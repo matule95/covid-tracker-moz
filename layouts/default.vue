@@ -3,7 +3,7 @@
     <div style="max-width: 82px;" class="w-full fixed left-0 z-40">
       <side-bar class="inset-y-0 sticky h-screen w-full"></side-bar>
     </div>
-    <div class="pt-16 ml-32 flex-1 max-w-full">
+    <div class="py-16 ml-32 flex-1 max-w-full">
       <nuxt />
     </div>
   </div>
@@ -20,13 +20,14 @@ export default {
 html {
   font-family: 'CircularStd', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  height: 100%;
 }
 
 *,
