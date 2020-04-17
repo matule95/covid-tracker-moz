@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     to="/"
-    class="flex flex-col items-center justify-center cursor-pointer py-4 w-full hover:bg-brown-light"
+    class="flex flex-col items-center justify-center cursor-pointer py-3 w-full hover:bg-brown-light"
   >
     <slot></slot>
   </nuxt-link>
