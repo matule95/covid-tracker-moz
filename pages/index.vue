@@ -7,12 +7,20 @@
       <div class="w-full mt-2">
         <p class="text-white">Global Cases</p>
       </div>
+      <div class="w-full mt-12">
+        <statistics></statistics>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {}
+import Statistics from '~/components/Statistics'
+export default {
+  components: {
+    Statistics
+  }
+}
 </script>
 
 <style>

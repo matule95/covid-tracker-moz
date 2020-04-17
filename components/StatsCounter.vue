@@ -1,0 +1,61 @@
+<template>
+  <div class="flex flex-wrap justify-between">
+    <div class="w-1/3 self-center flex">
+      <div
+        :class="getClassName"
+        :style="getStyles"
+        class="h-12 w-12 rounded-lg flex justify-center items-center z-10"
+      >
+        <slot name="icon"></slot>
+      </div>
+    </div>
+    <div class="w-2/3 flex flex-wrap self-center">
+      <div class="w-full mb-1">
+        <span class="text-md text-white">{{ stats.label || '' }}</span>
+        <span class="text-gold text-xs">+49kk</span>
+      </div>
+      <div class="w-full text-2xl text-white font-semibold">
+        {{ stats.value || 0 }}
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    stats: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    getClassName() {
+      const className = {}
+      if (this.stats.type === 'infected') className['bg-red-dark'] = true
+      else if (this.stats.type === 'active') className['bg-gold'] = true
+      else if (this.stats.type === 'deaths') className['bg-grey-dark'] = true
+      else if (this.stats.type === 'recovered') className['bg-green'] = true
+      else if (this.stats.type === 'countries') className['bg-purple'] = true
+      return className
+    },
+    getStyles() {
+      const style = {}
+      if (this.stats.type === 'infected')
+        style.boxShadow = '0px 0px 15px -2px #BA3131'
+      else if (this.stats.type === 'active')
+        style.boxShadow = '0px 0px 15px -2px #F6C879'
+      else if (this.stats.type === 'deaths')
+        style.boxShadow = '0px 0px 15px -2px #8795a1'
+      else if (this.stats.type === 'recovered')
+        style.boxShadow = '0px 0px 15px -2px #5CC1AC'
+      else if (this.stats.type === 'countries')
+        style.boxShadow = '0px 0px 15px -2px #8C79F6'
+
+      return style
+    }
+  }
+}
+</script>
+
+<style></style>
