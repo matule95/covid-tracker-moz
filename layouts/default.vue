@@ -1,9 +1,21 @@
 <template>
-  <div>
-    <nuxt />
+  <div class="flex min-h-screen antialiased bg-brown-light">
+    <div style="max-width: 82px;" class="w-full fixed left-0 z-40">
+      <side-bar class="inset-y-0 sticky h-screen w-full"></side-bar>
+    </div>
+    <div class="pt-16 ml-32 flex-1 max-w-full">
+      <nuxt />
+    </div>
   </div>
 </template>
-
+<script>
+import SideBar from '~/components/Sidebar'
+export default {
+  components: {
+    SideBar
+  }
+}
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -22,34 +34,5 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
 }
 </style>

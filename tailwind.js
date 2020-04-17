@@ -125,7 +125,10 @@ const colors = {
   pink: '#f66d9b',
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef'
+  'pink-lightest': '#ffebef',
+  brown: '#222529',
+  'brown-light': '#282B2E',
+  gold: '#F6C879'
 }
 
 module.exports = {
@@ -670,7 +673,8 @@ module.exports = {
     '16': '4rem',
     '20': '5rem',
     '24': '6rem',
-    '32': '8rem'
+    '32': '8rem',
+    '64': '16rem'
   },
 
   /*
