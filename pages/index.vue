@@ -11,7 +11,7 @@
         <statistics></statistics>
       </div>
       <div class="w-full flex-grow">
-        <maps></maps>
+        <maps :locations="mapData"></maps>
       </div>
     </div>
   </section>
@@ -24,6 +24,28 @@ export default {
   components: {
     Statistics,
     Maps
+  },
+  computed: {
+    mapData() {
+      const geoJson = {
+        type: 'FeatureCollection',
+        features: this.$store.state.locations.all.map((country = {}) => {
+          const { countryInfo = {} } = country
+          const { lat, long: lng } = countryInfo
+          return {
+            type: 'Feature',
+            properties: {
+              ...country
+            },
+            geometry: {
+              type: 'Point',
+              coordinates: [lng, lat]
+            }
+          }
+        })
+      }
+      return geoJson
+    }
   },
   async fetch({ store }) {
     await store.dispatch('locations/fetchItems')
