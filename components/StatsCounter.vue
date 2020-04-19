@@ -12,7 +12,9 @@
     <div class="w-2/3 flex flex-wrap self-center">
       <div class="w-full mb-1">
         <span class="text-md text-white">{{ stats.label || '' }}</span>
-        <span class="text-gold text-xs">+49kk</span>
+        <span v-if="stats.today" class="text-gold text-xs"
+          >+{{ stats.today }}</span
+        >
       </div>
       <div class="w-full text-2xl text-white font-semibold">
         {{ stats.value || 0 }}

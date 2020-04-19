@@ -94,12 +94,10 @@ export default {
   color: white;
   width: 3.6em;
   height: 3.6em;
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: bold;
   @apply bg-red;
   border-radius: 100%;
-  box-shadow: 0 2px 5px rgba(black, 0.9);
-
   &:hover {
     .icon-marker-tooltip {
       display: block;
