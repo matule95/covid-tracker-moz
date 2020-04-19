@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import SideBar from '~/components/Sidebar'
+import SideBar from '../components/SideBar'
 // import CasesInfo from '~/components/CasesInfo'
 export default {
   components: {

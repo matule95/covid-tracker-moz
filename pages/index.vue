@@ -55,6 +55,22 @@ export default {
       return new Date(this.dashboardStats.updated).toLocaleString()
     }
   },
+  head() {
+    return {
+      title: 'Início - Rastreador COVID-19 Moçambique',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Rastreador do COVID-19 para Moçambique 🇲🇿'
+        },
+        {
+          name: 'title',
+          content: 'Inicio - Rastreador do COVID-19 para Moçambique 🇲🇿'
+        }
+      ]
+    }
+  },
   async fetch({ store }) {
     await store.dispatch('locations/fetchItems')
     await store.dispatch('statistics/fetchItems')
