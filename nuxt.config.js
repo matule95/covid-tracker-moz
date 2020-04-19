@@ -24,6 +24,7 @@ export default {
       }
     ]
   },
+  loadingIndicator: '~/components/loadingIndicator.html',
 
   /*
    ** Customize the progress-bar color

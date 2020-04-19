@@ -1,18 +1,26 @@
 <template>
   <div class="flex min-h-screen antialiased bg-brown-light">
-    <div style="max-width: 82px;" class="w-full fixed left-0 z-40">
+    <div
+      style="max-width: 82px;"
+      class="w-full fixed left-0 z-40 hidden lg:block"
+    >
       <side-bar class="inset-y-0 sticky h-screen w-full"></side-bar>
     </div>
-    <div class="py-16 ml-32 flex-1 max-w-full">
+    <div class="py-16 lg:ml-32 px-5 lg:px-0 flex-1 max-w-full">
       <nuxt />
     </div>
+    <!-- <div style="max-width: 400px; right: 0;" class="w-full fixed right-0 z-40">
+      <cases-info class="inset-y-0 sticky h-screen w-full"></cases-info>
+    </div>-->
   </div>
 </template>
 <script>
 import SideBar from '~/components/Sidebar'
+// import CasesInfo from '~/components/CasesInfo'
 export default {
   components: {
     SideBar
+    // CasesInfo
   }
 }
 </script>

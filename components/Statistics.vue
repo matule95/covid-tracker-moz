@@ -1,8 +1,12 @@
 <template>
   <div class="w-full flex flex-wrap flex-1">
-    <div class="w-1/5">
+    <div class="w-1/2 md:w-1/4 xl:w-1/5">
       <stats-counter
-        :stats="{ type: 'infected', label: 'Infected', value: '615 235' }"
+        :stats="{
+          type: 'infected',
+          label: 'Infected',
+          value: formatNumbers(stats.cases)
+        }"
       >
         <template v-slot:icon>
           <svg
@@ -22,9 +26,13 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/5">
+    <div class="w-1/2 md:w-1/4 xl:w-1/5">
       <stats-counter
-        :stats="{ type: 'active', label: 'Active', value: '615 235' }"
+        :stats="{
+          type: 'active',
+          label: 'Active',
+          value: formatNumbers(stats.active)
+        }"
       >
         <template v-slot:icon>
           <svg
@@ -63,9 +71,13 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/5">
+    <div class="w-1/2 md:w-1/4 xl:w-1/5 mt-5 md:mt-0">
       <stats-counter
-        :stats="{ type: 'deaths', label: 'Deaths', value: '615 235' }"
+        :stats="{
+          type: 'deaths',
+          label: 'Deaths',
+          value: formatNumbers(stats.deaths)
+        }"
       >
         <template v-slot:icon>
           <svg
@@ -104,9 +116,13 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/5">
+    <div class="w-1/2 md:w-1/4 xl:w-1/5 mt-5 md:mt-0">
       <stats-counter
-        :stats="{ type: 'recovered', label: 'Recoverd', value: '615 235' }"
+        :stats="{
+          type: 'recovered',
+          label: 'Recovered',
+          value: formatNumbers(stats.recovered)
+        }"
       >
         <template v-slot:icon>
           <svg
@@ -126,9 +142,13 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/5">
+    <div class="w-1/2 md:w-1/4 xl:w-1/5 mt-5 xl:mt-0">
       <stats-counter
-        :stats="{ type: 'countries', label: 'Countries', value: '615 235' }"
+        :stats="{
+          type: 'countries',
+          label: 'Countries',
+          value: stats.affectedCountries
+        }"
       >
         <template v-slot:icon>
           <svg
@@ -156,6 +176,17 @@ import StatsCounter from '~/components/StatsCounter'
 export default {
   components: {
     StatsCounter
+  },
+  props: {
+    stats: {
+      required: true,
+      type: Object
+    }
+  },
+  methods: {
+    formatNumbers(value) {
+      return new Intl.NumberFormat('es-ES').format(value)
+    }
   }
 }
 </script>

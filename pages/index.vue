@@ -5,10 +5,12 @@
         <h2 class="text-white">Coronavirus COVID-19</h2>
       </div>
       <div class="w-full mt-2">
-        <p class="text-white">Global Cases</p>
+        <p class="text-white">
+          Global Cases (Latest Update: {{ latestUpdate }})
+        </p>
       </div>
       <div class="w-full my-12">
-        <statistics></statistics>
+        <statistics :stats="dashboardStats"></statistics>
       </div>
       <div class="w-full flex-grow">
         <maps :locations="mapData"></maps>
@@ -45,10 +47,17 @@ export default {
         })
       }
       return geoJson
+    },
+    dashboardStats() {
+      return this.$store.state.statistics.all
+    },
+    latestUpdate() {
+      return new Date(this.dashboardStats.updated).toLocaleString()
     }
   },
   async fetch({ store }) {
     await store.dispatch('locations/fetchItems')
+    await store.dispatch('statistics/fetchItems')
   }
 }
 </script>
