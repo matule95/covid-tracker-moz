@@ -59,7 +59,6 @@ export default {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
   /*
    ** Build configuration
    */
@@ -84,12 +83,10 @@ export default {
       }
     }
   },
-  pwa: {
-    manifest: {
-      name: 'COVID-19 MOZ',
-      short_name: 'COVID MOZ',
-      display: 'standalone',
-      backgroundColor: '#282B2E'
-    }
+  manifest: {
+    name: 'COVID-19 MOZ',
+    short_name: 'COVID MOZ',
+    display: 'standalone',
+    background_color: '#282B2E'
   }
 }
