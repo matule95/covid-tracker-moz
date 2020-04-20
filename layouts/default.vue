@@ -9,7 +9,7 @@
     <div class="py-16 lg:ml-32 px-5 lg:px-0 flex-1 max-w-full">
       <nuxt />
     </div>
-    <div style="max-width: 400px; right: 0;" class="w-full fixed right-0 z-40">
+    <div style="max-width: 420px; right: 0;" class="w-full fixed right-0 z-40">
       <cases-info class="h-screen w-full pt-16 px-6"></cases-info>
     </div>
   </div>

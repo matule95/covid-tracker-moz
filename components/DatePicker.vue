@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row overflow-x-auto h-24 relative">
+  <div id="calendar" class="flex flex-row overflow-x-hidden h-24 relative">
     <div class="flex flex-row w-full justify-between h-full">
       <div
         v-for="(date, index) in dates"
@@ -75,9 +75,12 @@ export default {
       return moment().format('YYYY-MM-DD')
     }
   },
+  mounted() {
+    const calendar = document.getElementById('calendar')
+    calendar.scrollLeft = calendar.scrollWidth
+  },
   methods: {
     isCurrentDate(date) {
-      // eslint-disable-next-line no-console
       const currentDate = moment().format('YYYY-MM-DD')
       return currentDate === moment(date).format('YYYY-MM-DD')
     }
