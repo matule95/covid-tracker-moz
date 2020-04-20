@@ -7,8 +7,11 @@ export default {
   /*
    ** Headers of the page
    */
+  server: {
+    host: '0.0.0.0'
+  },
   head: {
-    title: pkg.name,
+    title: 'COVID-19 MOZ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -79,6 +82,14 @@ export default {
           exclude: /(node_modules)/
         })
       }
+    }
+  },
+  pwa: {
+    manifest: {
+      name: 'COVID-19 MOZ',
+      short_name: 'COVID MOZ',
+      display: 'standalone',
+      backgroundColor: '#282B2E'
     }
   }
 }
