@@ -13,7 +13,7 @@
         <statistics :stats="dashboardStats"></statistics>
       </div>
       <div class="w-full flex-grow">
-        <maps :locations="mapData"></maps>
+        <maps :locations="mapData" class="z-30"></maps>
       </div>
     </div>
   </section>

@@ -9,18 +9,18 @@
     <div class="py-16 lg:ml-32 px-5 lg:px-0 flex-1 max-w-full">
       <nuxt />
     </div>
-    <!-- <div style="max-width: 400px; right: 0;" class="w-full fixed right-0 z-40">
-      <cases-info class="inset-y-0 sticky h-screen w-full"></cases-info>
-    </div>-->
+    <div style="max-width: 400px; right: 0;" class="w-full fixed right-0 z-40">
+      <cases-info class="h-screen w-full pt-16 px-6"></cases-info>
+    </div>
   </div>
 </template>
 <script>
 import SideBar from '../components/SideBar'
-// import CasesInfo from '~/components/CasesInfo'
+import CasesInfo from '../components/CasesInfo'
 export default {
   components: {
-    SideBar
-    // CasesInfo
+    SideBar,
+    CasesInfo
   }
 }
 </script>
