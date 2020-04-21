@@ -1,6 +1,15 @@
 <template>
-  <div id="calendar" class="flex flex-row overflow-x-hidden h-24 relative">
-    <div class="flex flex-row w-full justify-between h-full">
+  <div
+    id="calendar"
+    class="flex flex-row overflow-x-hidden h-24 relative select-none"
+  >
+    <div
+      @mousedown="mouseDown"
+      @mouseleave="isDown = false"
+      @mouseup="isDown = false"
+      @mousemove="mouseMove"
+      class="flex flex-row w-full justify-between h-full"
+    >
       <div
         v-for="(date, index) in dates"
         :key="index"
@@ -16,9 +25,11 @@
         <div
           :class="{
             'rounded-l-full': index === 0,
-            'rounded-r-full': index === dates.length - 1
+            'rounded-r-full': index === dates.length - 1,
+            'cursor-pointer': !isDown,
+            'cursor-move': isDown
           }"
-          class="w-full weekday text-sm mt-3 bg-brown-light py-2 text-center relative cursor-pointer"
+          class="w-full weekday text-sm mt-3 bg-brown-light py-2 text-center relative"
         >
           <div
             v-if="isCurrentDate(date.date)"
@@ -40,6 +51,12 @@
 import moment from 'moment'
 moment.locale('pt')
 export default {
+  data: () => ({
+    isDown: false,
+    startX: null,
+    scrollLeft: null,
+    calendar: null
+  }),
   computed: {
     dates() {
       const datesArray = []
@@ -76,13 +93,27 @@ export default {
     }
   },
   mounted() {
-    const calendar = document.getElementById('calendar')
-    calendar.scrollLeft = calendar.scrollWidth
+    this.calendar = document.getElementById('calendar')
   },
   methods: {
     isCurrentDate(date) {
       const currentDate = moment().format('YYYY-MM-DD')
       return currentDate === moment(date).format('YYYY-MM-DD')
+    },
+    mouseDown(event) {
+      this.isDown = true
+      this.startX = event.pageX - this.calendar.offsetLeft
+      this.scrollLeft = this.calendar.scrollLeft
+    },
+    mouseMove(event) {
+      if (!this.isDown) return
+      event.preventDefault()
+      const x = event.pageX - this.calendar.offsetLeft
+      const walk = (x - this.startX) * 2 // scroll-fast
+      this.calendar.scrollLeft = this.scrollLeft - walk
+
+      // eslint-disable-next-line no-console
+      console.log(walk)
     }
   }
 }
