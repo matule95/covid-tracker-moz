@@ -9,7 +9,10 @@
     <div class="py-16 lg:ml-32 px-5 lg:px-0 flex-1 max-w-full">
       <nuxt />
     </div>
-    <div style="max-width: 420px; right: 0;" class="w-full fixed right-0 z-40">
+    <div
+      style="max-width: 420px; right: 0;"
+      class="w-full fixed right-0 z-40 hidden lg:block"
+    >
       <cases-info class="h-screen w-full pt-16 px-6"></cases-info>
     </div>
   </div>
@@ -43,5 +46,17 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #766e63;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #f6c879;
+  border-radius: 50px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap flex-row -mx-4 lg:mx-0">
-    <div class="w-full text-center text-white mb-5">
+    <div class="w-full text-white mb-5">
       Abril 2020
     </div>
     <div
@@ -50,15 +50,6 @@ export default {
   computed: {
     currentMonth() {
       let daysInMonth = moment().daysInMonth()
-      const weekdays = [
-        'Segunda-feira',
-        'Terça-feira',
-        'Quarta-feira',
-        'Quinta-feira',
-        'Sexta-feira',
-        'Sábado',
-        'Domingo'
-      ]
       const monthDays = [[], [], [], [], []]
       monthDays.forEach(month => {
         let count = 0
@@ -69,7 +60,7 @@ export default {
       })
       while (daysInMonth > 0) {
         monthDays[this.getWeekOfMonth(moment().date(daysInMonth))].splice(
-          weekdays.indexOf(
+          this.weekdays.indexOf(
             moment()
               .date(daysInMonth)
               .format('dddd')
@@ -84,6 +75,9 @@ export default {
         daysInMonth--
       }
       return monthDays
+    },
+    weekdays() {
+      return moment.weekdays(true)
     }
   },
   methods: {

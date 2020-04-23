@@ -16,5 +16,6 @@ export default {
 <style>
 a.nuxt-link-active {
   @apply border-r-4 border-gold text-white;
+  border-right-style: solid;
 }
 </style>
