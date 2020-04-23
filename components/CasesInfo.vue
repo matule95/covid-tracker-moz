@@ -9,16 +9,17 @@
       </p>
     </div>
     <div class="w-full my-5">
-      <date-picker></date-picker>
+      <calendar></calendar>
     </div>
   </div>
 </template>
 
 <script>
-import DatePicker from '~/components/DatePicker'
+import Calendar from '~/components/Calendar'
+
 export default {
   components: {
-    DatePicker
+    Calendar
   }
 }
 </script>

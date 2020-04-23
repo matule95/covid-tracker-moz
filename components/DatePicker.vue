@@ -1,48 +1,55 @@
 <template>
-  <div
-    id="calendar"
-    class="flex flex-row overflow-x-hidden h-24 relative select-none"
-  >
+  <div>
     <div
-      @mousedown="mouseDown"
-      @mouseleave="isDown = false"
-      @mouseup="isDown = false"
-      @mousemove="mouseMove"
-      class="flex flex-row w-full justify-between h-full"
+      id="calendar"
+      class="flex flex-row overflow-x-hidden h-24 relative select-none"
     >
       <div
-        v-for="(date, index) in dates"
-        :key="index"
-        class="w-16 flex flex-col justify-center items-center z-10 text-white"
-        style="flex-shrink: 0; flex-grow: 0"
+        @mousedown="mouseDown"
+        @mouseleave="isDown = false"
+        @mouseup="isDown = false"
+        @mousemove="mouseMove"
+        class="flex flex-row w-full justify-between h-full"
       >
         <div
-          :class="{ 'text-gold': isCurrentDate(date.date) }"
-          class="weekday text-sm font-bold capitalized"
-        >
-          {{ date.name }}
-        </div>
-        <div
+          v-for="(date, index) in dates"
+          :key="index"
           :class="{
-            'rounded-l-full': index === 0,
-            'rounded-r-full': index === dates.length - 1,
             'cursor-pointer': !isDown,
             'cursor-move': isDown
           }"
-          class="w-full weekday text-sm mt-3 bg-brown-light py-2 text-center relative"
+          class="w-16 flex flex-col justify-center items-center z-10 text-white"
+          style="flex-shrink: 0; flex-grow: 0"
         >
           <div
-            v-if="isCurrentDate(date.date)"
-            class="relative flex justify-center items-center"
+            :class="{ 'text-gold': isCurrentDate(date.date) }"
+            class="weekday text-sm font-bold capitalized"
           >
-            <div class="active-selector z-0"></div>
-            <div class="active-value z-10">
-              {{ date.day }}
-            </div>
+            {{ date.name }}
           </div>
-          <span v-else> {{ date.day }} </span>
+          <div
+            :class="{
+              'rounded-l-full': index === 0,
+              'rounded-r-full': index === dates.length - 1,
+              'cursor-pointer': !isDown,
+              'cursor-move': isDown
+            }"
+            class="w-full weekday text-sm mt-3 bg-brown-light py-2 text-center relative"
+          >
+            <div
+              v-if="isCurrentDate(date.date)"
+              class="relative flex justify-center items-center"
+            >
+              <div class="active-selector z-0"></div>
+              <div class="active-value z-10">{{ date.day }}</div>
+            </div>
+            <span v-else>{{ date.day }}</span>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="flex flex-wrap w-full text-center text-white justify-center">
+      Abril 2020
     </div>
   </div>
 </template>
@@ -90,10 +97,32 @@ export default {
     },
     currentDate() {
       return moment().format('YYYY-MM-DD')
+    },
+    currentMounth() {
+      let daysInMonth = moment().daysInMonth()
+      const arrDays = {
+        'Segunda-feira': [],
+        'Terça-feira': [],
+        'Quarta-feira': [],
+        'Quinta-feira': [],
+        'Sexta-feira': [],
+        Sábado: [],
+        Domingo: []
+      }
+      while (daysInMonth) {
+        const current = moment().date(daysInMonth)
+        arrDays[current.format('dddd')].push({
+          day: current.format('D'),
+          date: current
+        })
+        daysInMonth--
+      }
+      return arrDays
     }
   },
   mounted() {
     this.calendar = document.getElementById('calendar')
+    this.calendar.scrollLeft = this.calendar.scrollWidth
   },
   methods: {
     isCurrentDate(date) {
@@ -109,7 +138,7 @@ export default {
       if (!this.isDown) return
       event.preventDefault()
       const x = event.pageX - this.calendar.offsetLeft
-      const walk = (x - this.startX) * 2 // scroll-fast
+      const walk = (x - this.startX) * 1.5 // scroll-fast
       this.calendar.scrollLeft = this.scrollLeft - walk
 
       // eslint-disable-next-line no-console
