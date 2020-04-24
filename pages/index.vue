@@ -15,7 +15,11 @@
       </div>
       <div class="w-full flex-grow flex flex-row flex-wrap">
         <div class="w-full xl:w-2/3 flex-grow h-64 xl:h-auto">
-          <maps :locations="mapGEOJSON" class="z-30"></maps>
+          <span class="text-gold"
+            >*Os pontos no mapa não representam localização exacta dos
+            casos</span
+          >
+          <maps :locations="mapGEOJSON" class="z-30 pt-1"></maps>
         </div>
         <div class="flex flex-wrap flex-row w-full xl:w-1/3 xl:pl-5">
           <div class="w-full mt-5 lg:mt-0 mb-2">
