@@ -194,56 +194,67 @@ export default {
         {
           name: 'Cabo Delgado',
           cases: 45,
-          todayCases: 5
+          todayCases: 5,
+          flag: '/icons/cabodelgado.svg'
         },
         {
           name: 'Niassa',
           cases: 0,
-          todayCases: 0
+          todayCases: 0,
+          flag: '/icons/niassa.svg'
         },
         {
           name: 'Nampula',
           cases: 0,
-          todayCases: 0
+          todayCases: 0,
+          flag: '/icons/nampula.svg'
         },
         {
           name: 'Zambézia',
           cases: 0,
-          todayCases: 0
+          todayCases: 0,
+          flag: '/icons/zambezia.svg'
         },
         {
           name: 'Tete',
           cases: 0,
-          todayCases: 0
+          todayCases: 0,
+          flag: '/icons/sofala.svg'
         },
         {
           name: 'Sofala',
           cases: 0,
-          todayCases: 0
+          todayCases: 0,
+          flag: '/icons/sofala.svg'
         },
         {
           name: 'Manica',
           cases: 0,
-          todayCases: 0
+          todayCases: 0,
+          flag: '/icons/manica.svg'
         },
         {
           name: 'Inhambane',
           cases: 0,
-          todayCases: 0
+          todayCases: 0,
+          flag: '/icons/inhambane.svg'
         },
         {
           name: 'Gaza',
           cases: 0,
-          todayCases: 0
+          todayCases: 0,
+          flag: '/icons/gaza.svg'
         },
         {
           name: 'Província de Maputo',
           cases: 12,
+          flag: '/icons/maputo.svg',
           todayCases: 5
         },
         {
           name: 'Maputo',
           cases: 15,
+          flag: '/icons/maputo.svg',
           todayCases: 5
         }
       ]
