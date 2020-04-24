@@ -1,0 +1,2724 @@
+{
+    "dailyInformation": [
+        {
+            "date": "24/04/2020",
+            "country_stats": {
+                "tested": "1439",
+                "infected": "65",
+                "active": "56",
+                "deaths": "0",
+                "recovered": "9",
+                "local_transmissions": "57",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "45",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "15",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "5",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "23/04/2020",
+            "country_stats": {
+                "tested": "1325",
+                "infected": "46",
+                "active": "37",
+                "deaths": "0",
+                "recovered": "9",
+                "local_transmissions": "38",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "32",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "2",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "1",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "22/04/2020",
+            "country_stats": {
+                "tested": "1247",
+                "infected": "41",
+                "active": "33",
+                "deaths": "0",
+                "recovered": "8",
+                "local_transmissions": "33",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "28",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "2",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "21/04/2020",
+            "country_stats": {
+                "tested": "1163",
+                "infected": "39",
+                "active": "31",
+                "deaths": "0",
+                "recovered": "8",
+                "local_transmissions": "31",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "26",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "2",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "20/04/2020",
+            "country_stats": {
+                "tested": "1110",
+                "infected": "39",
+                "active": "31",
+                "deaths": "0",
+                "recovered": "8",
+                "local_transmissions": "31",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "26",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "2",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "19/04/2020",
+            "country_stats": {
+                "tested": "1037",
+                "infected": "39",
+                "active": "31",
+                "deaths": "0",
+                "recovered": "8",
+                "local_transmissions": "31",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "26",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "2",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "18/04/2020",
+            "country_stats": {
+                "tested": "952",
+                "infected": "35",
+                "active": "31",
+                "deaths": "0",
+                "recovered": "4",
+                "local_transmissions": "27",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "22",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "2",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "17/04/2020",
+            "country_stats": {
+                "tested": "898",
+                "infected": "34",
+                "active": "32",
+                "deaths": "0",
+                "recovered": "2",
+                "local_transmissions": "26",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "22",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "1",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "16/04/2020",
+            "country_stats": {
+                "tested": "855",
+                "infected": "31",
+                "active": "29",
+                "deaths": "0",
+                "recovered": "2",
+                "local_transmissions": "23",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "20",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "15/04/2020",
+            "country_stats": {
+                "tested": "793",
+                "infected": "29",
+                "active": "27",
+                "deaths": "0",
+                "recovered": "2",
+                "local_transmissions": "21",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "18",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "14/04/2020",
+            "country_stats": {
+                "tested": "762",
+                "infected": "28",
+                "active": "26",
+                "deaths": "0",
+                "recovered": "2",
+                "local_transmissions": "20",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "17",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "13/04/2020",
+            "country_stats": {
+                "tested": "683",
+                "infected": "21",
+                "active": "19",
+                "deaths": "0",
+                "recovered": "2",
+                "local_transmissions": "13",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "10",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "12/04/2020",
+            "country_stats": {
+                "tested": "679",
+                "infected": "21",
+                "active": "19",
+                "deaths": "0",
+                "recovered": "2",
+                "local_transmissions": "13",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "10",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "11/04/2020",
+            "country_stats": {
+                "tested": "551",
+                "infected": "20",
+                "active": "18",
+                "deaths": "0",
+                "recovered": "2",
+                "local_transmissions": "12",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "9",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "10/04/2020",
+            "country_stats": {
+                "tested": "537",
+                "infected": "20",
+                "active": "18",
+                "deaths": "0",
+                "recovered": "2",
+                "local_transmissions": "12",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "9",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "09/04/2020",
+            "country_stats": {
+                "tested": "483",
+                "infected": "17",
+                "active": "16",
+                "deaths": "0",
+                "recovered": "1",
+                "local_transmissions": "9",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "6",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "08/04/2020",
+            "country_stats": {
+                "tested": "467",
+                "infected": "17",
+                "active": "16",
+                "deaths": "0",
+                "recovered": "1",
+                "local_transmissions": "9",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "6",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "07/04/2020",
+            "country_stats": {
+                "tested": "424",
+                "infected": "10",
+                "active": "9",
+                "deaths": "0",
+                "recovered": "1",
+                "local_transmissions": "3",
+                "foreign_transmissions": "7"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "06/04/2020",
+            "country_stats": {
+                "tested": "367",
+                "infected": "10",
+                "active": "9",
+                "deaths": "0",
+                "recovered": "1",
+                "local_transmissions": "3",
+                "foreign_transmissions": "7"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "05/04/2020",
+            "country_stats": {
+                "tested": "363",
+                "infected": "10",
+                "active": "9",
+                "deaths": "0",
+                "recovered": "1",
+                "local_transmissions": "3",
+                "foreign_transmissions": "7"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "04/04/2020",
+            "country_stats": {
+                "tested": "338",
+                "infected": "10",
+                "active": "9",
+                "deaths": "0",
+                "recovered": "1",
+                "local_transmissions": "3",
+                "foreign_transmissions": "7"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "03/04/2020",
+            "country_stats": {
+                "tested": "317",
+                "infected": "10",
+                "active": "10",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "3",
+                "foreign_transmissions": "7"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "02/04/2020",
+            "country_stats": {
+                "tested": "302",
+                "infected": "10",
+                "active": "10",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "3",
+                "foreign_transmissions": "7"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "01/04/2020",
+            "country_stats": {
+                "tested": "284",
+                "infected": "10",
+                "active": "10",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "3",
+                "foreign_transmissions": "7"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "31/03/2020",
+            "country_stats": {
+                "tested": "267",
+                "infected": "8",
+                "active": "8",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "2",
+                "foreign_transmissions": "6"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "30/03/2020",
+            "country_stats": {
+                "tested": "231",
+                "infected": "8",
+                "active": "8",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "2",
+                "foreign_transmissions": "6"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "29/03/2020",
+            "country_stats": {
+                "tested": "217",
+                "infected": "8",
+                "active": "8",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "2",
+                "foreign_transmissions": "6"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "28/03/2020",
+            "country_stats": {
+                "tested": "205",
+                "infected": "8",
+                "active": "8",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "2",
+                "foreign_transmissions": "6"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "27/03/2020",
+            "country_stats": {
+                "tested": "141",
+                "infected": "7",
+                "active": "7",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "1",
+                "foreign_transmissions": "6"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "7",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "26/03/2020",
+            "country_stats": {
+                "tested": "98",
+                "infected": "7",
+                "active": "7",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "1",
+                "foreign_transmissions": "6"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "7",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "25/03/2020",
+            "country_stats": {
+                "tested": "77",
+                "infected": "5",
+                "active": "5",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "1",
+                "foreign_transmissions": "4"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "5",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "24/03/2020",
+            "country_stats": {
+                "tested": "67",
+                "infected": "3",
+                "active": "3",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "1",
+                "foreign_transmissions": "2"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "3",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "23/03/2020",
+            "country_stats": {
+                "tested": "55",
+                "infected": "1",
+                "active": "1",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "0",
+                "foreign_transmissions": "1"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "1",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
+            "date": "22/03/2020",
+            "country_stats": {
+                "tested": "46",
+                "infected": "1",
+                "active": "1",
+                "deaths": "0",
+                "recovered": "0",
+                "local_transmissions": "0",
+                "foreign_transmissions": "1"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "1",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        }
+    ]
+}
