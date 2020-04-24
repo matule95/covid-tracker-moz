@@ -28,11 +28,11 @@
           </div>
           <div class="w-full mb-5">
             <span class="text-white font-bold"
-              >Resumo <span class="text-gold">Global</span> 🌍</span
+              >Países <span class="text-gold">Vizinhos</span> 🌍</span
             >
           </div>
-          <div class="w-full overflow-y-auto">
-            <location-stats :places="places" class="h-64"></location-stats>
+          <div class="w-full">
+            <location-stats :places="places"></location-stats>
           </div>
         </div>
       </div>
@@ -123,6 +123,14 @@ export default {
         totalCases: 45,
         deaths: 0
       }
+    ],
+    neighbourCountries: [
+      'South Africa',
+      'Tanzania',
+      'Swaziland',
+      'Zimbabwe',
+      'Malawi',
+      'Zambia'
     ]
   }),
   computed: {
@@ -168,9 +176,11 @@ export default {
             name: item.country,
             cases: item.cases,
             flag: item.countryInfo.flag,
-            todayCases: item.todayCases
+            todayCases: item.todayCases,
+            continent: item.continent
           }
         })
+        .filter(item => this.neighbourCountries.includes(item.name))
         .sort((a, b) => (a.cases > b.cases ? -1 : 1))
     },
     localPlaces() {
