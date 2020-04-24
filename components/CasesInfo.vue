@@ -11,15 +11,19 @@
     <div class="w-full my-5">
       <calendar></calendar>
     </div>
+    <div class="w-full">
+      <chart />
+    </div>
   </div>
 </template>
 
 <script>
 import Calendar from '~/components/Calendar'
-
+import Chart from '~/components/Chart'
 export default {
   components: {
-    Calendar
+    Calendar,
+    Chart
   }
 }
 </script>

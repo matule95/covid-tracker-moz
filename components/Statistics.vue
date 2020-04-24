@@ -3,10 +3,35 @@
     <div class="w-1/2 md:w-1/4 xl:w-1/5">
       <stats-counter
         :stats="{
+          type: 'countries',
+          label: 'Testados',
+          value: stats.tested
+        }"
+      >
+        <template v-slot:icon>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5"
+          >
+            <defs />
+            <path
+              fill="#FFF"
+              d="M439.463 61.867c-4.616-2.685-10.318-2.685-14.933 0-17.877 9.918-38.009 15.061-58.453 14.933-29.891.661-58.793-10.715-80.213-31.573-24.728-24.205-58.162-37.431-92.757-36.693-27.861-.241-55.101 8.232-77.909 24.235V25.6c0-14.138-11.461-25.6-25.6-25.6-14.139 0-25.6 11.461-25.6 25.6v460.8c0 14.138 11.461 25.6 25.6 25.6 14.138 0 25.6-11.461 25.6-25.6V264.533c2.828-.265 5.522-1.33 7.765-3.072 20.302-14.951 44.933-22.861 70.144-22.528 29.946-.688 58.911 10.689 80.384 31.573 24.681 24.17 58.049 37.394 92.587 36.693 26.469.308 52.431-7.266 74.581-21.76 4.74-3.285 7.501-8.742 7.339-14.507V76.8c.054-6.152-3.207-11.857-8.535-14.933z"
+              class="active-path"
+              data-old_color="#000000"
+              data-original="#000000"
+            />
+          </svg>
+        </template>
+      </stats-counter>
+    </div>
+    <div class="w-1/2 md:w-1/4 xl:w-1/5">
+      <stats-counter
+        :stats="{
           type: 'infected',
-          label: 'Infected',
-          value: formatNumbers(stats.cases),
-          today: formatNumbers(stats.todayCases)
+          label: 'Infectados',
+          value: formatNumbers(stats.infected)
         }"
         :today="stats.todayCases"
       >
@@ -28,13 +53,12 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5">
+    <div class="w-1/2 md:w-1/4 xl:w-1/5 mt-5 md:mt-0">
       <stats-counter
         :stats="{
           type: 'active',
-          label: 'Active',
-          value: formatNumbers(stats.active),
-          today: formatNumbers(stats.todayCases)
+          label: 'Activos',
+          value: formatNumbers(stats.active)
         }"
         :today="stats.todayCases"
       >
@@ -79,9 +103,8 @@
       <stats-counter
         :stats="{
           type: 'deaths',
-          label: 'Deaths',
-          value: formatNumbers(stats.deaths),
-          today: formatNumbers(stats.todayDeaths)
+          label: 'Óbitos',
+          value: formatNumbers(stats.deaths)
         }"
       >
         <template v-slot:icon>
@@ -102,11 +125,11 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 mt-5 md:mt-0">
+    <div class="w-1/2 md:w-1/4 xl:w-1/5 mt-5 xl:mt-0">
       <stats-counter
         :stats="{
           type: 'recovered',
-          label: 'Recovered',
+          label: 'Recuperados',
           value: formatNumbers(stats.recovered)
         }"
       >
@@ -120,32 +143,6 @@
             <path
               fill="#FFF"
               d="M408 184H272c-4.417969 0-8-3.582031-8-8V40c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8H40c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40V272c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"
-              class="active-path"
-              data-old_color="#000000"
-              data-original="#000000"
-            />
-          </svg>
-        </template>
-      </stats-counter>
-    </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 mt-5 xl:mt-0">
-      <stats-counter
-        :stats="{
-          type: 'countries',
-          label: 'Countries',
-          value: stats.affectedCountries
-        }"
-      >
-        <template v-slot:icon>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="w-5"
-          >
-            <defs />
-            <path
-              fill="#FFF"
-              d="M439.463 61.867c-4.616-2.685-10.318-2.685-14.933 0-17.877 9.918-38.009 15.061-58.453 14.933-29.891.661-58.793-10.715-80.213-31.573-24.728-24.205-58.162-37.431-92.757-36.693-27.861-.241-55.101 8.232-77.909 24.235V25.6c0-14.138-11.461-25.6-25.6-25.6-14.139 0-25.6 11.461-25.6 25.6v460.8c0 14.138 11.461 25.6 25.6 25.6 14.138 0 25.6-11.461 25.6-25.6V264.533c2.828-.265 5.522-1.33 7.765-3.072 20.302-14.951 44.933-22.861 70.144-22.528 29.946-.688 58.911 10.689 80.384 31.573 24.681 24.17 58.049 37.394 92.587 36.693 26.469.308 52.431-7.266 74.581-21.76 4.74-3.285 7.501-8.742 7.339-14.507V76.8c.054-6.152-3.207-11.857-8.535-14.933z"
               class="active-path"
               data-old_color="#000000"
               data-original="#000000"

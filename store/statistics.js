@@ -1,4 +1,4 @@
-const API_ENDPOINT = 'https://corona.lmao.ninja/v2/all'
+const API_ENDPOINT = 'https://covidreportmz-api.herokuapp.com/stats'
 export const state = () => ({
   all: []
 })
@@ -6,7 +6,7 @@ export const actions = {
   fetchItems({ commit }) {
     return this.$axios
       .get(API_ENDPOINT)
-      .then(({ data }) => {
+      .then(({ data: { data } }) => {
         commit('SET_ITEMS', data)
         return Promise.resolve(data)
       })

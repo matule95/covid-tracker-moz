@@ -2,11 +2,12 @@
   <section class="container h-full">
     <div class="flex flex-wrap flex-col h-full">
       <div class="flex-initial w-full mb-2">
-        <h2 class="text-white">Coronavirus COVID-19</h2>
+        <h2 class="text-white">COVID-19 - Moçambique</h2>
       </div>
       <div class="w-full mt-2">
         <p class="text-white">
-          Global Cases (Latest Update: {{ latestUpdate }})
+          {{ latestUpdate }} - Fonte:
+          <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
         </p>
       </div>
       <div class="w-full my-5">
@@ -30,8 +31,8 @@
               >Resumo <span class="text-gold">Global</span> 🌍</span
             >
           </div>
-          <div class="w-full overflow-y-auto h-64">
-            <location-stats :places="places"></location-stats>
+          <div class="w-full overflow-y-auto">
+            <location-stats :places="places" class="h-64"></location-stats>
           </div>
         </div>
       </div>
@@ -56,70 +57,70 @@ export default {
         name: 'Maputo',
         lat: -25.974873,
         lng: 32.581416,
-        totalCases: 10,
+        totalCases: 15,
         deaths: 0
       },
       {
         name: 'Sofala',
         lat: -19.84361,
         lng: 34.83889,
-        totalCases: 10,
+        totalCases: 0,
         deaths: 0
       },
       {
         name: 'Manica',
         lat: -19.11639,
         lng: 33.48333,
-        totalCases: 10,
+        totalCases: 0,
         deaths: 0
       },
       {
         name: 'Gaza',
         lat: -25.05194,
         lng: 33.64417,
-        totalCases: 10,
+        totalCases: 0,
         deaths: 0
       },
       {
         name: 'Inhambane',
         lat: -23.865,
         lng: 35.38333,
-        totalCases: 10,
+        totalCases: 0,
         deaths: 0
       },
       {
         name: 'Tete',
         lat: -16.15639,
         lng: 33.58667,
-        totalCases: 10,
+        totalCases: 0,
         deaths: 0
       },
       {
         name: 'Zambézia',
         lat: -17.87861,
         lng: 36.88833,
-        totalCases: 10,
+        totalCases: 0,
         deaths: 0
       },
       {
         name: 'Nampula',
         lat: -15.11646,
         lng: 39.2666,
-        totalCases: 10,
+        totalCases: 0,
         deaths: 0
       },
       {
         name: 'Niassa',
         lat: -13.31278,
         lng: 35.24056,
-        totalCases: 10,
+        totalCases: 0,
         deaths: 0
       },
       {
         name: 'Cabo Delgado',
         lat: -12.97395,
         lng: 40.51775,
-        totalCases: 10,
+        totalCases: 45,
         deaths: 0
       }
     ]
@@ -146,10 +147,19 @@ export default {
       return geoJson
     },
     dashboardStats() {
-      return this.$store.state.statistics.all
+      const statistics = this.$store.state.statistics.all.stats
+      return {
+        tested: statistics[2].total,
+        infected: statistics[4].total,
+        active:
+          Number.parseInt(statistics[4].total) -
+          Number.parseInt(statistics[7].total),
+        deaths: statistics[6].total,
+        recovered: statistics[7].total
+      }
     },
     latestUpdate() {
-      return new Date(this.dashboardStats.updated).toLocaleString()
+      return this.$store.state.statistics.all.date
     },
     places() {
       return this.$store.state.locations.all
@@ -167,56 +177,61 @@ export default {
       const provinces = [
         {
           name: 'Cabo Delgado',
-          cases: 12,
+          cases: 45,
           todayCases: 5
         },
         {
           name: 'Niassa',
-          cases: 12,
-          todayCases: 5
+          cases: 0,
+          todayCases: 0
         },
         {
           name: 'Nampula',
-          cases: 12,
-          todayCases: 5
+          cases: 0,
+          todayCases: 0
         },
         {
           name: 'Zambézia',
-          cases: 12,
-          todayCases: 5
+          cases: 0,
+          todayCases: 0
         },
         {
           name: 'Tete',
-          cases: 12,
-          todayCases: 5
+          cases: 0,
+          todayCases: 0
         },
         {
           name: 'Sofala',
-          cases: 12,
-          todayCases: 5
+          cases: 0,
+          todayCases: 0
         },
         {
           name: 'Manica',
-          cases: 12,
-          todayCases: 5
+          cases: 0,
+          todayCases: 0
         },
         {
           name: 'Inhambane',
-          cases: 12,
-          todayCases: 5
+          cases: 0,
+          todayCases: 0
         },
         {
           name: 'Gaza',
+          cases: 0,
+          todayCases: 0
+        },
+        {
+          name: 'Província de Maputo',
           cases: 12,
           todayCases: 5
         },
         {
           name: 'Maputo',
-          cases: 12,
+          cases: 15,
           todayCases: 5
         }
       ]
-      return provinces
+      return provinces.sort((a, b) => (a.cases > b.cases ? -1 : 1))
     },
     mapGEOJSON() {
       const geoJson = {
