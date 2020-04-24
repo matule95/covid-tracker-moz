@@ -39,6 +39,10 @@ export default {
       else if (this.stats.type === 'deaths') className['bg-grey-dark'] = true
       else if (this.stats.type === 'recovered') className['bg-green'] = true
       else if (this.stats.type === 'countries') className['bg-purple'] = true
+      else if (this.stats.type === 'local_transmissions')
+        className['bg-blue'] = true
+      else if (this.stats.type === 'foreign_transmission')
+        className['bg-orange'] = true
       return className
     },
     getStyles() {
@@ -53,7 +57,10 @@ export default {
         style.boxShadow = '0px 0px 15px -2px #5CC1AC'
       else if (this.stats.type === 'countries')
         style.boxShadow = '0px 0px 15px -2px #8C79F6'
-
+      else if (this.stats.type === 'local_transmissions')
+        style.boxShadow = '0px 0px 15px -2px #3490dc'
+      else if (this.stats.type === 'foreign_transmission')
+        style.boxShadow = '0px 0px 15px -2px #f6993f'
       return style
     }
   }
