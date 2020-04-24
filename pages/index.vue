@@ -163,7 +163,10 @@ export default {
           Number.parseInt(statistics[4].total) -
           Number.parseInt(statistics[7].total),
         deaths: statistics[6].total,
-        recovered: statistics[7].total
+        recovered: statistics[7].total,
+        negatives: statistics[5].total,
+        local_transmission: '11',
+        foreign_transmission: '25'
       }
     },
     latestUpdate() {
