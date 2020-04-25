@@ -27,8 +27,11 @@
           class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
         >
           <div
-            class="flex flex-wrap flex-row w-full my-5 order-3 xl:order-1 overallChart"
+            class="flex flex-wrap flex-row w-full my-5 xl:mt-0 order-3 xl:order-1 overallChart"
           >
+            <span class="text-white font-bold mb-5"
+              >Progressos dos <span class="text-gold">Casos</span> 📈</span
+            >
             <chart style="width: 100%" />
           </div>
           <div

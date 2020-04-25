@@ -74,10 +74,12 @@ export default {
             ],
             borderWidth: 3,
             lineTension: 0.15,
-            pointBackgroundColor: '#e3342f',
+            pointBackgroundColor: '#ffffff',
             pointStyle: 'circle',
-            pointRadius: 0,
+            pointHitRadius: 15,
             fill: true,
+            spanGaps: true,
+            borderCapStyle: 'round',
             backgroundColor: this.setGradient('#e3342f')
           },
           {
@@ -108,10 +110,12 @@ export default {
             ],
             borderWidth: 3,
             lineTension: 0.1,
-            pointBackgroundColor: '#5CC1AC',
+            pointBackgroundColor: '#ffffff',
             pointStyle: 'circle',
-            pointRadius: 0,
+            pointHitRadius: 15,
             fill: true,
+            spanGaps: true,
+            borderCapStyle: 'round',
             backgroundColor: this.setGradient('#5CC1AC')
           }
         ]

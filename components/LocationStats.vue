@@ -17,7 +17,7 @@
           >+{{ formatNumbers(place.todayCases) }}
         </span>
       </div>
-      <div class="w-1/3 text-white">
+      <div class="w-1/3 text-white text-center">
         {{ formatNumbers(place.cases) }}
       </div>
     </div>
