@@ -49,7 +49,7 @@ export default {
           <ul>
             <li><strong>Confirmados:</strong> ${confirmed}</li>
             <li><strong>Óbitos:</strong> ${deaths}</li>
-            <li><strong>Recovered:</strong> ${recovered}</li>
+            <li><strong>Recuperados:</strong> ${recovered}</li>
           </ul>
         </span>
         ${confirmed}
