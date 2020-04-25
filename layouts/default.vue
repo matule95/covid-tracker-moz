@@ -8,14 +8,26 @@
     >
       <animation-player src="fighter" style="max-width: 400px; width: 100%" />
       <h2 class="-mt-16 text-gold">Ajude-nos a combater o COVID-19!</h2>
-      <p class="mt-5 text-white w-full lg:w-1/2 text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et
-        congue mi. Ut sagittis magna rhoncus, blandit ante at, ultrices lacus.
-        In viverra tortor in vehicula suscipit.
-      </p>
+      <span
+        class="mt-5 text-white w-full lg:w-1/2 text-center"
+        style="line-height: 2.1rem;"
+      >
+        Além dos
+        <a class="text-gold" href="https://covid19.ins.gov.mz/prevencao/"
+          >métodos de prevenção indicados pelo INS</a
+        >, a nossa única maneira de ajudar a impedir a propagação do COVID-19 é
+        através da codificação de aplicativos. Essa é a parte mais fácil. O
+        difícil é obter informações locais confíaveis portanto precisamos da sua
+        ajuda para que possamos manter as pessoas conscientes do que está a
+        acontecer.<br />
+        Contacte-nos em:
+        <a class="text-gold" href="mailto:covidmozinfo@gmail.com"
+          >covidmozinfo@gmail.com</a
+        >
+      </span>
       <div class="mt-16 text-center">
         <span class="text-white font-bold text-sm">
-          Made with ❤️ by: <br />
+          Feito com ❤️ por: <br />
           <span class="text-gold">
             Clayton Matule <span class="text-white">&</span> Luís Pereira</span
           ></span
