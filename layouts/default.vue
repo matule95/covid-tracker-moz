@@ -1,31 +1,12 @@
 <template>
   <div class="flex min-h-screen antialiased bg-brown-light">
-    <div
-      style="max-width: 82px;"
-      class="w-full fixed left-0 z-40 hidden lg:block"
-    >
-      <side-bar class="inset-y-0 sticky h-screen w-full"></side-bar>
-    </div>
-    <div class="py-16 lg:ml-32 px-5 lg:px-0 flex-1 max-w-full">
+    <div class="py-16 lg:ml-8 xl:mx-16 px-5 lg:px-0 flex-1 max-w-full">
       <nuxt />
-    </div>
-    <div
-      style="max-width: 420px; right: 0;"
-      class="w-full fixed right-0 z-40 hidden lg:block"
-    >
-      <cases-info class="h-screen w-full pt-16 px-6"></cases-info>
     </div>
   </div>
 </template>
 <script>
-import SideBar from '../components/SideBar'
-import CasesInfo from '../components/CasesInfo'
-export default {
-  components: {
-    SideBar,
-    CasesInfo
-  }
-}
+export default {}
 </script>
 <style>
 html {
@@ -52,7 +33,7 @@ html {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #766e63;
+  background-color: #282b2e;
   border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb {

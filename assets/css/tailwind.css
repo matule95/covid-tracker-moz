@@ -60,3 +60,26 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+@media (min-width: 576px) {
+  .container {
+    max-width: 766px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 990px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1700px;
+  }
+}

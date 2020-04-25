@@ -1,5 +1,5 @@
 <template>
-  <section class="container h-full">
+  <section class="container h-full" style="max-width: 100%">
     <div class="flex flex-wrap flex-col h-full">
       <div class="flex-initial w-full mb-2">
         <h2 class="text-white">COVID-19 - Moçambique</h2>
@@ -14,29 +14,36 @@
         <statistics :stats="dashboardStats"></statistics>
       </div>
       <div class="w-full flex-grow flex flex-row flex-wrap">
-        <div class="w-full xl:w-2/3 flex-grow h-64 xl:h-auto">
+        <div class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-64 xl:h-auto my-5">
           <maps :locations="mapGEOJSON" class="z-30"></maps>
           <span class="text-gold text-xs pt-3"
             >*Os pontos no mapa não representam localização exacta dos
             casos</span
           >
         </div>
-        <div class="flex flex-wrap flex-row w-full xl:w-1/3 xl:pl-5">
-          <div class="w-full mt-5 lg:mt-0 mb-2">
+        <div
+          class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
+        >
+          <div class="flex flex-wrap flex-row w-full my-5 order-3 xl:order-1">
+            <chart style="width: 100%" />
+          </div>
+          <div class="w-full md:w-1/2 mt-5 mb-2 order-1 xl:order-2">
             <span class="text-white font-bold"
               >Distribuição <span class="text-gold">Provincial</span> 📍</span
             >
+            <location-stats
+              :places="localPlaces"
+              class="w-full mt-3 mb-5"
+            ></location-stats>
           </div>
-          <div class="w-full overflow-y-auto mt-3 mb-5">
-            <location-stats :places="localPlaces"></location-stats>
-          </div>
-          <div class="w-full mb-5">
+          <div class="w-full md:w-1/2 mt-5 order-2 xl:order-3">
             <span class="text-white font-bold"
               >Países <span class="text-gold">Vizinhos</span> 🌍</span
             >
-          </div>
-          <div class="w-full">
-            <location-stats :places="places"></location-stats>
+            <location-stats
+              :places="places"
+              class="w-full mt-3 mb-5"
+            ></location-stats>
           </div>
         </div>
       </div>
@@ -48,11 +55,13 @@
 import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
+import Chart from '~/components/Chart'
 export default {
   components: {
     Statistics,
     Maps,
-    LocationStats
+    LocationStats,
+    Chart
   },
   data: () => ({
     mozGeoJson: null,
