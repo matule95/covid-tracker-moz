@@ -190,8 +190,8 @@ export default {
           Number.parseInt(statistics[7].total),
         deaths: statistics[6].total,
         recovered: statistics[7].total,
-        local_transmission: '11',
-        foreign_transmission: '25'
+        local_transmission: '62',
+        foreign_transmission: '8'
       }
     },
     latestUpdate() {

@@ -1,6 +1,86 @@
 {
     "dailyInformation": [
         {
+            "date": "25/04/2020",
+            "country_stats": {
+                "tested": "1575",
+                "infected": "70",
+                "active": "61",
+                "deaths": "0",
+                "recovered": "9",
+                "local_transmissions": "62",
+                "foreign_transmissions": "8"
+            },
+            "province_stats": [
+                {
+                    "province": "Cabo Delgado",
+                    "confirmed": "50",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Cidade de Maputo",
+                    "confirmed": "15",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Província de Maputo",
+                    "confirmed": "5",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Niassa",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Nampula",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Zambézia",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Tete",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Sofala",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Manica",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Inhambane",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                },
+                {
+                    "province": "Gaza",
+                    "confirmed": "0",
+                    "deaths": "0",
+                    "recovered": "0"
+                }
+            ]
+        },
+        {
             "date": "24/04/2020",
             "country_stats": {
                 "tested": "1439",
