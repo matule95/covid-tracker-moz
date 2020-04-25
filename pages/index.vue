@@ -14,7 +14,9 @@
         <statistics :stats="dashboardStats"></statistics>
       </div>
       <div class="w-full flex-grow flex flex-row flex-wrap">
-        <div class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-64 xl:h-auto my-5">
+        <div
+          class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-64 xl:h-auto my-5 hidden xl:block"
+        >
           <maps :locations="mapGEOJSON" class="z-30"></maps>
           <span class="text-gold text-xs pt-3"
             >*Os pontos no mapa não representam localização exacta dos
@@ -24,10 +26,21 @@
         <div
           class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
         >
-          <div class="flex flex-wrap flex-row w-full my-5 order-3 xl:order-1">
+          <div
+            class="flex flex-wrap flex-row w-full my-5 order-3 xl:order-1 overallChart"
+          >
             <chart style="width: 100%" />
           </div>
-          <div class="w-full md:w-1/2 mt-5 mb-2 order-1 xl:order-2">
+          <div
+            class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-64 xl:h-auto my-5 block xl:hidden provincesMap"
+          >
+            <maps :locations="mapGEOJSON" class="z-30"></maps>
+            <span class="text-gold text-xs pt-3"
+              >*Os pontos no mapa não representam localização exacta dos
+              casos</span
+            >
+          </div>
+          <div class="w-full md:w-1/2 mt-5 mb-2 order-1 xl:order-2 provinces">
             <span class="text-white font-bold"
               >Distribuição <span class="text-gold">Provincial</span> 📍</span
             >
@@ -36,7 +49,7 @@
               class="w-full mt-3 mb-5"
             ></location-stats>
           </div>
-          <div class="w-full md:w-1/2 mt-5 order-2 xl:order-3">
+          <div class="w-full md:w-1/2 mt-5 order-2 xl:order-3 nearbyCountries">
             <span class="text-white font-bold"
               >Países <span class="text-gold">Vizinhos</span> 🌍</span
             >
@@ -323,9 +336,27 @@ export default {
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
+.provincesMap {
+  order: 2;
 }
-*/
+.overallChart {
+  order: 1;
+}
+.provinces {
+  order: 3;
+}
+.nearbyCountries {
+  order: 4;
+}
+@media (min-width: 1399px) {
+  .overallChart {
+    order: 1;
+  }
+  .provinces {
+    order: 2;
+  }
+  .nearbyCountries {
+    order: 3;
+  }
+}
 </style>
