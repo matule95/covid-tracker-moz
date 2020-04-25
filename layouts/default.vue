@@ -7,7 +7,9 @@
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown pb-20 px-5"
     >
       <animation-player src="fighter" style="max-width: 400px; width: 100%" />
-      <h2 class="-mt-16 text-gold">Ajude-nos a combater o COVID-19!</h2>
+      <h2 class="-mt-16 text-gold text-center">
+        Ajude-nos a combater o COVID-19!
+      </h2>
       <span
         class="mt-5 text-white w-full lg:w-1/2 text-center"
         style="line-height: 2.1rem;"
