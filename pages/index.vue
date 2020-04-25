@@ -83,78 +83,7 @@ export default {
   },
   data: () => ({
     mozGeoJson: null,
-    provinces: [
-      {
-        name: 'Maputo',
-        lat: -25.974873,
-        lng: 32.581416,
-        totalCases: 15,
-        deaths: 0
-      },
-      {
-        name: 'Sofala',
-        lat: -19.84361,
-        lng: 34.83889,
-        totalCases: 0,
-        deaths: 0
-      },
-      {
-        name: 'Manica',
-        lat: -19.11639,
-        lng: 33.48333,
-        totalCases: 0,
-        deaths: 0
-      },
-      {
-        name: 'Gaza',
-        lat: -25.05194,
-        lng: 33.64417,
-        totalCases: 0,
-        deaths: 0
-      },
-      {
-        name: 'Inhambane',
-        lat: -23.865,
-        lng: 35.38333,
-        totalCases: 0,
-        deaths: 0
-      },
-      {
-        name: 'Tete',
-        lat: -16.15639,
-        lng: 33.58667,
-        totalCases: 0,
-        deaths: 0
-      },
-      {
-        name: 'Zambézia',
-        lat: -17.87861,
-        lng: 36.88833,
-        totalCases: 0,
-        deaths: 0
-      },
-      {
-        name: 'Nampula',
-        lat: -15.11646,
-        lng: 39.2666,
-        totalCases: 0,
-        deaths: 0
-      },
-      {
-        name: 'Niassa',
-        lat: -13.31278,
-        lng: 35.24056,
-        totalCases: 0,
-        deaths: 0
-      },
-      {
-        name: 'Cabo Delgado',
-        lat: -12.97395,
-        lng: 40.51775,
-        totalCases: 45,
-        deaths: 0
-      }
-    ],
+    provinces: require('~/provinces'),
     neighbourCountries: [
       'South Africa',
       'Tanzania',
@@ -165,26 +94,6 @@ export default {
     ]
   }),
   computed: {
-    mapData() {
-      const geoJson = {
-        type: 'FeatureCollection',
-        features: this.$store.state.locations.all.map((country = {}) => {
-          const { countryInfo = {} } = country
-          const { lat, long: lng } = countryInfo
-          return {
-            type: 'Feature',
-            properties: {
-              ...country
-            },
-            geometry: {
-              type: 'Point',
-              coordinates: [lng, lat]
-            }
-          }
-        })
-      }
-      return geoJson
-    },
     dashboardStats() {
       const statistics = this.$store.state.statistics.all.stats
       return {
@@ -238,18 +147,23 @@ export default {
       const geoJson = {
         type: 'FeatureCollection',
         features: this.mozGeoJson.features.concat(
-          this.provinces.map(province => {
-            return {
-              type: 'Feature',
-              properties: {
-                ...province
-              },
-              geometry: {
-                type: 'Point',
-                coordinates: [province.lng, province.lat]
+          this.$store.state.statistics.dailyInformation[0].province_stats.map(
+            province => {
+              const position = this.provinces.provinces.find(
+                item => item.name === province.province
+              )
+              return {
+                type: 'Feature',
+                properties: {
+                  ...province
+                },
+                geometry: {
+                  type: 'Point',
+                  coordinates: [position.lng, position.lat]
+                }
               }
             }
-          })
+          )
         )
       }
       return geoJson

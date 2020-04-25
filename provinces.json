@@ -1,0 +1,61 @@
+{
+  "provinces": [
+    {
+      "name": "Província de Maputo",
+      "lat": -25.96222,
+      "lng": 32.45889
+    },
+    {
+      "name": "Cidade de Maputo",
+      "lat": -25.974873,
+      "lng": 32.581416
+    },
+    {
+      "name": "Sofala",
+      "lat": -19.84361,
+      "lng": 34.83889
+    },
+    {
+      "name": "Manica",
+      "lat": -19.11639,
+      "lng": 33.48333
+    },
+    {
+      "name": "Gaza",
+      "lat": -25.05194,
+      "lng": 33.64417
+    },
+    {
+      "name": "Inhambane",
+      "lat": -23.865,
+      "lng": 35.38333
+    },
+    {
+      "name": "Tete",
+      "lat": -16.15639,
+      "lng": 33.58667
+    },
+    {
+      "name": "Zambézia",
+      "lat": -17.87861,
+      "lng": 36.88833,
+      "totalCases": 0,
+      "deaths": 0
+    },
+    {
+      "name": "Nampula",
+      "lat": -15.11646,
+      "lng": 39.2666
+    },
+    {
+      "name": "Niassa",
+      "lat": -13.31278,
+      "lng": 35.24056
+    },
+    {
+      "name": "Cabo Delgado",
+      "lat": -12.97395,
+      "lng": 40.51775
+    }
+  ]
+}

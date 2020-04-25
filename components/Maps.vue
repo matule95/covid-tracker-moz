@@ -39,18 +39,20 @@ export default {
     pointToLayer() {
       return (feature, latlng) => {
         const { properties = {} } = feature
-        const { name, totalCases, deaths, recovered } = properties
+        const { province, confirmed, deaths, recovered } = properties
         const html = `
-      <span class="icon-marker">
-        <span class="icon-marker-tooltip">
-          <h2>${name}</h2>
+      <span class="icon-marker ${confirmed > 0 ? 'bg-red' : 'bg-blue'}">
+        <span class="icon-marker-tooltip ${
+          confirmed > 0 ? 'hasCases' : 'noCases'
+        } ">
+          <h2>${province}</h2>
           <ul>
-            <li><strong>Confirmed:</strong> ${totalCases}</li>
-            <li><strong>Deaths:</strong> ${deaths}</li>
+            <li><strong>Confirmados:</strong> ${confirmed}</li>
+            <li><strong>Óbitos:</strong> ${deaths}</li>
             <li><strong>Recovered:</strong> ${recovered}</li>
           </ul>
         </span>
-        ${totalCases}
+        ${confirmed}
       </span>
     `
 
@@ -94,7 +96,6 @@ export default {
   height: 3.6em;
   font-size: 0.8em;
   font-weight: bold;
-  @apply bg-red;
   border-radius: 100%;
   &:hover {
     .icon-marker-tooltip {
@@ -110,7 +111,7 @@ export default {
   width: 16em;
   font-size: 1.4em;
   padding: 1em;
-  background-color: blue;
+  // background-color: blue;
   border-radius: 0.4em;
   margin-bottom: 1em;
   box-shadow: 0 3px 5px rgba(black, 0.9);
@@ -126,6 +127,37 @@ export default {
     background-color: blue;
     transform: rotate(45deg);
     margin-left: -0.7em;
+  }
+  &.hasCases {
+    @apply bg-red;
+    :before {
+      display: block;
+      position: absolute;
+      bottom: -0.6em;
+      left: 50%;
+      content: '';
+      width: 1.4em;
+      height: 1.4em;
+      @apply bg-red;
+      transform: rotate(45deg);
+      margin-left: -0.7em;
+    }
+  }
+  &.noCases {
+    @apply bg-blue;
+    :before {
+      display: block;
+      position: absolute;
+      bottom: -0.6em;
+      left: 50%;
+      content: '';
+      width: 1.4em;
+      height: 1.4em;
+      @apply bg-red;
+      transform: rotate(45deg);
+      margin-left: -0.7em;
+      @apply bg-blue;
+    }
   }
 
   h2 {
