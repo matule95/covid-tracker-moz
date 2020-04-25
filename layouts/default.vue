@@ -1,12 +1,36 @@
 <template>
-  <div class="flex min-h-screen antialiased bg-brown-light">
+  <div class="flex flex-row flex-wrap min-h-screen antialiased bg-brown-light">
     <div class="py-16 lg:ml-8 xl:mx-16 px-5 lg:px-0 flex-1 max-w-full">
       <nuxt />
+    </div>
+    <div
+      class="flex flex-col flex-wrap w-full justify-center items-center bg-brown pb-20 px-5"
+    >
+      <animation-player src="fighter" style="max-width: 400px; width: 100%" />
+      <h2 class="-mt-16 text-gold">Ajude-nos a combater o COVID-19!</h2>
+      <p class="mt-5 text-white w-full lg:w-1/2 text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et
+        congue mi. Ut sagittis magna rhoncus, blandit ante at, ultrices lacus.
+        In viverra tortor in vehicula suscipit.
+      </p>
+      <div class="mt-16 text-center">
+        <span class="text-white font-bold text-sm">
+          Made with ❤️ by: <br />
+          <span class="text-gold">
+            Clayton Matule <span class="text-white">&</span> Luís Pereira</span
+          ></span
+        >
+      </div>
     </div>
   </div>
 </template>
 <script>
-export default {}
+import AnimationPlayer from '../components/AnimationPlayer'
+export default {
+  components: {
+    AnimationPlayer
+  }
+}
 </script>
 <style>
 html {
