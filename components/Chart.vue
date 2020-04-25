@@ -4,74 +4,34 @@ import moment from 'moment'
 import tinycolor2 from 'tinycolor2'
 export default {
   extends: Line,
+  props: {
+    info: {
+      type: [Array, Object],
+      required: true
+    }
+  },
   computed: {
-    dates() {
-      const datesArray = []
-      let daysBetween = moment()
-        .startOf('day')
-        .diff(moment('2020-03-10', 'YYYY-MM-DD'), 'days')
-      while (daysBetween !== 0) {
-        const newDate = `${moment()
-          .subtract(daysBetween, 'days')
-          .format('D')} ${moment()
-          .subtract(daysBetween, 'days')
-          .format('MMM')}`
-        datesArray.push(newDate)
-        daysBetween--
-      }
-      return datesArray
-    },
     chartData() {
-      return {
-        labels: this.dates,
+      let data = {}
+      const infected = []
+      const active = []
+      const recovered = []
+      const deaths = []
+      const labels = []
+      this.$store.state.statistics.dailyInformation.forEach(info => {
+        labels.push(this.getDate(info.date))
+        infected.push(info.country_stats.infected)
+        active.push(info.country_stats.active)
+        recovered.push(info.country_stats.recovered)
+        deaths.push(info.country_stats.deaths)
+      })
+      data = {
+        labels: labels.reverse(),
         datasets: [
           {
             label: 'Infectados',
             borderColor: '#e3342f',
-            data: [
-              0,
-              3,
-              3,
-              3,
-              5,
-              5,
-              5,
-              5,
-              8,
-              8,
-              8,
-              10,
-              10,
-              10,
-              10,
-              12,
-              12,
-              13,
-              13,
-              15,
-              15,
-              0,
-              3,
-              3,
-              3,
-              5,
-              5,
-              5,
-              5,
-              8,
-              8,
-              8,
-              10,
-              10,
-              10,
-              10,
-              12,
-              12,
-              13,
-              13,
-              15,
-              15
-            ],
+            data: infected.reverse(),
             borderWidth: 3,
             lineTension: 0.15,
             pointBackgroundColor: '#ffffff',
@@ -85,31 +45,9 @@ export default {
           {
             label: 'Recuperados',
             borderColor: '#5CC1AC',
-            data: [
-              0,
-              0,
-              0,
-              0,
-              1,
-              1,
-              1,
-              4,
-              4,
-              4,
-              4,
-              6,
-              6,
-              6,
-              8,
-              8,
-              8,
-              8,
-              8,
-              10,
-              11
-            ],
+            data: recovered.reverse(),
             borderWidth: 3,
-            lineTension: 0.1,
+            lineTension: 0.15,
             pointBackgroundColor: '#ffffff',
             pointStyle: 'circle',
             pointHitRadius: 15,
@@ -117,9 +55,38 @@ export default {
             spanGaps: true,
             borderCapStyle: 'round',
             backgroundColor: this.setGradient('#5CC1AC')
+          },
+          {
+            label: 'Activos',
+            borderColor: '#F6C879',
+            data: active.reverse(),
+            borderWidth: 3,
+            lineTension: 0.15,
+            pointBackgroundColor: '#ffffff',
+            pointStyle: 'circle',
+            pointHitRadius: 15,
+            fill: true,
+            spanGaps: true,
+            borderCapStyle: 'round',
+            backgroundColor: this.setGradient('#F6C879')
+          },
+          {
+            label: 'Óbitos',
+            borderColor: '#8795a1',
+            data: deaths.reverse(),
+            borderWidth: 3,
+            lineTension: 0.15,
+            pointBackgroundColor: '#ffffff',
+            pointStyle: 'circle',
+            pointHitRadius: 15,
+            fill: true,
+            spanGaps: true,
+            borderCapStyle: 'round',
+            backgroundColor: this.setGradient('#8795a1')
           }
         ]
       }
+      return data
     }
   },
   mounted() {
@@ -164,6 +131,15 @@ export default {
       gradient.addColorStop(0, bg.toString())
       gradient.addColorStop(1, 'rgba(34,37,41')
       return gradient
+    },
+    getDate(date) {
+      const splitDate = date.split('/')
+      const day = splitDate[0]
+      const month = splitDate[1]
+      const year = splitDate[2]
+      return `${day} ${moment(`${year}-${month}-${day}`, 'YYYY-MM-DD').format(
+        'MMM'
+      )}`
     }
   }
 }

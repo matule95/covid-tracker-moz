@@ -32,7 +32,7 @@
             <span class="text-white font-bold mb-5"
               >Progressos dos <span class="text-gold">Casos</span> 📈</span
             >
-            <chart style="width: 100%" />
+            <chart :info="chartData" style="width: 100%" />
           </div>
           <div
             class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-64 xl:h-auto my-5 block xl:hidden provincesMap"
@@ -68,10 +68,12 @@
 </template>
 
 <script>
+import moment from 'moment'
 import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
+moment.locale('pt')
 export default {
   components: {
     Statistics,
@@ -304,6 +306,9 @@ export default {
         )
       }
       return geoJson
+    },
+    chartData() {
+      return this.$store.state.statistics.dailyInformation
     }
   },
   head() {
@@ -334,6 +339,7 @@ export default {
   async fetch({ store }) {
     await store.dispatch('locations/fetchItems')
     await store.dispatch('statistics/fetchItems')
+    await store.dispatch('statistics/fetchDailyInformation')
   }
 }
 </script>
