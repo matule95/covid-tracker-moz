@@ -15,7 +15,7 @@
       </div>
       <div class="w-full flex-grow flex flex-row flex-wrap">
         <div
-          class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-64 xl:h-auto my-5 hidden xl:block"
+          class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
         >
           <maps :locations="mapGEOJSON" class="z-30"></maps>
           <span class="text-gold text-xs pt-3"
@@ -35,7 +35,7 @@
             <chart :info="chartData" style="width: 100%" />
           </div>
           <div
-            class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-64 xl:h-auto my-5 block xl:hidden provincesMap"
+            class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-10 block xl:hidden provincesMap"
           >
             <maps :locations="mapGEOJSON" class="z-30"></maps>
             <span class="text-gold text-xs pt-3"
