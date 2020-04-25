@@ -217,75 +217,22 @@ export default {
         .sort((a, b) => (a.cases > b.cases ? -1 : 1))
     },
     localPlaces() {
-      const provinces = [
-        {
-          name: 'Cabo Delgado',
-          cases: 45,
-          todayCases: 5,
-          flag: '/icons/cabodelgado.svg'
-        },
-        {
-          name: 'Niassa',
-          cases: 0,
-          todayCases: 0,
-          flag: '/icons/niassa.svg'
-        },
-        {
-          name: 'Nampula',
-          cases: 0,
-          todayCases: 0,
-          flag: '/icons/nampula.svg'
-        },
-        {
-          name: 'Zambézia',
-          cases: 0,
-          todayCases: 0,
-          flag: '/icons/zambezia.svg'
-        },
-        {
-          name: 'Tete',
-          cases: 0,
-          todayCases: 0,
-          flag: '/icons/sofala.svg'
-        },
-        {
-          name: 'Sofala',
-          cases: 0,
-          todayCases: 0,
-          flag: '/icons/sofala.svg'
-        },
-        {
-          name: 'Manica',
-          cases: 0,
-          todayCases: 0,
-          flag: '/icons/manica.svg'
-        },
-        {
-          name: 'Inhambane',
-          cases: 0,
-          todayCases: 0,
-          flag: '/icons/inhambane.svg'
-        },
-        {
-          name: 'Gaza',
-          cases: 0,
-          todayCases: 0,
-          flag: '/icons/gaza.svg'
-        },
-        {
-          name: 'Província de Maputo',
-          cases: 12,
-          flag: '/icons/maputo.svg',
-          todayCases: 5
-        },
-        {
-          name: 'Maputo',
-          cases: 15,
-          flag: '/icons/maputo.svg',
-          todayCases: 5
+      return this.$store.state.statistics.dailyInformation[0].province_stats.map(
+        province => {
+          const yesterday = this.$store.state.statistics.dailyInformation[1].province_stats.find(
+            item => item.province === province.province
+          )
+          return {
+            name: province.province,
+            cases: province.confirmed,
+            flag: this.getFlag(province.province),
+            todayCases: Number.parseInt(
+              Number.parseInt(province.confirmed) -
+                Number.parseInt(yesterday.confirmed)
+            )
+          }
         }
-      ]
-      return provinces.sort((a, b) => (a.cases > b.cases ? -1 : 1))
+      )
     },
     mapGEOJSON() {
       const geoJson = {
@@ -311,6 +258,39 @@ export default {
       return this.$store.state.statistics.dailyInformation
     }
   },
+  async asyncData({ axios }) {
+    const response = await fetch(
+      'https://raw.githubusercontent.com/matule95/covid-tracker-moz/master/map.geojson'
+    )
+    const geoJSON = await response.json()
+    return {
+      mozGeoJson: geoJSON
+    }
+  },
+  async fetch({ store }) {
+    await store.dispatch('locations/fetchItems')
+    await store.dispatch('statistics/fetchItems')
+    await store.dispatch('statistics/fetchDailyInformation')
+  },
+  methods: {
+    getFlag(province) {
+      const flags = {
+        'Cabo Delgado': `/icons/cabodelgado.svg`,
+        Niassa: `/icons/niassa.svg`,
+        Nampula: `/icons/nampula.svg`,
+        Zambézia: `/icons/zambezia.svg`,
+        Sofala: `/icons/sofala.svg`,
+        Manica: `/icons/manica.svg`,
+        Tete: `/icons/tete.svg`,
+        Gaza: `/icons/gaza.svg`,
+        Inhambane: `/icons/inhambane.svg`,
+        'Província de Maputo': `/icons/maputo.svg`,
+        'Cidade de Maputo': `/icons/maputo.svg`
+      }
+
+      return flags[province]
+    }
+  },
   head() {
     return {
       title: 'Início - Rastreador COVID-19 Moçambique',
@@ -326,20 +306,6 @@ export default {
         }
       ]
     }
-  },
-  async asyncData({ axios }) {
-    const response = await fetch(
-      'https://raw.githubusercontent.com/matule95/covid-tracker-moz/master/map.geojson'
-    )
-    const geoJSON = await response.json()
-    return {
-      mozGeoJson: geoJSON
-    }
-  },
-  async fetch({ store }) {
-    await store.dispatch('locations/fetchItems')
-    await store.dispatch('statistics/fetchItems')
-    await store.dispatch('statistics/fetchDailyInformation')
   }
 }
 </script>
