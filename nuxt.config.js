@@ -51,7 +51,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    'nuxt-leaflet'
+    'nuxt-leaflet',
+    'nuxt-purgecss'
   ],
   /*
    ** Axios module configuration
@@ -68,6 +69,14 @@ export default {
         tailwindcss: path.resolve(__dirname, './tailwind.js')
       }
     },
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+        automaticNameDelimiter: '.',
+        maxSize: 256000
+      }
+    },
     /*
      ** You can extend webpack config here
      */
@@ -82,6 +91,11 @@ export default {
         })
       }
     }
+  },
+  purgeCSS: {
+    mode: 'postcss',
+    enabled: process.env.NODE_ENV === 'production',
+    whitelistPatterns: [/leaflet/]
   },
   manifest: {
     name: 'COVID-19 MOZ',

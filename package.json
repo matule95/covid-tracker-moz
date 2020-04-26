@@ -17,8 +17,6 @@
     "@nuxtjs/pwa": "^2.6.0",
     "chart.js": "^2.9.3",
     "cross-env": "^5.2.0",
-    "lottie-web": "^5.6.8",
-    "moment": "^2.24.0",
     "nuxt": "^2.4.0",
     "nuxt-leaflet": "^0.0.21",
     "tinycolor2": "^1.4.1",
@@ -42,6 +40,7 @@
     "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.13.1",
     "nodemon": "^1.18.9",
+    "nuxt-purgecss": "^0.2.1",
     "prettier": "^1.16.4",
     "sass-loader": "^8.0.2",
     "tailwindcss": "^0.7.0"
