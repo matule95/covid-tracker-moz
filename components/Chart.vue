@@ -151,10 +151,6 @@ export default {
       const splitDate = date.split('/')
       const day = splitDate[0]
       const month = splitDate[1]
-      const year = splitDate[2]
-      const newDate = new Date(`${year}-${Number.parseInt(month)}-${day}`)
-      /*eslint-disable*/
-      console.log(newDate)
       return `${day} ${this.months[Number.parseInt(month - 1)].substring(0, 3)}`
     }
   }
