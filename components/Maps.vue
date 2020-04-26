@@ -39,21 +39,11 @@ export default {
     pointToLayer() {
       return (feature, latlng) => {
         const { properties = {} } = feature
-        const { province, confirmed, deaths, recovered } = properties
+        const { confirmed } = properties
         let html = ''
         if (confirmed > 0) {
           html = `
       <span class="icon-marker ${confirmed > 0 ? 'bg-red' : 'bg-blue'}">
-        <span class="icon-marker-tooltip ${
-          confirmed > 0 ? 'hasCases' : 'noCases'
-        } ">
-          <h2>${province}</h2>
-          <ul>
-            <li><strong>Confirmados:</strong> ${confirmed}</li>
-            <li><strong>Óbitos:</strong> ${deaths}</li>
-            <li><strong>Recuperados:</strong> ${recovered}</li>
-          </ul>
-        </span>
         ${confirmed}
       </span>
     `
@@ -107,85 +97,85 @@ export default {
   }
 }
 
-.icon-marker-tooltip {
-  display: none;
-  position: absolute;
-  bottom: 100%;
-  width: 16em;
-  font-size: 1.4em;
-  padding: 1em;
-  // background-color: blue;
-  border-radius: 0.4em;
-  margin-bottom: 1em;
-  box-shadow: 0 3px 5px rgba(black, 0.9);
+// .icon-marker-tooltip {
+//   display: none;
+//   position: absolute;
+//   bottom: 100%;
+//   width: 16em;
+//   font-size: 1.4em;
+//   padding: 1em;
+//   // background-color: blue;
+//   border-radius: 0.4em;
+//   margin-bottom: 1em;
+//   box-shadow: 0 3px 5px rgba(black, 0.9);
 
-  &:before {
-    display: block;
-    position: absolute;
-    bottom: -0.6em;
-    left: 50%;
-    content: '';
-    width: 1.4em;
-    height: 1.4em;
-    background-color: blue;
-    transform: rotate(45deg);
-    margin-left: -0.7em;
-  }
-  &.hasCases {
-    @apply bg-red;
-    :before {
-      display: block;
-      position: absolute;
-      bottom: -0.6em;
-      left: 50%;
-      content: '';
-      width: 1.4em;
-      height: 1.4em;
-      @apply bg-red;
-      transform: rotate(45deg);
-      margin-left: -0.7em;
-    }
-  }
-  &.noCases {
-    @apply bg-blue;
-    :before {
-      display: block;
-      position: absolute;
-      bottom: -0.6em;
-      left: 50%;
-      content: '';
-      width: 1.4em;
-      height: 1.4em;
-      @apply bg-red;
-      transform: rotate(45deg);
-      margin-left: -0.7em;
-      @apply bg-blue;
-    }
-  }
+//   &:before {
+//     display: block;
+//     position: absolute;
+//     bottom: -0.6em;
+//     left: 50%;
+//     content: '';
+//     width: 1.4em;
+//     height: 1.4em;
+//     background-color: blue;
+//     transform: rotate(45deg);
+//     margin-left: -0.7em;
+//   }
+//   &.hasCases {
+//     @apply bg-red;
+//     :before {
+//       display: block;
+//       position: absolute;
+//       bottom: -0.6em;
+//       left: 50%;
+//       content: '';
+//       width: 1.4em;
+//       height: 1.4em;
+//       @apply bg-red;
+//       transform: rotate(45deg);
+//       margin-left: -0.7em;
+//     }
+//   }
+//   &.noCases {
+//     @apply bg-blue;
+//     :before {
+//       display: block;
+//       position: absolute;
+//       bottom: -0.6em;
+//       left: 50%;
+//       content: '';
+//       width: 1.4em;
+//       height: 1.4em;
+//       @apply bg-red;
+//       transform: rotate(45deg);
+//       margin-left: -0.7em;
+//       @apply bg-blue;
+//     }
+//   }
 
-  h2 {
-    font-size: 1.5em;
-    line-height: 1.2;
-    margin-bottom: 0.1em;
-    margin-top: 0;
-  }
+//   h2 {
+//     font-size: 1.5em;
+//     line-height: 1.2;
+//     margin-bottom: 0.1em;
+//     margin-top: 0;
+//   }
 
-  h3 {
-    font-size: 1.2em;
-    margin: 0.1em 0;
-    font-weight: normal;
-    color: gray;
-  }
+//   h3 {
+//     font-size: 1.2em;
+//     margin: 0.1em 0;
+//     font-weight: normal;
+//     color: gray;
+//   }
 
-  ul,
-  p {
-    font-weight: normal;
-  }
+//   ul,
+//   p {
+//     font-weight: normal;
+//   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0.6em 0 0;
-  }
-}
+//   ul {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0.6em 0 0;
+//   }
+// }
 </style>
