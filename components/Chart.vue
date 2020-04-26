@@ -1,6 +1,5 @@
 <script>
 import { Line } from 'vue-chartjs'
-import moment from 'moment'
 import tinycolor2 from 'tinycolor2'
 export default {
   extends: Line,
@@ -10,6 +9,22 @@ export default {
       required: true
     }
   },
+  data: () => ({
+    months: [
+      'Janeiro',
+      'Fevereiro',
+      'Março',
+      'Abril',
+      'Maio',
+      'Junho',
+      'Julho',
+      'Agosto',
+      'Setembro',
+      'Outubro',
+      'Novembro',
+      'Dezembro'
+    ]
+  }),
   computed: {
     chartData() {
       let data = {}
@@ -137,9 +152,10 @@ export default {
       const day = splitDate[0]
       const month = splitDate[1]
       const year = splitDate[2]
-      return `${day} ${moment(`${year}-${month}-${day}`, 'YYYY-MM-DD').format(
-        'MMM'
-      )}`
+      const newDate = new Date(`${year}-${Number.parseInt(month)}-${day}`)
+      /*eslint-disable*/
+      console.log(newDate)
+      return `${day} ${this.months[Number.parseInt(month - 1)].substring(0, 3)}`
     }
   }
 }

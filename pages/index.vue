@@ -1,41 +1,22 @@
 <template>
-  <section class="container h-full" style="max-width: 100%">
-    <div class="flex flex-wrap flex-col h-full">
-      <div class="flex-initial w-full mb-2">
-        <h2 class="text-white">COVID-19 - Moçambique</h2>
-      </div>
-      <div class="w-full mt-2">
-        <p class="text-white">
-          {{ latestUpdate }} - Fonte:
-          <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
-        </p>
-      </div>
-      <div class="w-full my-5">
-        <statistics :stats="dashboardStats"></statistics>
-      </div>
-      <div class="w-full flex-grow flex flex-row flex-wrap">
-        <div
-          class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
-        >
-          <maps :locations="mapGEOJSON" class="z-30"></maps>
-          <span class="text-gold text-xs pt-3"
-            >*Os pontos no mapa não representam localização exacta dos
-            casos</span
-          >
+  <div>
+    <section class="container h-full" style="max-width: 100%">
+      <div class="flex flex-wrap flex-col h-full">
+        <div class="flex-initial w-full mb-2">
+          <h2 class="text-white">COVID-19 - Moçambique</h2>
         </div>
-        <div
-          class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
-        >
+        <div class="w-full mt-2">
+          <p class="text-white">
+            {{ latestUpdate }} - Fonte:
+            <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
+          </p>
+        </div>
+        <div class="w-full my-5">
+          <statistics :stats="dashboardStats"></statistics>
+        </div>
+        <div class="w-full flex-grow flex flex-row flex-wrap">
           <div
-            class="flex flex-wrap flex-row w-full my-5 xl:mt-0 order-3 xl:order-1 overallChart"
-          >
-            <span class="text-white font-bold mb-5"
-              >Progressos dos <span class="text-gold">Casos</span> 📈</span
-            >
-            <chart :info="chartData" style="width: 100%" />
-          </div>
-          <div
-            class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-10 block xl:hidden provincesMap"
+            class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
           >
             <maps :locations="mapGEOJSON" class="z-30"></maps>
             <span class="text-gold text-xs pt-3"
@@ -43,37 +24,85 @@
               casos</span
             >
           </div>
-          <div class="w-full md:w-1/2 mt-5 mb-2 order-1 xl:order-2 provinces">
-            <span class="text-white font-bold"
-              >Distribuição <span class="text-gold">Provincial</span> 📍</span
+          <div
+            class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
+          >
+            <div
+              class="flex flex-wrap flex-row w-full my-5 xl:mt-0 order-3 xl:order-1 overallChart"
             >
-            <location-stats
-              :places="localPlaces"
-              class="w-full mt-3 mb-5"
-            ></location-stats>
-          </div>
-          <div class="w-full md:w-1/2 mt-5 order-2 xl:order-3 nearbyCountries">
-            <span class="text-white font-bold"
-              >Países <span class="text-gold">Vizinhos</span> 🌍</span
+              <span class="text-white font-bold mb-5"
+                >Progressos dos <span class="text-gold">Casos</span> 📈</span
+              >
+              <chart :info="chartData" style="width: 100%" />
+            </div>
+            <div
+              class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-10 block xl:hidden provincesMap"
             >
-            <location-stats
-              :places="places"
-              class="w-full mt-3 mb-5"
-            ></location-stats>
+              <maps :locations="mapGEOJSON" class="z-30"></maps>
+              <span class="text-gold text-xs pt-3"
+                >*Os pontos no mapa não representam localização exacta dos
+                casos</span
+              >
+            </div>
+            <div class="w-full md:w-1/2 mt-5 mb-2 order-1 xl:order-2 provinces">
+              <span class="text-white font-bold"
+                >Distribuição <span class="text-gold">Provincial</span> 📍</span
+              >
+              <location-stats
+                :places="localPlaces"
+                class="w-full mt-3 mb-5"
+              ></location-stats>
+            </div>
+            <div
+              class="w-full md:w-1/2 mt-5 order-2 xl:order-3 nearbyCountries"
+            >
+              <span class="text-white font-bold"
+                >Países <span class="text-gold">Vizinhos</span> 🌍</span
+              >
+              <location-stats
+                :places="places"
+                class="w-full mt-3 mb-5"
+              ></location-stats>
+            </div>
           </div>
         </div>
       </div>
+    </section>
+    <div
+      class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
+    >
+      <div class="w-full flex justify-center mt-10">
+        <img src="/Gladiator.png" style="max-width: 250px;" />
+      </div>
+      <h2 class="mt-5 text-gold text-center">
+        Ajude-nos a combater o COVID-19!
+      </h2>
+      <span
+        class="mt-5 text-white w-full lg:w-1/2 text-center"
+        style="line-height: 2.1rem;"
+      >
+        Além dos
+        <a class="text-gold" href="https://covid19.ins.gov.mz/prevencao/"
+          >métodos de prevenção indicados pelo INS</a
+        >, a nossa única maneira de ajudar a impedir a propagação do COVID-19 é
+        através da codificação de aplicativos. Essa é a parte mais fácil. O
+        difícil é obter informações locais confíaveis portanto precisamos da sua
+        ajuda para que possamos manter as pessoas conscientes do que está a
+        acontecer.<br />
+        Contacte-nos em:
+        <a class="text-gold" href="mailto:covidmozinfo@gmail.com"
+          >covidmozinfo@gmail.com</a
+        >
+      </span>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import moment from 'moment'
 import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
-moment.locale('pt')
 export default {
   components: {
     Statistics,
