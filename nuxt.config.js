@@ -94,7 +94,7 @@ export default {
   },
   purgeCSS: {
     mode: 'postcss',
-    enabled: false,
+    enabled: process.env.NODE_ENV === 'production',
     whitelistPatterns: [/leaflet/]
   },
   manifest: {
