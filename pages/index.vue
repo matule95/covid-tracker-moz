@@ -72,7 +72,7 @@
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
     >
       <div class="w-full flex justify-center mt-10">
-        <img src="/Gladiator.png" style="max-width: 250px;" />
+        <img src="/Gladiator.png" width="250px" height="170px" />
       </div>
       <h2 class="mt-5 text-gold text-center">
         Ajude-nos a combater o COVID-19!
@@ -86,7 +86,7 @@
           >métodos de prevenção indicados pelo INS</a
         >, a nossa única maneira de ajudar a impedir a propagação do COVID-19 é
         através da codificação de aplicativos. Essa é a parte mais fácil. O
-        difícil é obter informações locais confíaveis portanto precisamos da sua
+        difícil é obter informações locais confiáveis portanto precisamos da sua
         ajuda para que possamos manter as pessoas conscientes do que está a
         acontecer.<br />
         Contacte-nos em:
@@ -111,7 +111,7 @@ export default {
     Chart
   },
   data: () => ({
-    mozGeoJson: null,
+    mozGeoJson: require('~/map'),
     provinces: require('~/provinces'),
     neighbourCountries: [
       'South Africa',
@@ -199,15 +199,6 @@ export default {
     },
     chartData() {
       return this.$store.state.statistics.dailyInformation
-    }
-  },
-  async asyncData({ axios }) {
-    const response = await fetch(
-      'https://raw.githubusercontent.com/matule95/covid-tracker-moz/master/map.geojson'
-    )
-    const geoJSON = await response.json()
-    return {
-      mozGeoJson: geoJSON
     }
   },
   async fetch({ store }) {
