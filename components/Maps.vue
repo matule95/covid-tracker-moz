@@ -40,7 +40,9 @@ export default {
       return (feature, latlng) => {
         const { properties = {} } = feature
         const { province, confirmed, deaths, recovered } = properties
-        const html = `
+        let html = ''
+        if (confirmed > 0) {
+          html = `
       <span class="icon-marker ${confirmed > 0 ? 'bg-red' : 'bg-blue'}">
         <span class="icon-marker-tooltip ${
           confirmed > 0 ? 'hasCases' : 'noCases'
@@ -55,6 +57,7 @@ export default {
         ${confirmed}
       </span>
     `
+        }
 
         return this.$L.marker(latlng, {
           icon: this.$L.divIcon({
