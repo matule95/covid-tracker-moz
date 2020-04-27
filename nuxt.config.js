@@ -52,7 +52,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     'nuxt-leaflet',
-    'nuxt-purgecss'
+    'nuxt-purgecss',
+    '@nuxtjs/firebase'
   ],
   /*
    ** Axios module configuration
@@ -97,10 +98,36 @@ export default {
     enabled: process.env.NODE_ENV === 'production',
     whitelistPatterns: [/leaflet/]
   },
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyDlm8ZeIzo0I_zClTrNAkFgJti3I-oGX0w',
+      authDomain: 'covid-19-tracker-moz.firebaseapp.com',
+      databaseURL: 'https://covid-19-tracker-moz.firebaseio.com',
+      projectId: 'covid-19-tracker-moz',
+      storageBucket: 'covid-19-tracker-moz.appspot.com',
+      messagingSenderId: '536171650610',
+      appId: '1:536171650610:web:26cad8c7e170c2a9f7262b',
+      measurementId: 'G-8GZ5N5EZS4'
+    },
+    services: {
+      messaging: {
+        createServiceWorker: true
+      }
+    }
+  },
+  pwa: {
+    workbox: {
+      importScripts: ['/firebase-auth-sw.js'],
+      // by default the workbox module will not install the service worker in dev environment to avoid conflicts with HMR
+      // only set this true for testing and remember to always clear your browser cache in development
+      dev: true
+    }
+  },
   manifest: {
     name: 'COVID-19 MOZ',
     short_name: 'COVID MOZ',
     display: 'standalone',
-    background_color: '#282B2E'
+    background_color: '#282B2E',
+    gcm_sender_id: '536171650610'
   }
 }

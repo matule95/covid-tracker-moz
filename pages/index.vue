@@ -5,11 +5,12 @@
         <div class="flex-initial w-full mb-2">
           <h2 class="text-white">COVID-19 - Moçambique</h2>
         </div>
-        <div class="w-full mt-2">
+        <div class="w-full mt-2 flex flex-row">
           <p class="text-white">
             Última actualização: {{ latestUpdate }} 16:20 - Fonte:
             <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
           </p>
+          <button @click="requestPermission">Subscribe 🔔</button>
         </div>
         <div class="w-full my-5">
           <statistics :stats="dashboardStats"></statistics>
@@ -99,6 +100,7 @@
 </template>
 
 <script>
+/*eslint-disable*/
 import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
@@ -120,7 +122,10 @@ export default {
       'Zimbabwe',
       'Malawi',
       'Zambia'
-    ]
+    ],
+    listenersStarted: false,
+    permissionGranted: false,
+    idToken: ''
   }),
   computed: {
     dashboardStats() {
@@ -223,6 +228,57 @@ export default {
       }
 
       return flags[province]
+    },
+    async requestPermission() {
+      try {
+        const permission = await Notification.requestPermission()
+        this.permissionGranted = permission === 'granted'
+        await this.getIdToken()
+      } catch (e) {
+        console.error(e)
+        return
+      }
+    },
+    async getIdToken() {
+      let currentToken
+      try {
+        currentToken = await this.$fireMess.getToken()
+      } catch (e) {
+        console.error('An error occurred while retrieving token. ', e)
+        this.idToken = ''
+      }
+      if (currentToken) {
+        this.idToken = currentToken
+        console.log(currentToken)
+      } else {
+        // Show permission request.
+        console.info(
+          'No Instance ID token available. Request permission to generate one.'
+        )
+        // Show permission UI.
+        //updateUIForPushPermissionRequired();
+        this.idToken = ''
+      }
+    },
+    startListeners() {
+      this.startOnMessageListener()
+      this.startTokenRefreshListener()
+      this.listenersStarted = true
+    },
+    startOnMessageListener() {
+      this.$fireMess.onMessage(payload => {
+        console.info('Message received. ', payload)
+      })
+    },
+    startTokenRefreshListener() {
+      this.$fireMess.onTokenRefresh(async () => {
+        try {
+          const refreshedToken = await this.$fireMess.getToken()
+          this.idToken = refreshedToken
+        } catch (e) {
+          console.error('Unable to retrieve refreshed token ', e)
+        }
+      })
     }
   },
   head() {
@@ -240,6 +296,9 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    this.startListeners()
   }
 }
 </script>
