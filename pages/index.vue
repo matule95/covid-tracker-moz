@@ -7,7 +7,7 @@
         </div>
         <div class="w-full mt-2">
           <p class="text-white">
-            Última actualização: {{ latestUpdate }} - Fonte:
+            Última actualização: {{ latestUpdate }} 16:20 - Fonte:
             <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
           </p>
         </div>
