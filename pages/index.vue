@@ -7,7 +7,7 @@
         </div>
         <div class="w-full mt-2">
           <p class="text-white">
-            {{ latestUpdate }} - Fonte:
+            Última actualização: {{ latestUpdate }} 16:20 - Fonte:
             <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
           </p>
         </div>
@@ -124,21 +124,22 @@ export default {
   }),
   computed: {
     dashboardStats() {
-      const statistics = this.$store.state.statistics.all.stats
+      const statistics = this.$store.state.statistics.dailyInformation[0]
+        .country_stats
       return {
-        tested: statistics[2].total,
-        infected: statistics[4].total,
+        tested: statistics.tested,
+        infected: statistics.infected,
         active:
-          Number.parseInt(statistics[4].total) -
-          Number.parseInt(statistics[7].total),
-        deaths: statistics[6].total,
-        recovered: statistics[7].total,
-        local_transmission: '62',
-        foreign_transmission: '8'
+          Number.parseInt(statistics.infected) -
+          Number.parseInt(statistics.recovered),
+        deaths: statistics.deaths,
+        recovered: statistics.recovered,
+        local_transmission: statistics.local_transmissions,
+        foreign_transmission: statistics.foreign_transmissions
       }
     },
     latestUpdate() {
-      return this.$store.state.statistics.all.date
+      return this.$store.state.statistics.dailyInformation[0].date
     },
     places() {
       return this.$store.state.locations.all
@@ -203,7 +204,6 @@ export default {
   },
   async fetch({ store }) {
     await store.dispatch('locations/fetchItems')
-    await store.dispatch('statistics/fetchItems')
     await store.dispatch('statistics/fetchDailyInformation')
   },
   methods: {
