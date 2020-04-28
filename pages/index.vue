@@ -7,7 +7,8 @@
         </div>
         <div class="w-full mt-2">
           <p class="text-white">
-            Última actualização: {{ latestUpdate }} 16:20 - Fonte:
+            Última actualização: {{ latestUpdateDate }} às
+            {{ latestUpdateTime }} - Fonte:
             <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
           </p>
         </div>
@@ -138,8 +139,11 @@ export default {
         foreign_transmission: statistics.foreign_transmissions
       }
     },
-    latestUpdate() {
+    latestUpdateDate() {
       return this.$store.state.statistics.dailyInformation[0].date
+    },
+    latestUpdateTime() {
+      return this.$store.state.statistics.dailyInformation[0].updatedAt
     },
     places() {
       return this.$store.state.locations.all
