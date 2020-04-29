@@ -69,6 +69,32 @@
         </div>
       </div>
     </section>
+    <section class="container h-full pt-5" style="max-width: 100%">
+      <h1 class="text-gold font-bold">Dados Adicionais</h1>
+      <div class="flex flex-row justify-around w-full ">
+        <div class="flex flex-col pt-4">
+          <h3 class="text-gold text-center">
+            Casos positivos por sexo (%)
+          </h3>
+          <PieChart
+            :data="ratioByGender"
+            :labels="genders"
+            :backgroundColor="['#57E2E5', '#E08DAC']"
+            class="justify-left"
+          />
+        </div>
+
+        <div class="flex flex-col justify-left pt-4">
+          <h3 class="text-gold text-center">Casos positivos por Origem (%)</h3>
+          <PieChart
+            :data="ratioByOrigin"
+            :labels="origins"
+            :backgroundColor="['#F6C879', '#A7D3A6']"
+            class="justify-left"
+          />
+        </div>
+      </div>
+    </section>
     <div
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
     >
@@ -104,12 +130,14 @@ import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
+import PieChart from '~/components/PieChart'
 export default {
   components: {
     Statistics,
     Maps,
     LocationStats,
-    Chart
+    Chart,
+    PieChart
   },
   data: () => ({
     mozGeoJson: require('~/map'),
@@ -121,7 +149,11 @@ export default {
       'Zimbabwe',
       'Malawi',
       'Zambia'
-    ]
+    ],
+    ratioByGender: [59, 41],
+    ratioByOrigin: [48, 28],
+    genders: ['Masculino', 'Feminino'],
+    origins: ['Moçambicano', 'Estrangeiro']
   }),
   computed: {
     dashboardStats() {
