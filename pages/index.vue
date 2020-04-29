@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="container h-full" style="max-width: 100%">
-      <div class="flex flex-wrap flex-col h-full">
+      <div class="flex flex-wrap flex-row h-full">
         <div class="flex-initial w-full mb-2">
           <h2 class="text-white">COVID-19 - Moçambique</h2>
         </div>
@@ -55,7 +55,26 @@
               ></location-stats>
             </div>
             <div
-              class="w-full md:w-1/2 mt-5 order-2 xl:order-3 nearbyCountries"
+              class="w-full lg:w-1/2 flex flex-row flex-wrap order-5 newsFeed self-start mt-5"
+            >
+              <div class="w-2/3">
+                <span class="text-white font-bold"
+                  >Resumo das
+                  <span class="text-gold">Conferências de Imprensa</span></span
+                >
+              </div>
+              <div class="w-1/3 flex flex-wrap justify-end">
+                <div
+                  class="bg-red text-white rounded font-bold text-xs flex flex-wrap justify-center items-center px-2 pulse h-8"
+                >
+                  Em Directo
+                </div>
+              </div>
+
+              <news-feed />
+            </div>
+            <div
+              class="w-full md:w-1/2 mt-5 order-3 xl:order-4 nearbyCountries"
             >
               <span class="text-white font-bold"
                 >Países <span class="text-gold">Vizinhos</span> 🌍</span
@@ -104,12 +123,14 @@ import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
+import NewsFeed from '~/components/NewsFeed'
 export default {
   components: {
     Statistics,
     Maps,
     LocationStats,
-    Chart
+    Chart,
+    NewsFeed
   },
   data: () => ({
     mozGeoJson: require('~/map'),
@@ -259,6 +280,9 @@ export default {
   order: 3;
 }
 .nearbyCountries {
+  order: 5;
+}
+.newsFeed {
   order: 4;
 }
 @media (min-width: 1399px) {
@@ -269,7 +293,28 @@ export default {
     order: 2;
   }
   .nearbyCountries {
+    order: 4;
+  }
+  .newsFeed {
     order: 3;
+  }
+}
+.pulse {
+  animation: pulsing;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes pulsing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 </style>
