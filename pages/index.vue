@@ -80,7 +80,7 @@
             :data="ratioByGender"
             :labels="genders"
             :backgroundColor="['#57E2E5', '#E08DAC']"
-            class="justify-left"
+            class="justify-left pt-1"
           />
         </div>
 
@@ -90,7 +90,7 @@
             :data="ratioByOrigin"
             :labels="origins"
             :backgroundColor="['#F6C879', '#A7D3A6']"
-            class="justify-left"
+            class="justify-left pt-1"
           />
         </div>
       </div>
