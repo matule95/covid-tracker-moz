@@ -1,5 +1,6 @@
 <script>
 import { Pie } from 'vue-chartjs'
+import ChartJsPluginDataLabels from 'chartjs-plugin-datalabels'
 
 export default {
   extends: Pie,
@@ -11,15 +12,30 @@ export default {
   mounted() {
     this.renderChart(
       {
+        plugins: [ChartJsPluginDataLabels],
+
         labels: this.labels,
         datasets: [
           {
             backgroundColor: this.backgroundColor,
-            data: this.data
+            data: this.data,
+            datalabels: {
+              align: 'center',
+              anchor: 'top',
+              borderRadius: 4,
+              color: '#000000',
+              font: {
+                weight: 'bold',
+                size: 20
+              }
+            }
           }
         ]
       },
-      { responsive: true, maintainAspectRatio: false }
+      {
+        responsive: true,
+        maintainAspectRatio: false
+      }
     )
   }
 }
