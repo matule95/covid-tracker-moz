@@ -71,7 +71,7 @@
     </section>
     <section class="container h-full pt-5" style="max-width: 100%">
       <h1 class="text-gold font-bold">Dados Adicionais</h1>
-      <div class="flex flex-col lg:flex-row justify-around w-full ">
+      <div class="flex flex-col lg:flex-row justify-left w-full ">
         <div class="flex flex-col pt-4">
           <h3 class="text-gold text-center">
             Casos positivos por sexo (%)
