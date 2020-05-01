@@ -36,7 +36,15 @@ export default {
         responsive: true,
         maintainAspectRatio: false,
         legend: {
-          position: 'bottom'
+          position: 'bottom',
+          labels: {
+            boxWidth: 8,
+            fontFamily: 'CircularStd',
+            padding: 20,
+            fontColor: '#ffffff',
+            usePointStyle: true,
+            backgroundColor: '#ffffff'
+          }
         }
       }
     )
