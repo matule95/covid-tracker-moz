@@ -121,22 +121,67 @@ export default {
       'Zimbabwe',
       'Malawi',
       'Zambia'
-    ]
+    ],
+    ratioByGender: [66, 13],
+    ratioByOrigin: [48, 31],
+    ratioBySintomology: [59, 18, 2, 0],
+    sintomology: ['Assintomático', 'Leve', 'Moderada', 'Grave'],
+    genders: ['Masculino', 'Feminino'],
+    origins: ['Moçambicana', 'Outras']
   }),
   computed: {
     dashboardStats() {
       const statistics = this.$store.state.statistics.dailyInformation[0]
         .country_stats
+      const yesterday = this.$store.state.statistics.dailyInformation[1]
+        .country_stats
       return {
-        tested: statistics.tested,
-        infected: statistics.infected,
-        active:
-          Number.parseInt(statistics.infected) -
-          Number.parseInt(statistics.recovered),
-        deaths: statistics.deaths,
-        recovered: statistics.recovered,
-        local_transmission: statistics.local_transmissions,
-        foreign_transmission: statistics.foreign_transmissions
+        tested: {
+          today: statistics.tested,
+          variation:
+            Number.parseInt(statistics.tested) -
+            Number.parseInt(yesterday.tested)
+        },
+        infected: {
+          today: statistics.infected,
+          variation:
+            Number.parseInt(statistics.infected) -
+            Number.parseInt(yesterday.infected)
+        },
+        active: {
+          today:
+            Number.parseInt(statistics.infected) -
+            Number.parseInt(statistics.recovered),
+          variation:
+            Number.parseInt(statistics.infected) -
+            Number.parseInt(statistics.recovered) -
+            (Number.parseInt(yesterday.infected) -
+              Number.parseInt(yesterday.recovered))
+        },
+        deaths: {
+          today: statistics.deaths,
+          variation:
+            Number.parseInt(statistics.deaths) -
+            Number.parseInt(yesterday.deaths)
+        },
+        recovered: {
+          today: statistics.recovered,
+          variation:
+            Number.parseInt(statistics.recovered) -
+            Number.parseInt(yesterday.recovered)
+        },
+        local_transmission: {
+          today: statistics.local_transmissions,
+          variation:
+            Number.parseInt(statistics.local_transmissions) -
+            Number.parseInt(yesterday.local_transmissions)
+        },
+        foreign_transmission: {
+          today: statistics.foreign_transmissions,
+          variation:
+            Number.parseInt(statistics.foreign_transmissions) -
+            Number.parseInt(yesterday.foreign_transmissions)
+        }
       }
     },
     latestUpdateDate() {
