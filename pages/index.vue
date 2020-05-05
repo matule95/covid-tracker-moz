@@ -69,45 +69,6 @@
         </div>
       </div>
     </section>
-    <section class="container h-full pt-5" style="max-width: 100%">
-      <div class="flex flex-col lg:flex-row justify-left w-full ">
-        <div class="flex flex-col pt-4">
-          <span class="text-white font-bold mb-3 text-center"
-            >Distribuição por <span class="text-gold">Sexo</span></span
-          >
-          <PieChart
-            :data="ratioByGender"
-            :labels="genders"
-            :backgroundColor="['#57E2E5', '#E08DAC']"
-            class="justify-left h-64 w-full"
-          />
-        </div>
-
-        <div class="flex flex-col justify-left pt-10 lg:pt-4">
-          <span class="text-white font-bold mb-3 text-center"
-            >Distribuição por
-            <span class="text-gold">Nacionalidade </span></span
-          >
-          <PieChart
-            :data="ratioByOrigin"
-            :labels="origins"
-            :backgroundColor="['#F6C879', '#A7D3A6']"
-            class="justify-left h-64 w-full"
-          />
-        </div>
-        <div class="flex flex-col pt-4">
-          <span class="text-white font-bold mb-3 text-center"
-            >Distribuição por <span class="text-gold">Sintomologia</span></span
-          >
-          <PieChart
-            :data="ratioBySintomology"
-            :labels="sintomology"
-            :backgroundColor="['#5cc1ac', '#57E2E5', '#F6C879', '#ba3131']"
-            class="justify-left h-64 w-full"
-          />
-        </div>
-      </div>
-    </section>
     <div
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
     >
@@ -143,14 +104,12 @@ import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
-import PieChart from '~/components/PieChart'
 export default {
   components: {
     Statistics,
     Maps,
     LocationStats,
-    Chart,
-    PieChart
+    Chart
   },
   data: () => ({
     mozGeoJson: require('~/map'),
