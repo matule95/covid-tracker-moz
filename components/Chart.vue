@@ -55,7 +55,10 @@ export default {
             fill: true,
             spanGaps: true,
             borderCapStyle: 'round',
-            backgroundColor: this.setGradient('#e3342f')
+            backgroundColor: this.setGradient('#e3342f'),
+            datalabels: {
+              display: false
+            }
           },
           {
             label: 'Recuperados',
@@ -69,7 +72,10 @@ export default {
             fill: true,
             spanGaps: true,
             borderCapStyle: 'round',
-            backgroundColor: this.setGradient('#5CC1AC')
+            backgroundColor: this.setGradient('#5CC1AC'),
+            datalabels: {
+              display: false
+            }
           },
           {
             label: 'Activos',
@@ -83,7 +89,10 @@ export default {
             fill: true,
             spanGaps: true,
             borderCapStyle: 'round',
-            backgroundColor: this.setGradient('#F6C879')
+            backgroundColor: this.setGradient('#F6C879'),
+            datalabels: {
+              display: false
+            }
           },
           {
             label: 'Óbitos',
@@ -97,7 +106,10 @@ export default {
             fill: true,
             spanGaps: true,
             borderCapStyle: 'round',
-            backgroundColor: this.setGradient('#8795a1')
+            backgroundColor: this.setGradient('#8795a1'),
+            datalabels: {
+              display: false
+            }
           }
         ]
       }
