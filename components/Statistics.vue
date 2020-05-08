@@ -8,6 +8,7 @@
           value: stats.tested.today,
           today: stats.tested.variation
         }"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -36,6 +37,7 @@
           today: stats.infected.variation
         }"
         :today="stats.todayCases"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -109,6 +111,7 @@
           value: stats.deaths.today,
           today: stats.deaths.variation
         }"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -136,6 +139,7 @@
           value: stats.recovered.today,
           today: stats.recovered.variation
         }"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -164,6 +168,7 @@
           today: stats.local_transmission.variation
         }"
         :today="stats.todayLocal_transmissions"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -191,6 +196,7 @@
           value: stats.foreign_transmission.today,
           today: stats.foreign_transmission.variation
         }"
+        absolute
       >
         <template v-slot:icon>
           <svg
