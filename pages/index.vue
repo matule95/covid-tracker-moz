@@ -14,6 +14,10 @@
         </div>
         <div class="w-full my-5">
           <statistics :stats="dashboardStats"></statistics>
+          <span class="text-gold text-xs pt-3"
+            >*O número em amarelo representa a diferença comparativamente ao dia
+            anterior</span
+          >
         </div>
         <div class="w-full flex-grow flex flex-row flex-wrap">
           <div
