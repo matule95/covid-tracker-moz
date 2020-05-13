@@ -71,7 +71,7 @@
                 </div>
               </div>
 
-              <news-feed />
+              <news-feed class="mt-5" />
             </div>
             <div
               class="w-full md:w-1/2 mt-5 order-3 xl:order-4 nearbyCountries"

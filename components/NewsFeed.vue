@@ -14,6 +14,7 @@
         <div
           v-for="(date, index) in dates"
           :key="index"
+          @click="active = date.date"
           :class="{
             'cursor-pointer': !isDown,
             'cursor-move': isDown
@@ -22,10 +23,10 @@
           style="flex-shrink: 0; flex-grow: 0"
         >
           <div
-            :class="{ 'text-gold': isCurrentDate(date.date) }"
-            class="weekday text-sm font-bold capitalized"
+            :class="{ 'text-gold font-bold': isActive(date.date) }"
+            class="w-full text-xs md:text-sm text-center"
           >
-            {{ date.name }}
+            {{ date.month }}
           </div>
           <div
             :class="{
@@ -34,16 +35,27 @@
               'cursor-pointer': !isDown,
               'cursor-move': isDown
             }"
-            class="w-full weekday text-sm mt-3 bg-brown-light py-2 text-center relative"
+            class="w-full weekday text-sm my-3 bg-brown py-2 text-center relative"
           >
             <div
-              v-if="isCurrentDate(date.date)"
+              v-if="isActive(date.date)"
               class="relative flex justify-center items-center"
             >
               <div class="active-selector z-0"></div>
               <div class="active-value z-10">{{ date.day }}</div>
             </div>
-            <span v-else>{{ date.day }}</span>
+            <div v-else class="relative flex justify-center items-center">
+              <div
+                class="selector z-0 border border-4 border-brown hover:border-gold border-solid"
+              ></div>
+              <div class="z-10 pointer-events-none">{{ date.day }}</div>
+            </div>
+          </div>
+          <div
+            :class="{ 'text-gold font-bold': isActive(date.date) }"
+            class="weekday text-xs md:text-sm capitalized"
+          >
+            {{ date.name }}
           </div>
         </div>
       </div>
@@ -107,7 +119,8 @@ export default {
     isDown: false,
     startX: null,
     scrollLeft: null,
-    calendar: null
+    calendar: null,
+    active: null
   }),
   computed: {
     dates() {
@@ -132,7 +145,7 @@ export default {
         daysBetween--
       }
       const newDate = {
-        date: moment(),
+        date: moment().format('YYYY-MM-DD'),
         name: moment().format('ddd'),
         day: moment().format('D'),
         month: moment().format('MMM')
@@ -166,28 +179,41 @@ export default {
     }
   },
   mounted() {
+    this.active = moment().format('YYYY-MM-DD')
     this.calendar = document.getElementById('calendar')
     this.calendar.scrollLeft = this.calendar.scrollWidth
+    document.getElementById('calendar').addEventListener('touchmove', event => {
+      this.mouseMove(event)
+    })
+    document
+      .getElementById('calendar')
+      .addEventListener('touchstart', event => {
+        this.mouseDown(event)
+      })
+    document.getElementById('calendar').addEventListener('touchend', event => {
+      this.isDown = false
+    })
   },
   methods: {
-    isCurrentDate(date) {
-      const currentDate = moment().format('YYYY-MM-DD')
-      return currentDate === moment(date).format('YYYY-MM-DD')
+    isActive(date) {
+      // const currentDate = moment().format('YYYY-MM-DD')
+      return this.active === date
     },
     mouseDown(event) {
       this.isDown = true
-      this.startX = event.pageX - this.calendar.offsetLeft
+      this.startX = event.pageX
+        ? event.pageX - this.calendar.offsetLeft
+        : event.touches[0].pageX - this.calendar.offsetLeft
       this.scrollLeft = this.calendar.scrollLeft
     },
     mouseMove(event) {
       if (!this.isDown) return
       event.preventDefault()
-      const x = event.pageX - this.calendar.offsetLeft
-      const walk = (x - this.startX) * 1.5 // scroll-fast
+      const x = event.pageX
+        ? event.pageX - this.calendar.offsetLeft
+        : event.touches[0].pageX - this.calendar.offsetLeft
+      const walk = (x - this.startX) * 1.2 // scroll-fast
       this.calendar.scrollLeft = this.scrollLeft - walk
-
-      // eslint-disable-next-line no-console
-      console.log(walk)
     }
   }
 }
@@ -198,11 +224,17 @@ export default {
   z-index: 2;
 }
 .active-selector {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   position: absolute;
   @apply bg-gold;
+}
+.selector {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
 }
 .separator {
   width: 3px;
