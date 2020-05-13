@@ -12,12 +12,15 @@
     <div class="w-2/3 flex flex-wrap self-center">
       <div class="w-full mb-1">
         <span class="text-md text-white">{{ stats.label || '' }}</span>
-        <span v-if="stats.today" class="text-gold text-xs"
-          >+{{ stats.today }}</span
-        >
       </div>
-      <div class="w-full text-2xl text-white font-semibold">
+      <div
+        class="w-full text-2xl text-white font-semibold flex flex-wap flex-row"
+      >
         {{ stats.value || 0 }}
+        <span v-if="stats.today" class="ml-2 text-gold text-sm self-center"
+          ><span v-if="absolute || stats.today > 0">+</span
+          >{{ stats.today }}</span
+        >
       </div>
     </div>
   </div>
@@ -29,7 +32,8 @@ export default {
     stats: {
       type: Object,
       required: true
-    }
+    },
+    absolute: { type: Boolean, required: false }
   },
   computed: {
     getClassName() {

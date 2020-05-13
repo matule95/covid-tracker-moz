@@ -7,6 +7,7 @@
     >
       <div class="w-2/3 text-white flex flex-wrap items-center">
         <img
+          :alt="`${place.name} Country Flag`"
           :src="place.flag"
           width="25px"
           height="25px"

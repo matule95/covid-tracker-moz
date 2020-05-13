@@ -14,6 +14,10 @@
         </div>
         <div class="w-full my-5">
           <statistics :stats="dashboardStats"></statistics>
+          <span class="text-gold text-xs pt-3"
+            >*O número em amarelo representa a diferença comparativamente ao dia
+            anterior</span
+          >
         </div>
         <div class="w-full flex-grow flex flex-row flex-wrap">
           <div
@@ -92,10 +96,15 @@
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
     >
       <div class="w-full flex justify-center mt-10">
-        <img src="/Gladiator.png" width="250px" height="170px" />
+        <img
+          src="/Gladiator.png"
+          width="250px"
+          height="170px"
+          alt="Gladiator Fighting Corona Virus"
+        />
       </div>
       <h2 class="mt-5 text-gold text-center">
-        Ajude-nos a combater o COVID-19!
+        Ajude-nos a combater a COVID-19!
       </h2>
       <span
         class="mt-5 text-white w-full lg:w-1/2 text-center"
@@ -104,7 +113,7 @@
         Além dos
         <a class="text-gold" href="https://covid19.ins.gov.mz/prevencao/"
           >métodos de prevenção indicados pelo INS</a
-        >, a nossa única maneira de ajudar a impedir a propagação do COVID-19 é
+        >, a nossa única maneira de ajudar a impedir a propagação da COVID-19 é
         através da codificação de aplicativos. Essa é a parte mais fácil. O
         difícil é obter informações locais confiáveis portanto precisamos da sua
         ajuda para que possamos manter as pessoas conscientes do que está a
@@ -142,22 +151,67 @@ export default {
       'Zimbabwe',
       'Malawi',
       'Zambia'
-    ]
+    ],
+    ratioByGender: [66, 13],
+    ratioByOrigin: [48, 31],
+    ratioBySintomology: [59, 18, 2, 0],
+    sintomology: ['Assintomático', 'Leve', 'Moderada', 'Grave'],
+    genders: ['Masculino', 'Feminino'],
+    origins: ['Moçambicana', 'Outras']
   }),
   computed: {
     dashboardStats() {
       const statistics = this.$store.state.statistics.dailyInformation[0]
         .country_stats
+      const yesterday = this.$store.state.statistics.dailyInformation[1]
+        .country_stats
       return {
-        tested: statistics.tested,
-        infected: statistics.infected,
-        active:
-          Number.parseInt(statistics.infected) -
-          Number.parseInt(statistics.recovered),
-        deaths: statistics.deaths,
-        recovered: statistics.recovered,
-        local_transmission: statistics.local_transmissions,
-        foreign_transmission: statistics.foreign_transmissions
+        tested: {
+          today: statistics.tested,
+          variation:
+            Number.parseInt(statistics.tested) -
+            Number.parseInt(yesterday.tested)
+        },
+        infected: {
+          today: statistics.infected,
+          variation:
+            Number.parseInt(statistics.infected) -
+            Number.parseInt(yesterday.infected)
+        },
+        active: {
+          today:
+            Number.parseInt(statistics.infected) -
+            Number.parseInt(statistics.recovered),
+          variation:
+            Number.parseInt(statistics.infected) -
+            Number.parseInt(statistics.recovered) -
+            (Number.parseInt(yesterday.infected) -
+              Number.parseInt(yesterday.recovered))
+        },
+        deaths: {
+          today: statistics.deaths,
+          variation:
+            Number.parseInt(statistics.deaths) -
+            Number.parseInt(yesterday.deaths)
+        },
+        recovered: {
+          today: statistics.recovered,
+          variation:
+            Number.parseInt(statistics.recovered) -
+            Number.parseInt(yesterday.recovered)
+        },
+        local_transmission: {
+          today: statistics.local_transmissions,
+          variation:
+            Number.parseInt(statistics.local_transmissions) -
+            Number.parseInt(yesterday.local_transmissions)
+        },
+        foreign_transmission: {
+          today: statistics.foreign_transmissions,
+          variation:
+            Number.parseInt(statistics.foreign_transmissions) -
+            Number.parseInt(yesterday.foreign_transmissions)
+        }
       }
     },
     latestUpdateDate() {

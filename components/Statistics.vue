@@ -5,8 +5,10 @@
         :stats="{
           type: 'countries',
           label: 'Testados',
-          value: stats.tested
+          value: stats.tested.today,
+          today: stats.tested.variation
         }"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -31,9 +33,11 @@
         :stats="{
           type: 'infected',
           label: 'Infectados',
-          value: formatNumbers(stats.infected)
+          value: stats.infected.today,
+          today: stats.infected.variation
         }"
         :today="stats.todayCases"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -58,9 +62,9 @@
         :stats="{
           type: 'active',
           label: 'Activos',
-          value: formatNumbers(stats.active)
+          value: stats.active.today,
+          today: stats.active.variation
         }"
-        :today="stats.todayCases"
       >
         <template v-slot:icon>
           <svg
@@ -104,8 +108,10 @@
         :stats="{
           type: 'deaths',
           label: 'Óbitos',
-          value: formatNumbers(stats.deaths)
+          value: stats.deaths.today,
+          today: stats.deaths.variation
         }"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -130,8 +136,10 @@
         :stats="{
           type: 'recovered',
           label: 'Recuperados',
-          value: formatNumbers(stats.recovered)
+          value: stats.recovered.today,
+          today: stats.recovered.variation
         }"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -156,9 +164,11 @@
         :stats="{
           type: 'local_transmissions',
           label: 'Trans. Local',
-          value: formatNumbers(stats.local_transmission)
+          value: stats.local_transmission.today,
+          today: stats.local_transmission.variation
         }"
         :today="stats.todayLocal_transmissions"
+        absolute
       >
         <template v-slot:icon>
           <svg
@@ -183,9 +193,10 @@
         :stats="{
           type: 'foreign_transmission',
           label: 'C. Importados',
-          value: formatNumbers(stats.foreign_transmission)
+          value: stats.foreign_transmission.today,
+          today: stats.foreign_transmission.variation
         }"
-        :today="stats.todayForeign_transmission"
+        absolute
       >
         <template v-slot:icon>
           <svg
