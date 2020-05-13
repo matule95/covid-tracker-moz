@@ -65,42 +65,15 @@
       <div
         class="w-full flex flex-row flex-wrap h-10 bg-brown-light relative my-5"
       >
-        <div class="w-1/5 text-white self-center text-sm font-bold">
+        <div
+          class="w-1/5 md:w-1/6 text-white self-center text-xs md:text-sm font-bold"
+        >
           16:24
         </div>
         <div
-          class="w-4/5 self-center text-white"
+          class="w-4/5 md:w-5/6 self-center text-white text-sm"
           style="border: 1px solid dashed;"
         >
-          When the Twilio messages webhook triggers a new POST request to your
-          server we include
-        </div>
-        <div class="separator absolute"></div>
-        <div class="separator-ball absolute"></div>
-      </div>
-      <div
-        class="w-full flex flex-row flex-wrap h-10 bg-brown-light relative my-5"
-      >
-        <div class="w-1/5 text-white self-center text-sm font-bold">
-          16:24
-        </div>
-        <div
-          class="w-4/5 self-center text-white"
-          style="border: 1px solid dashed;"
-        >
-          When the Twilio messages webhook triggers a new POST request to your
-          server we include
-        </div>
-        <div class="separator absolute"></div>
-        <div class="separator-ball absolute"></div>
-      </div>
-      <div
-        class="w-full flex flex-row flex-wrap h-10 bg-brown-light relative my-5"
-      >
-        <div class="w-1/5 text-white text-sm self-center font-bold">
-          16:24
-        </div>
-        <div class="w-4/5 self-center text-white border border-b-2 border-gold">
           When the Twilio messages webhook triggers a new POST request to your
           server we include
         </div>
@@ -237,7 +210,7 @@ export default {
   position: absolute;
 }
 .separator {
-  width: 3px;
+  width: 2px;
   height: 100%;
   @apply bg-gold;
   top: 0;
@@ -247,9 +220,49 @@ export default {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 3px solid #f6c879;
+  border: 2px solid #f6c879;
   background-color: #222529;
   top: 31%;
   left: 11.8%;
+}
+@media only screen and (min-width: 320px) {
+  .separator-ball {
+    left: 12.6%;
+  }
+  .separator {
+    left: 15%;
+  }
+}
+@media only screen and (min-width: 375px) {
+  .separator-ball {
+    left: 12%;
+  }
+  .separator {
+    left: 14%;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .separator-ball {
+    left: 11.5%;
+  }
+  .separator {
+    left: 13%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .separator-ball {
+    left: 10%;
+  }
+  .separator {
+    left: 11%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .separator-ball {
+    left: 11.8%;
+  }
+  .separator {
+    left: 13%;
+  }
 }
 </style>
