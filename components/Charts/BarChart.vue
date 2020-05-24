@@ -13,7 +13,6 @@ export default {
     this.renderChart(
       {
         plugins: [ChartJsPluginDataLabels],
-
         labels: this.labels,
         datasets: [
           {
@@ -21,7 +20,6 @@ export default {
             data: this.data,
             datalabels: {
               align: 'center',
-              anchor: 'top',
               borderRadius: 4,
               color: '#000000',
               font: {
@@ -45,6 +43,22 @@ export default {
             usePointStyle: true,
             backgroundColor: '#ffffff'
           }
+        },
+        scales: {
+          xAxes: [
+            {
+              ticks: {
+                fontSize: 18
+              }
+            }
+          ],
+          yAxes: [
+            {
+              ticks: {
+                fontSize: 18
+              }
+            }
+          ]
         }
       }
     )

@@ -69,63 +69,7 @@
         </div>
       </div>
     </section>
-    <section class="container h-full pt-5" style="max-width: 100%">
-      <div class="flex flex-col lg:flex-row justify-left w-full ">
-        <div class="flex flex-col pt-4">
-          <span class="text-white font-bold mb-3 text-center"
-            >Distribuição por <span class="text-gold">Sexo</span></span
-          >
-          <PieChart
-            :data="ratioByGender"
-            :labels="genders"
-            :backgroundColor="['#57E2E5', '#E08DAC']"
-            class="justify-left h-64 w-full"
-          />
-        </div>
-
-        <div class="flex flex-col justify-left pt-10 lg:pt-4">
-          <span class="text-white font-bold mb-3 text-center"
-            >Distribuição por
-            <span class="text-gold">Nacionalidade </span></span
-          >
-          <PieChart
-            :data="ratioByOrigin"
-            :labels="origins"
-            :backgroundColor="['#F6C879', '#A7D3A6']"
-            class="justify-left h-64 w-full"
-          />
-        </div>
-        <div class="flex flex-col pt-4">
-          <span class="text-white font-bold mb-3 text-center"
-            >Distribuição por <span class="text-gold">Sintomologia</span></span
-          >
-          <PieChart
-            :data="ratioBySintomology"
-            :labels="sintomology"
-            :backgroundColor="['#5cc1ac', '#57E2E5', '#F6C879', '#ba3131']"
-            class="justify-left h-64 w-full"
-          />
-        </div>
-        <div class="flex flex-col pt-4">
-          <span class="text-white font-bold mb-3 text-center"
-            >Distribuição por <span class="text-gold">Faixa Etária</span></span
-          >
-          <BarChart
-            :data="ratioByAgeRange"
-            :labels="ageRange"
-            :backgroundColor="[
-              '#5cc1ac',
-              '#57E2E5',
-              '#F6C879',
-              '#ba3131',
-              '#ba3131',
-              '#ba3131'
-            ]"
-            class="justify-left h-64 w-full"
-          />
-        </div>
-      </div>
-    </section>
+    <ChartsSection class="h-full pt-5" />
     <div
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
     >
@@ -157,20 +101,18 @@
 </template>
 
 <script>
+import ChartsSection from '~/components/Partials/ChartsSection'
 import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
-import PieChart from '~/components/PieChart'
-import BarChart from '~/components/Charts/BarChart'
 export default {
   components: {
-    BarChart,
+    ChartsSection,
     Statistics,
     Maps,
     LocationStats,
-    Chart,
-    PieChart
+    Chart
   },
   data: () => ({
     mozGeoJson: require('~/map'),
@@ -182,15 +124,7 @@ export default {
       'Zimbabwe',
       'Malawi',
       'Zambia'
-    ],
-    ratioByGender: [66, 13],
-    ratioByOrigin: [48, 31],
-    ratioBySintomology: [59, 18, 2, 0],
-    ratioByAgeRange: [5, 4, 10, 49, 70, 26, 18, 12],
-    sintomology: ['Assintomático', 'Leve', 'Moderada', 'Grave'],
-    ageRange: ['<5', '5-9', '10-19', '20-29', '30-39', '40-49', '50-59', '>60'],
-    genders: ['Masculino', 'Feminino'],
-    origins: ['Moçambicana', 'Outras']
+    ]
   }),
   computed: {
     dashboardStats() {
@@ -317,6 +251,7 @@ export default {
   async fetch({ store }) {
     await store.dispatch('locations/fetchItems')
     await store.dispatch('statistics/fetchDailyInformation')
+    await store.dispatch('statistics/fetchWeeklyInformation')
   },
   methods: {
     getFlag(province) {
