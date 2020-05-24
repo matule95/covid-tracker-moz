@@ -106,6 +106,24 @@
             class="justify-left h-64 w-full"
           />
         </div>
+        <div class="flex flex-col pt-4">
+          <span class="text-white font-bold mb-3 text-center"
+            >Distribuição por <span class="text-gold">Faixa Etária</span></span
+          >
+          <BarChart
+            :data="ratioByAgeRange"
+            :labels="ageRange"
+            :backgroundColor="[
+              '#5cc1ac',
+              '#57E2E5',
+              '#F6C879',
+              '#ba3131',
+              '#ba3131',
+              '#ba3131'
+            ]"
+            class="justify-left h-64 w-full"
+          />
+        </div>
       </div>
     </section>
     <div
@@ -144,8 +162,10 @@ import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
 import PieChart from '~/components/PieChart'
+import BarChart from '~/components/Charts/BarChart'
 export default {
   components: {
+    BarChart,
     Statistics,
     Maps,
     LocationStats,
@@ -166,7 +186,9 @@ export default {
     ratioByGender: [66, 13],
     ratioByOrigin: [48, 31],
     ratioBySintomology: [59, 18, 2, 0],
+    ratioByAgeRange: [5, 4, 10, 49, 70, 26, 18, 12],
     sintomology: ['Assintomático', 'Leve', 'Moderada', 'Grave'],
+    ageRange: ['<5', '5-9', '10-19', '20-29', '30-39', '40-49', '50-59', '>60'],
     genders: ['Masculino', 'Feminino'],
     origins: ['Moçambicana', 'Outras']
   }),
