@@ -5,13 +5,20 @@
         <div class="flex-initial w-full mb-2">
           <h2 class="text-white">COVID-19 - Moçambique</h2>
         </div>
-        <div class="w-full mt-2 flex flex-row">
-          <p class="text-white">
-            Última actualização: {{ latestUpdateDate }} às
-            {{ latestUpdateTime }} - Fonte:
-            <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
-          </p>
-          <button @click="requestPermission">Subscribe 🔔</button>
+        <div class="w-full mt-2 flex flex-row flex-wrap">
+          <div class="w-10/12">
+            <p class="text-white">
+              Última actualização: {{ latestUpdateDate }} às
+              {{ latestUpdateTime }} - Fonte:
+              <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
+            </p>
+          </div>
+          <!-- <div class="w-2/12 flex justify-end flex-wrap">
+            <button @click="requestPermission">{{ buttonInfo }}</button>
+          </div> -->
+          <div class="w-2/12 flex justify-end flex-wrap">
+            <button @click="showModal = true">{{ buttonInfo }}</button>
+          </div>
         </div>
         <div class="w-full my-5">
           <statistics :stats="dashboardStats"></statistics>
@@ -106,6 +113,7 @@
         >
       </span>
     </div>
+    <permission-notification />
   </div>
 </template>
 
@@ -115,12 +123,14 @@ import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
+import PermissionNotification from '~/components/PermissionNotification'
 export default {
   components: {
     Statistics,
     Maps,
     LocationStats,
-    Chart
+    Chart,
+    PermissionNotification
   },
   data: () => ({
     mozGeoJson: require('~/map'),
@@ -133,15 +143,10 @@ export default {
       'Malawi',
       'Zambia'
     ],
-    ratioByGender: [66, 13],
-    ratioByOrigin: [48, 31],
-    ratioBySintomology: [59, 18, 2, 0],
-    sintomology: ['Assintomático', 'Leve', 'Moderada', 'Grave'],
-    genders: ['Masculino', 'Feminino'],
-    origins: ['Moçambicana', 'Outras']
     listenersStarted: false,
     permissionGranted: false,
-    idToken: ''
+    idToken: '',
+    showModal: false
   }),
   computed: {
     dashboardStats() {
@@ -263,6 +268,11 @@ export default {
     },
     chartData() {
       return this.$store.state.statistics.dailyInformation
+    },
+    buttonInfo() {
+      return window.localStorage.getItem('subscribed')
+        ? 'Subscribed'
+        : 'Not Subscribed'
     }
   },
   async fetch({ store }) {
@@ -308,6 +318,9 @@ export default {
       if (currentToken) {
         this.idToken = currentToken
         console.log(currentToken)
+        window.localStorage.setItem('notificationToken', currentToken)
+        window.localStorage.setItem('subscribed', true)
+        this.subscribed = true
       } else {
         // Show permission request.
         console.info(
@@ -332,6 +345,7 @@ export default {
       this.$fireMess.onTokenRefresh(async () => {
         try {
           const refreshedToken = await this.$fireMess.getToken()
+          window.localStorage.setItem('notificationToken', refreshedToken)
           this.idToken = refreshedToken
         } catch (e) {
           console.error('Unable to retrieve refreshed token ', e)

@@ -1,4 +1,18 @@
-const options = {"firebaseVersion":"7.14.1","config":{"apiKey":"AIzaSyDlm8ZeIzo0I_zClTrNAkFgJti3I-oGX0w","authDomain":"covid-19-tracker-moz.firebaseapp.com","databaseURL":"https:\u002F\u002Fcovid-19-tracker-moz.firebaseio.com","projectId":"covid-19-tracker-moz","storageBucket":"covid-19-tracker-moz.appspot.com","messagingSenderId":"536171650610","appId":"1:536171650610:web:26cad8c7e170c2a9f7262b","measurementId":"G-8GZ5N5EZS4"},"onFirebaseHosting":false}
+/* eslint-disable */
+const options = {
+  firebaseVersion: '7.14.1',
+  config: {
+    apiKey: 'AIzaSyDlm8ZeIzo0I_zClTrNAkFgJti3I-oGX0w',
+    authDomain: 'covid-19-tracker-moz.firebaseapp.com',
+    databaseURL: 'https:\u002F\u002Fcovid-19-tracker-moz.firebaseio.com',
+    projectId: 'covid-19-tracker-moz',
+    storageBucket: 'covid-19-tracker-moz.appspot.com',
+    messagingSenderId: '536171650610',
+    appId: '1:536171650610:web:26cad8c7e170c2a9f7262b',
+    measurementId: 'G-8GZ5N5EZS4'
+  },
+  onFirebaseHosting: false
+}
 const version = options.firebaseVersion
 const onFirebaseHosting = options.onFirebaseHosting
 
@@ -7,8 +21,7 @@ if (onFirebaseHosting) {
   importScripts('/__/firebase/' + version + '/firebase-app.js')
   importScripts('/__/firebase/' + version + '/firebase-messaging.js')
   importScripts('/__/firebase/init.js')
-}
-else {
+} else {
   importScripts(
     'https://www.gstatic.com/firebasejs/' + version + '/firebase-app.js'
   )
@@ -23,10 +36,10 @@ else {
 const messaging = firebase.messaging()
 
 messaging.setBackgroundMessageHandler(function(payload) {
-  console.info("SW received the message: ", payload);
-  const notification = payload.notification;
+  console.info('SW received the message: ', payload)
+  const notification = payload.notification
 
-  const notificationTitle = notification.title;
+  const notificationTitle = notification.title
   const notificationOptions = {
     body: notification.body,
     icon: notification.image,
@@ -34,11 +47,11 @@ messaging.setBackgroundMessageHandler(function(payload) {
     actions: [
       // First item is always taken as click action (see comment below)
       {
-        title: "Visit",
+        title: 'Visit',
         action: notification.clickPath
       }
     ]
-  };
+  }
   return self.registration.showNotification(
     notificationTitle,
     notificationOptions

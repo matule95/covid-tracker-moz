@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col flex-wrap min-h-screen antialiased bg-brown-light">
+  <div
+    class="flex flex-col flex-wrap min-h-screen antialiased bg-brown-light relative"
+  >
     <div class="py-16 lg:mx-8 xl:mx-16 px-5 lg:px-0 flex-1 max-w-full">
       <nuxt />
     </div>

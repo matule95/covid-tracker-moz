@@ -60,6 +60,7 @@ button {
   display: inline-block;
   font-size: 16px;
   transition: all 0.3 ease-in-out;
+  font-family: 'CircularStd';
   &:hover {
     @apply bg-gold text-white;
     cursor: pointer;
