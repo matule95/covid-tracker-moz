@@ -15,52 +15,52 @@
           </div>
           <!-- <div class="w-2/12 flex justify-end flex-wrap">
             <button @click="requestPermission">{{ buttonInfo }}</button>
-          </div> -->
+          </div>-->
           <div class="w-2/12 flex justify-end flex-wrap">
             <button @click="showModal = true">{{ buttonInfo }}</button>
           </div>
         </div>
         <div class="w-full my-5">
           <statistics :stats="dashboardStats"></statistics>
-          <span class="text-gold text-xs pt-3"
-            >*O número em amarelo representa a diferença comparativamente ao dia
-            anterior</span
-          >
+          <span class="text-gold text-xs pt-3">
+            *O número em amarelo representa a diferença comparativamente ao dia
+            anterior
+          </span>
         </div>
         <div class="w-full flex-grow flex flex-row flex-wrap">
           <div
             class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
           >
             <maps :locations="mapGEOJSON" class="z-30"></maps>
-            <span class="text-gold text-xs pt-3"
-              >*Os pontos no mapa não representam localização exacta dos
-              casos</span
-            >
+            <span class="text-gold text-xs pt-3">
+              *Os pontos no mapa não representam localização exacta dos casos
+            </span>
           </div>
           <div
-            class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
+            class="flex flex-wrap flex-row w-full xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
           >
             <div
               class="flex flex-wrap flex-row w-full my-5 xl:mt-0 order-3 xl:order-1 overallChart"
             >
-              <span class="text-white font-bold mb-5"
-                >Progressos dos <span class="text-gold">Casos</span> 📈</span
-              >
+              <span class="text-white font-bold mb-5">
+                Progressos dos
+                <span class="text-gold">Casos</span> 📈
+              </span>
               <chart :info="chartData" style="width: 100%" />
             </div>
             <div
               class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-10 block xl:hidden provincesMap"
             >
               <maps :locations="mapGEOJSON" class="z-30"></maps>
-              <span class="text-gold text-xs pt-3"
-                >*Os pontos no mapa não representam localização exacta dos
-                casos</span
-              >
+              <span class="text-gold text-xs pt-3">
+                *Os pontos no mapa não representam localização exacta dos casos
+              </span>
             </div>
             <div class="w-full md:w-1/2 mt-5 mb-2 order-1 xl:order-2 provinces">
-              <span class="text-white font-bold"
-                >Distribuição <span class="text-gold">Provincial</span> 📍</span
-              >
+              <span class="text-white font-bold">
+                Distribuição
+                <span class="text-gold">Provincial</span> 📍
+              </span>
               <location-stats
                 :places="localPlaces"
                 class="w-full mt-3 mb-5"
@@ -69,9 +69,10 @@
             <div
               class="w-full md:w-1/2 mt-5 order-2 xl:order-3 nearbyCountries"
             >
-              <span class="text-white font-bold"
-                >Países <span class="text-gold">Vizinhos</span> 🌍</span
-              >
+              <span class="text-white font-bold">
+                Países
+                <span class="text-gold">Vizinhos</span> 🌍
+              </span>
               <location-stats
                 :places="places"
                 class="w-full mt-3 mb-5"
@@ -106,8 +107,7 @@
         através da codificação de aplicativos. Essa é a parte mais fácil. O
         difícil é obter informações locais confiáveis portanto precisamos da sua
         ajuda para que possamos manter as pessoas conscientes do que está a
-        acontecer.<br />
-        Contacte-nos em:
+        acontecer. <br />Contacte-nos em:
         <a class="text-gold" href="mailto:covidmozinfo@gmail.com"
           >covidmozinfo@gmail.com</a
         >
@@ -118,7 +118,7 @@
 </template>
 
 <script>
-/*eslint-disable*/
+/* eslint-disable */
 import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
 import Maps from '~/components/Maps'

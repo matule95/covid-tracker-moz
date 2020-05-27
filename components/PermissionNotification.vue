@@ -59,6 +59,7 @@ export default {
   methods: {
     async requestPermission() {
       try {
+        this.askingForPermission = true
         const permission = await Notification.requestPermission()
         this.permissionGranted = permission === 'granted'
         await this.getIdToken()
