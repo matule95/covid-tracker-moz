@@ -160,12 +160,15 @@ export default {
         active: {
           today:
             Number.parseInt(statistics.infected) -
-            Number.parseInt(statistics.recovered),
+            Number.parseInt(statistics.recovered) -
+            Number.parseInt(statistics.deaths) -
+            1,
           variation:
             Number.parseInt(statistics.infected) -
             Number.parseInt(statistics.recovered) -
             (Number.parseInt(yesterday.infected) -
-              Number.parseInt(yesterday.recovered))
+              Number.parseInt(yesterday.recovered)) -
+            Number.parseInt(yesterday.deaths)
         },
         deaths: {
           today: statistics.deaths,
