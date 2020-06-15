@@ -2,21 +2,18 @@
   <div>
     <section class="container h-full" style="max-width: 100%">
       <div class="flex flex-wrap flex-col h-full">
-        <div class="flex-initial w-full mb-2">
-          <h2 class="text-white">COVID-19 - Moçambique</h2>
-        </div>
-        <div class="w-full mt-2 flex flex-row flex-wrap">
-          <div class="w-10/12">
-            <p class="text-white">
-              Última actualização: {{ latestUpdateDate }} às
-              {{ latestUpdateTime }} - Fonte:
-              <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
-            </p>
+        <div class="flex flex-wrap w-full flex-row">
+          <div class="flex flex-wrap flex-row w-1/2">
+            <h2 class="text-white w-full mb-2">COVID-19 - Moçambique</h2>
+            <div class="w-full">
+              <p class="text-white">
+                Última actualização: {{ latestUpdateDate }} às
+                {{ latestUpdateTime }} - Fonte:
+                <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
+              </p>
+            </div>
           </div>
-          <!-- <div class="w-2/12 flex justify-end flex-wrap">
-            <button @click="requestPermission">{{ buttonInfo }}</button>
-          </div>-->
-          <div class="w-2/12 flex justify-end flex-wrap">
+          <div class="w-1/2 flex justify-end">
             <button @click="showModal = true">{{ buttonInfo }}</button>
           </div>
         </div>
@@ -113,7 +110,7 @@
         >
       </span>
     </div>
-    <permission-notification />
+    <permission-notification v-if="showModal" @close="showModal = false" />
   </div>
 </template>
 
@@ -271,8 +268,8 @@ export default {
     },
     buttonInfo() {
       return window.localStorage.getItem('subscribed')
-        ? 'Subscribed'
-        : 'Not Subscribed'
+        ? 'Notificações Activadas'
+        : 'Activar Notificações'
     }
   },
   async fetch({ store }) {
