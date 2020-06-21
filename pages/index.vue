@@ -29,7 +29,7 @@
               <div class="w-full flex flex-row flex-wrap">
                 <span class="w-5 h-5 bg-red">&nbsp;</span>
                 <span class="text-white text-xs self-center pl-1"
-                  >Confirmados</span
+                  >Infectados</span
                 >
               </div>
               <div class="w-full flex flex-row flex-wrap my-1">
@@ -84,7 +84,7 @@
               </div>
             </div>
             <div
-              class="w-full md:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
+              class="w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
             >
               <span class="text-white font-bold"
                 >Distribuição <span class="text-gold">Provincial</span> 📍</span
@@ -94,7 +94,7 @@
               </div>
             </div>
             <div
-              class="w-full md:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
+              class="w-full lg:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
             >
               <span class="text-white font-bold"
                 >Países <span class="text-gold">Vizinhos</span> 🌍</span

@@ -7,7 +7,7 @@
       <tr>
         <th class="pr-5">&nbsp;</th>
         <th class="pr-5">&nbsp;</th>
-        <th class="text-red px-3">Confirmados</th>
+        <th class="text-red px-3">Infectados</th>
         <th class="text-gold px-3">Activos</th>
         <th class="text-grey px-3">Óbitos</th>
         <th class="text-green">Recuperados</th>
