@@ -1,5 +1,5 @@
 <template>
-  <l-map :zoom="5" :center="[-18.6696553, 35.5273354]">
+  <l-map :zoom="6" :center="[-18.6696553, 35.5273354]">
     <l-tile-layer
       url="https://api.mapbox.com/styles/v1/matule/ck94rgiyu21wy1itbehq23za6/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWF0dWxlIiwiYSI6ImNrOTRyZTFkZTAya3gzbHFwOHgxN3ViYWMifQ.l_H5aQ85wmhyMEK0qFwf2A"
     ></l-tile-layer>
@@ -39,13 +39,16 @@ export default {
     pointToLayer() {
       return (feature, latlng) => {
         const { properties = {} } = feature
-        const { confirmed } = properties
+        const { confirmed, deaths, recovered, province } = properties
         let html = ''
         if (confirmed > 0) {
           html = `
-      <span class="icon-marker ${confirmed > 0 ? 'bg-red' : 'bg-blue'}">
-        ${confirmed}
-      </span>
+          <div class="marker flex flex-row flex-wrap rounded-lg">
+            <div class="marker--confirmed px-2 w-1/3 rounded-tl-lg"> ${confirmed}</div>
+            <div class="marker--deaths px-2 w-1/3 text-black"> ${deaths} </div>
+            <div class="marker--recovered px-2 w-1/3 rounded-tr-lg"> ${recovered} </div>
+            <div class="w-full truncate bg-white text-black text-xs rounded-b-lg text-center" style="font-size:0.65rem">${province}</div>
+          </div>
     `
         }
 
@@ -78,6 +81,38 @@ export default {
 </script>
 
 <style lang="scss">
+.marker {
+  font-family: CircularStd;
+  width: 120px;
+  height: 3.6em;
+  color: white;
+  font-weight: bold;
+  // display: flex;
+  // flex-direction: row;
+  border-radius: 10px;
+  padding: 10px;
+}
+.marker--confirmed {
+  @apply bg-red;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marker--deaths {
+  @apply bg-grey;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marker--recovered {
+  @apply bg-green;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .icon-marker {
   font-family: CircularStd;
   display: flex;
@@ -89,7 +124,7 @@ export default {
   height: 3.6em;
   font-size: 0.8em;
   font-weight: bold;
-  border-radius: 100%;
+  // border-radius: 100%;
   &:hover {
     .icon-marker-tooltip {
       display: block;

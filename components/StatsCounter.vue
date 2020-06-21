@@ -18,7 +18,8 @@
       >
         {{ stats.value || 0 }}
         <span v-if="stats.today" class="ml-2 text-gold text-sm self-center"
-          >+{{ stats.today }}</span
+          ><span v-if="absolute || stats.today > 0">+</span
+          >{{ stats.today }}</span
         >
       </div>
     </div>
@@ -31,7 +32,8 @@ export default {
     stats: {
       type: Object,
       required: true
-    }
+    },
+    absolute: { type: Boolean, required: false }
   },
   computed: {
     getClassName() {

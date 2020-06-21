@@ -14,16 +14,35 @@
         </div>
         <div class="w-full my-5">
           <statistics :stats="dashboardStats"></statistics>
+          <span class="text-gold text-xs pt-3"
+            >*O número em amarelo representa a diferença comparativamente ao dia
+            anterior</span
+          >
         </div>
         <div class="w-full flex-grow flex flex-row flex-wrap">
           <div
             class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
           >
             <maps :locations="mapGEOJSON" class="z-30"></maps>
-            <span class="text-gold text-xs pt-3"
-              >*Os pontos no mapa não representam localização exacta dos
-              casos</span
-            >
+            <div class="text-gold text-xs pt-3">
+              *Os pontos no mapa não representam localização exacta dos casos
+              <div class="w-full flex flex-row flex-wrap">
+                <span class="w-5 h-5 bg-red">&nbsp;</span>
+                <span class="text-white text-xs self-center pl-1"
+                  >Infectados</span
+                >
+              </div>
+              <div class="w-full flex flex-row flex-wrap my-1">
+                <span class="w-5 h-5 bg-grey">&nbsp;</span>
+                <span class="text-white text-xs self-center pl-1">Óbitos</span>
+              </div>
+              <div class="w-full flex flex-row flex-wrap">
+                <span class="w-5 h-5 bg-green">&nbsp;</span>
+                <span class="text-white text-xs self-center pl-1"
+                  >Recuperados</span
+                >
+              </div>
+            </div>
           </div>
           <div
             class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
@@ -40,22 +59,42 @@
               class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-10 block xl:hidden provincesMap"
             >
               <maps :locations="mapGEOJSON" class="z-30"></maps>
-              <span class="text-gold text-xs pt-3"
-                >*Os pontos no mapa não representam localização exacta dos
-                casos</span
-              >
+              <div class="text-gold text-xs pt-3">
+                *Os pontos no mapa não representam localização exacta dos casos
+                <div class="flex flex-row flex-wrap">
+                  <div class="w-full flex flex-row flex-wrap">
+                    <span class="w-5 h-5 bg-red">&nbsp;</span>
+                    <span class="text-white text-xs self-center pl-1"
+                      >Confirmados</span
+                    >
+                  </div>
+                  <div class="w-full flex flex-row flex-wrap my-1">
+                    <span class="w-5 h-5 bg-grey">&nbsp;</span>
+                    <span class="text-white text-xs self-center pl-1"
+                      >Óbitos</span
+                    >
+                  </div>
+                  <div class="w-full flex flex-row flex-wrap">
+                    <span class="w-5 h-5 bg-green">&nbsp;</span>
+                    <span class="text-white text-xs self-center pl-1"
+                      >Recuperados</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="w-full md:w-1/2 mt-5 mb-2 order-1 xl:order-2 provinces">
+            <div
+              class="w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
+            >
               <span class="text-white font-bold"
                 >Distribuição <span class="text-gold">Provincial</span> 📍</span
               >
-              <location-stats
-                :places="localPlaces"
-                class="w-full mt-3 mb-5"
-              ></location-stats>
+              <div class="w-full mt-3 mb-5 overflow-auto">
+                <province-distribution :provinces="localPlaces" />
+              </div>
             </div>
             <div
-              class="w-full md:w-1/2 mt-5 order-2 xl:order-3 nearbyCountries"
+              class="w-full lg:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
             >
               <span class="text-white font-bold"
                 >Países <span class="text-gold">Vizinhos</span> 🌍</span
@@ -74,10 +113,15 @@
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
     >
       <div class="w-full flex justify-center mt-10">
-        <img src="/Gladiator.png" width="250px" height="170px" />
+        <img
+          src="/Gladiator.png"
+          width="250px"
+          height="170px"
+          alt="Gladiator Fighting Corona Virus"
+        />
       </div>
       <h2 class="mt-5 text-gold text-center">
-        Ajude-nos a combater o COVID-19!
+        Ajude-nos a combater a COVID-19!
       </h2>
       <span
         class="mt-5 text-white w-full lg:w-1/2 text-center"
@@ -86,7 +130,7 @@
         Além dos
         <a class="text-gold" href="https://covid19.ins.gov.mz/prevencao/"
           >métodos de prevenção indicados pelo INS</a
-        >, a nossa única maneira de ajudar a impedir a propagação do COVID-19 é
+        >, a nossa única maneira de ajudar a impedir a propagação da COVID-19 é
         através da codificação de aplicativos. Essa é a parte mais fácil. O
         difícil é obter informações locais confiáveis portanto precisamos da sua
         ajuda para que possamos manter as pessoas conscientes do que está a
@@ -104,6 +148,7 @@
 import ChartsSection from '~/components/Partials/ChartsSection'
 import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
+import ProvinceDistribution from '~/components/ProvinceDistribution'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
 export default {
@@ -112,7 +157,8 @@ export default {
     Statistics,
     Maps,
     LocationStats,
-    Chart
+    Chart,
+    ProvinceDistribution
   },
   data: () => ({
     mozGeoJson: require('~/map'),
@@ -148,12 +194,20 @@ export default {
         active: {
           today:
             Number.parseInt(statistics.infected) -
-            Number.parseInt(statistics.recovered),
+            Number.parseInt(statistics.recovered) -
+            Number.parseInt(statistics.deaths) -
+            1,
           variation:
             Number.parseInt(statistics.infected) -
             Number.parseInt(statistics.recovered) -
-            (Number.parseInt(yesterday.infected) -
-              Number.parseInt(yesterday.recovered))
+            [
+              Number.parseInt(yesterday.infected) -
+                Number.parseInt(yesterday.recovered) -
+                [
+                  Number.parseInt(statistics.deaths) -
+                    Number.parseInt(yesterday.deaths)
+                ]
+            ]
         },
         deaths: {
           today: statistics.deaths,
@@ -202,8 +256,8 @@ export default {
         .sort((a, b) => (a.cases > b.cases ? -1 : 1))
     },
     localPlaces() {
-      return this.$store.state.statistics.dailyInformation[0].province_stats.map(
-        province => {
+      return this.$store.state.statistics.dailyInformation[0].province_stats
+        .map(province => {
           const yesterday = this.$store.state.statistics.dailyInformation[1].province_stats.find(
             item => item.province === province.province
           )
@@ -214,10 +268,32 @@ export default {
             todayCases: Number.parseInt(
               Number.parseInt(province.confirmed) -
                 Number.parseInt(yesterday.confirmed)
-            )
+            ),
+            active: province.active,
+            todayActive: Number.parseInt(
+              Number.parseInt(province.active) -
+                Number.parseInt(yesterday.active)
+            ),
+            todayRecovered: Number.parseInt(
+              Number.parseInt(province.recovered) -
+                Number.parseInt(yesterday.recovered)
+            ),
+            recovered: province.recovered,
+            todayDeaths: Number.parseInt(
+              Number.parseInt(province.deaths) -
+                Number.parseInt(yesterday.deaths)
+            ),
+            deaths: province.deaths
           }
-        }
-      )
+        })
+        .sort((a, b) => {
+          if (Number.parseInt(a.cases) < Number.parseInt(b.cases)) {
+            return 1
+          }
+          if (Number.parseInt(a.cases) > Number.parseInt(b.cases)) {
+            return -1
+          }
+        })
     },
     mapGEOJSON() {
       const geoJson = {

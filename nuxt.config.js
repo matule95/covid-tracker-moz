@@ -1,4 +1,3 @@
-import pkg from './package'
 // eslint-disable-next-line nuxt/no-cjs-in-config
 const path = require('path')
 export default {
@@ -11,11 +10,16 @@ export default {
     host: '0.0.0.0'
   },
   head: {
-    title: 'COVID-19 MOZ',
+    title: 'Situação das últimas 24 horas do Coronavirus em Moçambique',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Faça o monitoramento diário do número de casos de Coronavirus COVID-19 em Moçambique. Resumo das Últimas 24 horas do Coronavirus em Moçambique. Rastreador do COVID-19 para Moçambique 🇲🇿'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
