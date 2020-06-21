@@ -24,10 +24,25 @@
             class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
           >
             <maps :locations="mapGEOJSON" class="z-30"></maps>
-            <span class="text-gold text-xs pt-3"
-              >*Os pontos no mapa não representam localização exacta dos
-              casos</span
-            >
+            <div class="text-gold text-xs pt-3">
+              *Os pontos no mapa não representam localização exacta dos casos
+              <div class="w-full flex flex-row flex-wrap">
+                <span class="w-5 h-5 bg-red">&nbsp;</span>
+                <span class="text-white text-xs self-center pl-1"
+                  >Infectados</span
+                >
+              </div>
+              <div class="w-full flex flex-row flex-wrap my-1">
+                <span class="w-5 h-5 bg-grey">&nbsp;</span>
+                <span class="text-white text-xs self-center pl-1">Óbitos</span>
+              </div>
+              <div class="w-full flex flex-row flex-wrap">
+                <span class="w-5 h-5 bg-green">&nbsp;</span>
+                <span class="text-white text-xs self-center pl-1"
+                  >Recuperados</span
+                >
+              </div>
+            </div>
           </div>
           <div
             class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
@@ -44,22 +59,42 @@
               class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-10 block xl:hidden provincesMap"
             >
               <maps :locations="mapGEOJSON" class="z-30"></maps>
-              <span class="text-gold text-xs pt-3"
-                >*Os pontos no mapa não representam localização exacta dos
-                casos</span
-              >
+              <div class="text-gold text-xs pt-3">
+                *Os pontos no mapa não representam localização exacta dos casos
+                <div class="flex flex-row flex-wrap">
+                  <div class="w-full flex flex-row flex-wrap">
+                    <span class="w-5 h-5 bg-red">&nbsp;</span>
+                    <span class="text-white text-xs self-center pl-1"
+                      >Confirmados</span
+                    >
+                  </div>
+                  <div class="w-full flex flex-row flex-wrap my-1">
+                    <span class="w-5 h-5 bg-grey">&nbsp;</span>
+                    <span class="text-white text-xs self-center pl-1"
+                      >Óbitos</span
+                    >
+                  </div>
+                  <div class="w-full flex flex-row flex-wrap">
+                    <span class="w-5 h-5 bg-green">&nbsp;</span>
+                    <span class="text-white text-xs self-center pl-1"
+                      >Recuperados</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="w-full md:w-1/2 mt-5 mb-2 order-1 xl:order-2 provinces">
+            <div
+              class="w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
+            >
               <span class="text-white font-bold"
                 >Distribuição <span class="text-gold">Provincial</span> 📍</span
               >
-              <location-stats
-                :places="localPlaces"
-                class="w-full mt-3 mb-5"
-              ></location-stats>
+              <div class="w-full mt-3 mb-5 overflow-auto">
+                <province-distribution :provinces="localPlaces" />
+              </div>
             </div>
             <div
-              class="w-full md:w-1/2 mt-5 order-2 xl:order-3 nearbyCountries"
+              class="w-full lg:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
             >
               <span class="text-white font-bold"
                 >Países <span class="text-gold">Vizinhos</span> 🌍</span
@@ -111,6 +146,7 @@
 <script>
 import Statistics from '~/components/Statistics'
 import LocationStats from '~/components/LocationStats'
+import ProvinceDistribution from '~/components/ProvinceDistribution'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
 export default {
@@ -118,7 +154,8 @@ export default {
     Statistics,
     Maps,
     LocationStats,
-    Chart
+    Chart,
+    ProvinceDistribution
   },
   data: () => ({
     mozGeoJson: require('~/map'),
@@ -234,7 +271,22 @@ export default {
             todayCases: Number.parseInt(
               Number.parseInt(province.confirmed) -
                 Number.parseInt(yesterday.confirmed)
-            )
+            ),
+            active: province.active,
+            todayActive: Number.parseInt(
+              Number.parseInt(province.active) -
+                Number.parseInt(yesterday.active)
+            ),
+            todayRecovered: Number.parseInt(
+              Number.parseInt(province.recovered) -
+                Number.parseInt(yesterday.recovered)
+            ),
+            recovered: province.recovered,
+            todayDeaths: Number.parseInt(
+              Number.parseInt(province.deaths) -
+                Number.parseInt(yesterday.deaths)
+            ),
+            deaths: province.deaths
           }
         })
         .sort((a, b) => {
