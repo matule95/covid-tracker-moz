@@ -160,12 +160,20 @@ export default {
         active: {
           today:
             Number.parseInt(statistics.infected) -
-            Number.parseInt(statistics.recovered),
+            Number.parseInt(statistics.recovered) -
+            Number.parseInt(statistics.deaths) -
+            1,
           variation:
             Number.parseInt(statistics.infected) -
             Number.parseInt(statistics.recovered) -
-            (Number.parseInt(yesterday.infected) -
-              Number.parseInt(yesterday.recovered))
+            [
+              Number.parseInt(yesterday.infected) -
+                Number.parseInt(yesterday.recovered) -
+                [
+                  Number.parseInt(statistics.deaths) -
+                    Number.parseInt(yesterday.deaths)
+                ]
+            ]
         },
         deaths: {
           today: statistics.deaths,
@@ -214,8 +222,8 @@ export default {
         .sort((a, b) => (a.cases > b.cases ? -1 : 1))
     },
     localPlaces() {
-      return this.$store.state.statistics.dailyInformation[0].province_stats.map(
-        province => {
+      return this.$store.state.statistics.dailyInformation[0].province_stats
+        .map(province => {
           const yesterday = this.$store.state.statistics.dailyInformation[1].province_stats.find(
             item => item.province === province.province
           )
@@ -228,8 +236,15 @@ export default {
                 Number.parseInt(yesterday.confirmed)
             )
           }
-        }
-      )
+        })
+        .sort((a, b) => {
+          if (Number.parseInt(a.cases) < Number.parseInt(b.cases)) {
+            return 1
+          }
+          if (Number.parseInt(a.cases) > Number.parseInt(b.cases)) {
+            return -1
+          }
+        })
     },
     mapGEOJSON() {
       const geoJson = {
