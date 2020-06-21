@@ -56,6 +56,7 @@ export default {
             spanGaps: true,
             borderCapStyle: 'round',
             backgroundColor: this.setGradient('#e3342f'),
+            pointRadius: 0,
             datalabels: {
               display: false
             }
@@ -73,6 +74,7 @@ export default {
             spanGaps: true,
             borderCapStyle: 'round',
             backgroundColor: this.setGradient('#5CC1AC'),
+            pointRadius: 0,
             datalabels: {
               display: false
             }
@@ -90,6 +92,7 @@ export default {
             spanGaps: true,
             borderCapStyle: 'round',
             backgroundColor: this.setGradient('#F6C879'),
+            pointRadius: 0,
             datalabels: {
               display: false
             }
@@ -107,6 +110,7 @@ export default {
             spanGaps: true,
             borderCapStyle: 'round',
             backgroundColor: this.setGradient('#8795a1'),
+            pointRadius: 0,
             datalabels: {
               display: false
             }
@@ -120,6 +124,9 @@ export default {
     this.renderChart(this.chartData, {
       responsive: true,
       maintainAspectRatio: false,
+      tooltips: {
+        mode: 'x-axis'
+      },
       scales: {
         xAxes: [
           {
