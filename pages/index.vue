@@ -222,8 +222,8 @@ export default {
         .sort((a, b) => (a.cases > b.cases ? -1 : 1))
     },
     localPlaces() {
-      return this.$store.state.statistics.dailyInformation[0].province_stats.map(
-        province => {
+      return this.$store.state.statistics.dailyInformation[0].province_stats
+        .map(province => {
           const yesterday = this.$store.state.statistics.dailyInformation[1].province_stats.find(
             item => item.province === province.province
           )
@@ -236,8 +236,15 @@ export default {
                 Number.parseInt(yesterday.confirmed)
             )
           }
-        }
-      )
+        })
+        .sort((a, b) => {
+          if (Number.parseInt(a.cases) < Number.parseInt(b.cases)) {
+            return 1
+          }
+          if (Number.parseInt(a.cases) > Number.parseInt(b.cases)) {
+            return -1
+          }
+        })
     },
     mapGEOJSON() {
       const geoJson = {
