@@ -14,7 +14,6 @@ export default {
     this.renderChart(
       {
         plugins: [ChartJsPluginDataLabels],
-
         labels: this.labels,
         datasets: [
           {
@@ -46,6 +45,13 @@ export default {
             fontColor: '#ffffff',
             usePointStyle: true,
             backgroundColor: '#ffffff'
+          }
+        },
+        plugins: {
+          datalabels: {
+            formatter: function(value, context) {
+              return `${value}`
+            }
           }
         }
       }

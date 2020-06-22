@@ -7,7 +7,7 @@ export default {
   props: {
     data: { type: [Array, Object], required: true },
     labels: { type: [Array, Object], required: true },
-    backgroundColor: { type: [Array, Object], required: true }
+    backgroundColor: { type: [Array, Object, String], required: true }
   },
   mounted() {
     this.renderChart(
@@ -21,7 +21,7 @@ export default {
             datalabels: {
               align: 'center',
               borderRadius: 4,
-              color: '#000000',
+              color: '#ffffff',
               font: {
                 weight: 'bold',
                 size: 20
@@ -40,25 +40,9 @@ export default {
             fontFamily: 'CircularStd',
             padding: 20,
             fontColor: '#ffffff',
-            usePointStyle: true,
+            usePointStyle: false,
             backgroundColor: '#ffffff'
           }
-        },
-        scales: {
-          xAxes: [
-            {
-              ticks: {
-                fontSize: 18
-              }
-            }
-          ],
-          yAxes: [
-            {
-              ticks: {
-                fontSize: 18
-              }
-            }
-          ]
         }
       }
     )

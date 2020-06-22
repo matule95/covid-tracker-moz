@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="container h-full" style="max-width: 100%">
+    <section class="container h-full pb-5" style="max-width: 100%">
       <div class="flex flex-wrap flex-col h-full">
         <div class="flex-initial w-full mb-2">
           <h2 class="text-white">COVID-19 - Moçambique</h2>
@@ -108,7 +108,7 @@
         </div>
       </div>
     </section>
-    <ChartsSection class="h-full pt-5" />
+    <ChartsSection class="w-full h-full pt-5" />
     <div
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
     >
