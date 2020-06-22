@@ -3,40 +3,38 @@ import { Bar } from 'vue-chartjs'
 import ChartJsPluginDataLabels from 'chartjs-plugin-datalabels'
 export default {
   extends: Bar,
+  props: {
+    data: { type: [Array, Object], required: true }
+  },
   data: () => ({
-    months: ['Março', 'Abril', 'Maio', 'Junho']
+    ageRange: ['<5', '5-9', '10-19', '20-29', '30-39', '40-49', '50-59', '>60']
   }),
   mounted() {
     this.renderChart(
       {
         plugins: [ChartJsPluginDataLabels],
-        labels: this.months,
+        labels: this.ageRange,
         datasets: [
           {
-            label: 'Testados',
-            backgroundColor: ['#6CD4FF', '#6CD4FF', '#6CD4FF', '#6CD4FF'],
-            data: [267, 1809, 8802, 13470],
+            label: '<5',
+            backgroundColor: [
+              '#89023E',
+              '#57E2E5',
+              '#F6C879',
+              '#ba3131',
+              '#5F5566',
+              '#8CD867',
+              '#12664F',
+              '#624CAB'
+            ],
+            data: this.data,
             datalabels: {
               align: 'center',
               borderRadius: 4,
               color: '#000000',
               font: {
                 weight: 'bold',
-                size: 16
-              }
-            }
-          },
-          {
-            label: 'Positivos',
-            backgroundColor: ['#ba3131', '#ba3131', '#ba3131', '#ba3131'],
-            data: [8, 68, 178, 483],
-            datalabels: {
-              align: 'center',
-              borderRadius: 4,
-              color: '#000000',
-              font: {
-                weight: 'bold',
-                size: 16
+                size: 18
               }
             }
           }
@@ -51,8 +49,8 @@ export default {
             boxWidth: 8,
             fontFamily: 'CircularStd',
             padding: 20,
-            fontColor: '#ffffff',
             fontSize: 16,
+            fontColor: '#ffffff',
             usePointStyle: false,
             backgroundColor: '#ffffff'
           }
@@ -61,7 +59,7 @@ export default {
           xAxes: [
             {
               ticks: {
-                fontSize: 18,
+                fontSize: 14,
                 fontColor: '#ffffff'
               }
             }
@@ -69,7 +67,7 @@ export default {
           yAxes: [
             {
               ticks: {
-                fontSize: 18,
+                fontSize: 16,
                 fontColor: '#ffffff'
               }
             }

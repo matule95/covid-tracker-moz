@@ -52,21 +52,7 @@
       <span class="text-white font-bold mb-3 text-center"
         >Distribuição por <span class="text-gold">Faixa Etária</span></span
       >
-      <BarChart
-        :data="ratioByAgeRange"
-        :labels="ageRange"
-        :backgroundColor="[
-          '#89023E',
-          '#57E2E5',
-          '#F6C879',
-          '#ba3131',
-          '#5F5566',
-          '#8CD867',
-          '#12664F',
-          '#624CAB'
-        ]"
-        class="justify-left h-64 w-full"
-      />
+      <AgeRangeChart :data="ratioByAgeRange" class="justify-left h-64 w-full" />
     </div>
     <div class="flex flex-col lg:w-1/3 pt-4 lg:pt-8">
       <span class="text-white font-bold mb-3 text-center"
@@ -79,48 +65,27 @@
       <span class="text-white font-bold mb-3 text-center"
         >Casos por <span class="text-gold">Semana</span></span
       >
-      <BarChart
-        :data="testWeeks"
-        :labels="weeks"
-        :backgroundColor="'#ba3131'"
-        class="justify-left h-64 w-full"
-      />
+      <WeeklyCasesChart class="justify-left h-64 w-full" />
     </div>
   </div>
 </template>
 
 <script>
+import AgeRangeChart from '~/components/Partials/AgeRangeChart'
 import PieChart from '~/components/PieChart'
-import BarChart from '~/components/Charts/BarChart'
 import TestedAndPositiveChart from '~/components/Partials/TestedAndPositiveChart'
+import WeeklyCasesChart from '~/components/Partials/WeeklyCasesChart'
 export default {
   components: {
-    BarChart,
+    AgeRangeChart,
     PieChart,
-    TestedAndPositiveChart
+    TestedAndPositiveChart,
+    WeeklyCasesChart
   },
   data: () => ({
     symptomatology: ['Assintomático', 'Leve', 'Moderada', 'Grave'],
-    ageRange: ['<5', '5-9', '10-19', '20-29', '30-39', '40-49', '50-59', '>60'],
     genders: ['Masculino', 'Feminino'],
-    origins: ['Moçambicana', 'Outras'],
-    weeks: [
-      '22/03 - 28/03',
-      '29/03 - 04/04',
-      '05/04 - 11/04',
-      '12/04 - 18-04',
-      '19/04 - 25/04',
-      '26/04 - 02/05',
-      '03/05 - 09/05',
-      '10/05 - 16/05',
-      '17/05 - 23/05',
-      '24/05 - 30/05',
-      '31/05 - 06/06',
-      '07/06 - 13/06',
-      '14/06 - 20/06',
-      '21/06 - 27/06'
-    ],
-    testWeeks: [8, 2, 10, 15, 35, 9, 8, 42, 39, 76, 165, 144, 135, 49]
+    origins: ['Moçambicana', 'Outras']
   }),
   computed: {
     weeklyInformation() {
