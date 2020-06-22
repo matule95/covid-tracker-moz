@@ -65,7 +65,7 @@
                   <div class="w-full flex flex-row flex-wrap">
                     <span class="w-5 h-5 bg-red">&nbsp;</span>
                     <span class="text-white text-xs self-center pl-1"
-                      >Confirmados</span
+                      >Infectados</span
                     >
                   </div>
                   <div class="w-full flex flex-row flex-wrap my-1">

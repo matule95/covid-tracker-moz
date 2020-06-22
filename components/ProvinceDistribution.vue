@@ -34,7 +34,8 @@
           <span
             v-if="province.todayCases !== 0"
             class="pl-2 text-red text-xs font-bold"
-            >+{{ formatNumbers(province.todayCases) }}
+            ><span v-if="province.todayCases > 0">+</span
+            >{{ formatNumbers(province.todayCases) }}
           </span>
         </td>
         <td>
@@ -42,7 +43,8 @@
           <span
             v-if="province.todayActive !== 0"
             class="pl-2 text-gold text-xs font-bold"
-            >+{{ formatNumbers(province.todayActive) }}
+            ><span v-if="province.todayActive > 0">+</span
+            >{{ formatNumbers(province.todayActive) }}
           </span>
         </td>
         <td>
@@ -50,7 +52,8 @@
           <span
             v-if="province.todayDeaths !== 0"
             class="pl-2 text-grey text-xs font-bold"
-            >+{{ formatNumbers(province.todayDeaths) }}
+            ><span v-if="province.todayDeaths > 0">+</span
+            >{{ formatNumbers(province.todayDeaths) }}
           </span>
         </td>
         <td>
@@ -58,7 +61,8 @@
           <span
             v-if="province.todayRecovered !== 0"
             class="pl-2 text-green text-xs"
-            >+{{ formatNumbers(province.todayRecovered) }}
+            ><span v-if="province.todayRecovered > 0">+</span
+            >{{ formatNumbers(province.todayRecovered) }}
           </span>
         </td>
       </tr>
