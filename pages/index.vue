@@ -199,7 +199,7 @@ export default {
             Number.parseInt(statistics.infected) -
             Number.parseInt(statistics.recovered) -
             Number.parseInt(statistics.deaths) -
-            1,
+            2,
           variation:
             Number.parseInt(statistics.infected) -
             Number.parseInt(statistics.recovered) -
