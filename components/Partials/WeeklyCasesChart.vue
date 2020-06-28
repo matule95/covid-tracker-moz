@@ -30,30 +30,31 @@ export default {
           {
             label: 'N° de Casos',
             backgroundColor: [
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6',
-              '#93B5C6'
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F',
+              '#7F055F'
             ],
             data: [8, 2, 10, 15, 35, 9, 8, 42, 39, 76, 165, 144, 135, 49],
             datalabels: {
               align: 'center',
               borderRadius: 4,
-              color: '#000000',
+              color: '#ffffff',
               font: {
                 weight: 'bold',
                 size: 18
-              }
+              },
+              anchor: 'end'
             }
           }
         ]

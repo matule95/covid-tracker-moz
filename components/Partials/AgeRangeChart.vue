@@ -20,10 +20,10 @@ export default {
             backgroundColor: [
               '#89023E',
               '#57E2E5',
-              '#F6C879',
+              '#7D4E57',
               '#ba3131',
               '#5F5566',
-              '#8CD867',
+              '#586A6A',
               '#12664F',
               '#624CAB'
             ],
@@ -31,11 +31,12 @@ export default {
             datalabels: {
               align: 'center',
               borderRadius: 4,
-              color: '#000000',
+              color: '#ffffff',
               font: {
                 weight: 'bold',
                 size: 18
-              }
+              },
+              anchor: 'end'
             }
           }
         ]
@@ -53,7 +54,8 @@ export default {
             fontColor: '#ffffff',
             usePointStyle: false,
             backgroundColor: '#ffffff'
-          }
+          },
+          display: false
         },
         scales: {
           xAxes: [

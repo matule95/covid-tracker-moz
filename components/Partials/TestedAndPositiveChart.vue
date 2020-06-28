@@ -14,16 +14,17 @@ export default {
         datasets: [
           {
             label: 'Testados',
-            backgroundColor: ['#6CD4FF', '#6CD4FF', '#6CD4FF', '#6CD4FF'],
+            backgroundColor: ['#1B4079', '#1B4079', '#1B4079', '#1B4079'],
             data: [267, 1809, 8802, 13470],
             datalabels: {
               align: 'center',
               borderRadius: 4,
-              color: '#000000',
+              color: '#ffffff',
               font: {
                 weight: 'bold',
                 size: 16
-              }
+              },
+              anchor: 'end'
             }
           },
           {
@@ -33,11 +34,12 @@ export default {
             datalabels: {
               align: 'center',
               borderRadius: 4,
-              color: '#000000',
+              color: '#ffffff',
               font: {
                 weight: 'bold',
-                size: 16
-              }
+                size: 14
+              },
+              anchor: 'end'
             }
           }
         ]
@@ -61,7 +63,7 @@ export default {
           xAxes: [
             {
               ticks: {
-                fontSize: 18,
+                fontSize: 14,
                 fontColor: '#ffffff'
               }
             }
@@ -69,7 +71,7 @@ export default {
           yAxes: [
             {
               ticks: {
-                fontSize: 18,
+                fontSize: 16,
                 fontColor: '#ffffff'
               }
             }
