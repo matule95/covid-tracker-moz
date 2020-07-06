@@ -3,43 +3,41 @@ import { Bar } from 'vue-chartjs'
 import ChartJsPluginDataLabels from 'chartjs-plugin-datalabels'
 export default {
   extends: Bar,
-  data: () => ({
-    months: ['Março', 'Abril', 'Maio', 'Junho']
-  }),
+  props: {
+    chartData: { type: [Array, Object], required: true }
+  },
   mounted() {
     this.renderChart(
       {
         plugins: [ChartJsPluginDataLabels],
-        labels: this.months,
+        labels: this.chartData.labels,
         datasets: [
           {
             label: 'Testados',
-            backgroundColor: ['#1B4079', '#1B4079', '#1B4079', '#1B4079'],
-            data: [267, 1809, 8802, 13470],
+            backgroundColor: '#8c79f6',
+            data: this.chartData.tested,
             datalabels: {
-              align: 'center',
+              align: 'top',
               borderRadius: 4,
               color: '#ffffff',
               font: {
                 weight: 'bold',
-                size: 16
-              },
-              anchor: 'end'
+                fontSize: 12
+              }
             }
           },
           {
             label: 'Positivos',
-            backgroundColor: ['#ba3131', '#ba3131', '#ba3131', '#ba3131'],
-            data: [8, 68, 178, 483],
+            backgroundColor: '#e84a5f',
+            data: this.chartData.cases,
             datalabels: {
-              align: 'center',
+              align: 'top',
               borderRadius: 4,
               color: '#ffffff',
               font: {
                 weight: 'bold',
-                size: 14
-              },
-              anchor: 'end'
+                fontSize: 12
+              }
             }
           }
         ]
@@ -63,16 +61,29 @@ export default {
           xAxes: [
             {
               ticks: {
-                fontSize: 14,
+                fontSize: 13,
+                fontFamily: 'CircularStd',
                 fontColor: '#ffffff'
+              },
+              stacked: false,
+              gridLines: {
+                color: '#333639',
+                borderDash: [3, 3],
+                zeroLineColor: 'transparent'
               }
             }
           ],
           yAxes: [
             {
               ticks: {
-                fontSize: 16,
-                fontColor: '#ffffff'
+                fontSize: 13,
+                fontFamily: 'CircularStd'
+              },
+              stacked: false,
+              gridLines: {
+                color: '#333639',
+                borderDash: [3, 3],
+                zeroLineColor: 'transparent'
               }
             }
           ]

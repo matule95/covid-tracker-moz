@@ -4,37 +4,34 @@ import ChartJsPluginDataLabels from 'chartjs-plugin-datalabels'
 export default {
   extends: Bar,
   props: {
-    data: { type: [Array, Object], required: true }
+    chartData: { type: [Array, Object], required: true }
   },
-  data: () => ({
-    ageRange: ['<5', '5-9', '10-19', '20-29', '30-39', '40-49', '50-59', '>60']
-  }),
   mounted() {
     this.renderChart(
       {
         plugins: [ChartJsPluginDataLabels],
-        labels: this.ageRange,
+        labels: this.chartData.labels,
         datasets: [
           {
             label: '<5',
             backgroundColor: [
-              '#89023E',
-              '#57E2E5',
-              '#7D4E57',
-              '#ba3131',
-              '#5F5566',
-              '#586A6A',
-              '#12664F',
-              '#624CAB'
+              '#99b898',
+              '#feceab',
+              '#ff847c',
+              '#e84a5f',
+              '#0e9aa7',
+              '#a2de96',
+              '#f6cd61',
+              '#fe8a71'
             ],
-            data: this.data,
+            data: this.chartData.data,
             datalabels: {
-              align: 'center',
+              align: 'top',
               borderRadius: 4,
               color: '#ffffff',
               font: {
                 weight: 'bold',
-                size: 18
+                fontSize: 12
               },
               anchor: 'end'
             }
@@ -54,23 +51,35 @@ export default {
             fontColor: '#ffffff',
             usePointStyle: false,
             backgroundColor: '#ffffff'
-          },
-          display: false
+          }
         },
         scales: {
           xAxes: [
             {
               ticks: {
-                fontSize: 14,
+                fontSize: 13,
+                fontFamily: 'CircularStd',
                 fontColor: '#ffffff'
+              },
+              stacked: false,
+              gridLines: {
+                color: '#333639',
+                borderDash: [3, 3],
+                zeroLineColor: 'transparent'
               }
             }
           ],
           yAxes: [
             {
               ticks: {
-                fontSize: 16,
-                fontColor: '#ffffff'
+                fontSize: 13,
+                fontFamily: 'CircularStd'
+              },
+              stacked: false,
+              gridLines: {
+                color: '#333639',
+                borderDash: [3, 3],
+                zeroLineColor: 'transparent'
               }
             }
           ]
