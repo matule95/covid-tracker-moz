@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="container h-full" style="max-width: 100%">
+    <section class="container h-full pb-5" style="max-width: 100%">
       <div class="flex flex-wrap flex-col h-full">
         <div class="flex-initial w-full mb-2">
           <h2 class="text-white">COVID-19 - Moçambique</h2>
@@ -16,7 +16,7 @@
           <statistics :stats="dashboardStats"></statistics>
           <span class="text-gold text-xs pt-3"
             >*O número em amarelo representa a diferença comparativamente ao dia
-            anterior</span
+            de ontem.</span
           >
         </div>
         <div class="w-full flex-grow flex flex-row flex-wrap">
@@ -94,20 +94,34 @@
               </div>
             </div>
             <div
-              class="w-full lg:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
+              class="w-full flex flex-wrap flex-row lg:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
             >
-              <span class="text-white font-bold"
-                >Países <span class="text-gold">Vizinhos</span> 🌍</span
-              >
-              <location-stats
-                :places="places"
-                class="w-full mt-3 mb-5"
-              ></location-stats>
+              <div class="w-full flex flex-row flex-wrap">
+                <span class="text-white font-bold mb-10 text-center w-full"
+                  >Distribuição por <span class="text-gold">Sexo</span></span
+                >
+                <PieChart
+                  :chart-data="genderDistribution"
+                  class="justify-left h-64 w-full flex flex-wrap justify-center content-center items-center"
+                />
+              </div>
+              <div class="w-full flex flex-row flex-wrap mt-16">
+                <span class="text-white font-bold mb-10 text-center w-full"
+                  >Distribuição por
+                  <span class="text-gold">Nacionalidade</span></span
+                >
+                <PieChart
+                  :chart-data="originDistribution"
+                  :background-color="['#F6C879', '#A7D3A6']"
+                  class="justify-left h-64 w-full flex flex-wrap justify-center content-center items-center"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <ChartsSection class="w-full h-full pt-5" />
     <div
       class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
     >
@@ -144,36 +158,24 @@
 </template>
 
 <script>
+import ChartsSection from '~/components/Partials/ChartsSection'
+import PieChart from '~/components/PieChart'
 import Statistics from '~/components/Statistics'
-import LocationStats from '~/components/LocationStats'
 import ProvinceDistribution from '~/components/ProvinceDistribution'
 import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
 export default {
   components: {
+    ChartsSection,
     Statistics,
     Maps,
-    LocationStats,
+    PieChart,
     Chart,
     ProvinceDistribution
   },
   data: () => ({
     mozGeoJson: require('~/map'),
-    provinces: require('~/provinces'),
-    neighbourCountries: [
-      'South Africa',
-      'Tanzania',
-      'Swaziland',
-      'Zimbabwe',
-      'Malawi',
-      'Zambia'
-    ],
-    ratioByGender: [66, 13],
-    ratioByOrigin: [48, 31],
-    ratioBySintomology: [59, 18, 2, 0],
-    sintomology: ['Assintomático', 'Leve', 'Moderada', 'Grave'],
-    genders: ['Masculino', 'Feminino'],
-    origins: ['Moçambicana', 'Outras']
+    provinces: require('~/provinces')
   }),
   computed: {
     dashboardStats() {
@@ -244,20 +246,6 @@ export default {
     latestUpdateTime() {
       return this.$store.state.statistics.dailyInformation[0].updatedAt
     },
-    places() {
-      return this.$store.state.locations.all
-        .map(item => {
-          return {
-            name: item.country,
-            cases: item.cases,
-            flag: item.countryInfo.flag,
-            todayCases: item.todayCases,
-            continent: item.continent
-          }
-        })
-        .filter(item => this.neighbourCountries.includes(item.name))
-        .sort((a, b) => (a.cases > b.cases ? -1 : 1))
-    },
     localPlaces() {
       return this.$store.state.statistics.dailyInformation[0].province_stats
         .map(province => {
@@ -325,11 +313,37 @@ export default {
     },
     chartData() {
       return this.$store.state.statistics.dailyInformation
+    },
+    genderDistribution() {
+      const newRatioByGender = {
+        data: [],
+        labels: []
+      }
+      const gender = this.$store.state.statistics.weeklyInformation
+        .genderDistribution
+      gender.forEach(item => {
+        newRatioByGender.labels.push(item.gender)
+        newRatioByGender.data.push(item.cases)
+      })
+      return newRatioByGender
+    },
+    originDistribution() {
+      const newRatioByOrigin = {
+        data: [],
+        labels: []
+      }
+      const gender = this.$store.state.statistics.weeklyInformation
+        .originDistribution
+      gender.forEach(item => {
+        newRatioByOrigin.labels.push(item.gender)
+        newRatioByOrigin.data.push(item.cases)
+      })
+      return newRatioByOrigin
     }
   },
   async fetch({ store }) {
-    await store.dispatch('locations/fetchItems')
     await store.dispatch('statistics/fetchDailyInformation')
+    await store.dispatch('statistics/fetchWeeklyInformation')
   },
   methods: {
     getFlag(province) {
