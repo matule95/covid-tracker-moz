@@ -5,20 +5,21 @@ import ChartJsPluginDataLabels from 'chartjs-plugin-datalabels'
 export default {
   extends: Pie,
   props: {
-    data: { type: [Array, Object], required: true },
-    labels: { type: [Array, Object], required: true },
-    backgroundColor: { type: [Array, Object], required: true }
+    chartData: { type: [Array, Object], required: true },
+    backgroundColor: { type: [Array], default: () => null },
+    customFormat: { type: String, default: '' }
   },
   mounted() {
     this.renderChart(
       {
         plugins: [ChartJsPluginDataLabels],
-
-        labels: this.labels,
+        labels: this.chartData.labels,
         datasets: [
           {
-            backgroundColor: this.backgroundColor,
-            data: this.data,
+            backgroundColor: this.backgroundColor
+              ? this.backgroundColor
+              : ['#57E2E5', '#E08DAC'],
+            data: this.chartData.data,
             datalabels: {
               align: 'center',
               anchor: 'top',
@@ -26,7 +27,7 @@ export default {
               color: '#000000',
               font: {
                 weight: 'bold',
-                size: 20
+                size: 14
               }
             }
           }
@@ -38,12 +39,19 @@ export default {
         legend: {
           position: 'bottom',
           labels: {
-            boxWidth: 8,
+            boxWidth: 7,
             fontFamily: 'CircularStd',
+            fontSize: 12,
             padding: 20,
             fontColor: '#ffffff',
-            usePointStyle: true,
-            backgroundColor: '#ffffff'
+            usePointStyle: true
+          }
+        },
+        plugins: {
+          datalabels: {
+            formatter: function(value, context) {
+              return `${value}`
+            }
           }
         }
       }
