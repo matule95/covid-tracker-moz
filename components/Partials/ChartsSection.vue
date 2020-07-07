@@ -28,6 +28,12 @@
         class="justify-left w-full pt-10"
       />
     </div>
+    <div class="flex flex-wrap flex-row w-full">
+      <span class="text-gold text-xs pt-3"
+        >*Alguns dos gráficos apresentados acima são actualizados no início de
+        cada semana e não diariamente.</span
+      >
+    </div>
   </div>
 </template>
 
