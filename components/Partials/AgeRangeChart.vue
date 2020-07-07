@@ -6,37 +6,40 @@ export default {
   props: {
     chartData: { type: [Array, Object], required: true }
   },
+  data: () => ({
+    bgColors: [
+      '#99b898',
+      '#feceab',
+      '#ff847c',
+      '#e84a5f',
+      '#0e9aa7',
+      '#a2de96',
+      '#f6cd61',
+      '#fe8a71'
+    ]
+  }),
   mounted() {
+    const datasets = this.chartData.data.map((item, index) => {
+      return {
+        label: this.chartData.labels[index],
+        backgroundColor: this.bgColors[index],
+        data: [item],
+        datalabels: {
+          align: 'top',
+          borderRadius: 4,
+          color: '#ffffff',
+          font: {
+            weight: 'bold',
+            fontSize: 12
+          },
+          anchor: 'end'
+        }
+      }
+    })
     this.renderChart(
       {
         plugins: [ChartJsPluginDataLabels],
-        labels: this.chartData.labels,
-        datasets: [
-          {
-            label: '<5',
-            backgroundColor: [
-              '#99b898',
-              '#feceab',
-              '#ff847c',
-              '#e84a5f',
-              '#0e9aa7',
-              '#a2de96',
-              '#f6cd61',
-              '#fe8a71'
-            ],
-            data: this.chartData.data,
-            datalabels: {
-              align: 'top',
-              borderRadius: 4,
-              color: '#ffffff',
-              font: {
-                weight: 'bold',
-                fontSize: 12
-              },
-              anchor: 'end'
-            }
-          }
-        ]
+        datasets
       },
       {
         responsive: true,
