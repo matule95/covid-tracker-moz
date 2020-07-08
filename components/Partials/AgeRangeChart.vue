@@ -39,7 +39,8 @@ export default {
     this.renderChart(
       {
         plugins: [ChartJsPluginDataLabels],
-        datasets
+        datasets,
+        labels: ['Idade']
       },
       {
         responsive: true,

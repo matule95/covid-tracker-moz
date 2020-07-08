@@ -1,7 +1,7 @@
 <template>
-  <l-map :zoom="6" :center="[-18.6696553, 35.5273354]">
+  <l-map :zoom="6" :center="[-18.6696553, 35.5273354]" :max-bounds="maxBounds">
     <l-tile-layer
-      url="https://api.mapbox.com/styles/v1/matule/ck94rgiyu21wy1itbehq23za6/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWF0dWxlIiwiYSI6ImNrOTRyZTFkZTAya3gzbHFwOHgxN3ViYWMifQ.l_H5aQ85wmhyMEK0qFwf2A"
+      url="https://api.mapbox.com/styles/v1/hozzah95/ckcceqz5l0yo71io91yjt0ypu/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaG96emFoOTUiLCJhIjoiY2tjY2VoY2Z0MDN4OTJ0cGdxbDAxcXJ0ZSJ9.y1SsevyWmOJmcOUhpri9Og"
     ></l-tile-layer>
     <!-- <l-marker :lat-lng="[-25.9692, 32.5732]"></l-marker> -->
     <l-geo-json
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { latLngBounds } from 'leaflet'
 export default {
   props: {
     locations: {
@@ -20,6 +21,16 @@ export default {
       required: true
     }
   },
+  data: () => ({
+    bounds: latLngBounds([
+      [-28.875855, 29.273413],
+      [-10.36705, 42.954591]
+    ]),
+    maxBounds: latLngBounds([
+      [-28.875855, 29.273413],
+      [-10.36705, 42.954591]
+    ])
+  }),
   computed: {
     options() {
       return {
