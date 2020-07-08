@@ -40,7 +40,7 @@ export default {
       {
         plugins: [ChartJsPluginDataLabels],
         datasets,
-        labels: ['']
+        labels: ['Idade']
       },
       {
         responsive: true,
