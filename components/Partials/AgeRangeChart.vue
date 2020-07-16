@@ -25,14 +25,13 @@ export default {
         backgroundColor: this.bgColors[index],
         data: [item],
         datalabels: {
-          align: 'top',
+          align: 'middle',
           borderRadius: 4,
           color: '#ffffff',
           font: {
             weight: 'bold',
             fontSize: 12
-          },
-          anchor: 'end'
+          }
         }
       }
     })

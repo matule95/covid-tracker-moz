@@ -17,7 +17,7 @@ export default {
             backgroundColor: '#8c79f6',
             data: this.chartData.tested,
             datalabels: {
-              align: 'top',
+              align: 'middle',
               borderRadius: 4,
               color: '#ffffff',
               font: {
@@ -31,7 +31,7 @@ export default {
             backgroundColor: '#e84a5f',
             data: this.chartData.cases,
             datalabels: {
-              align: 'top',
+              align: 'middle',
               borderRadius: 4,
               color: '#ffffff',
               font: {
