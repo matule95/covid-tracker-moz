@@ -17,14 +17,13 @@ export default {
             backgroundColor: '#e84a5f',
             data: this.chartData.data,
             datalabels: {
-              align: 'top',
+              align: 'middle',
               borderRadius: 4,
               color: '#ffffff',
               font: {
                 weight: 'bold',
                 fontSize: 12
-              },
-              anchor: 'end'
+              }
             }
           }
         ]
