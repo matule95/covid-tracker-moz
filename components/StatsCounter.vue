@@ -18,8 +18,7 @@
       >
         {{ stats.value || 0 }}
         <span v-if="stats.today" class="ml-2 text-gold text-sm self-center"
-          ><span v-if="absolute || stats.today > 0">+</span
-          >{{ stats.today }}</span
+          ><span v-if="stats.today > 0">+</span>{{ stats.today }}</span
         >
       </div>
     </div>
