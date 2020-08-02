@@ -1,0 +1,82 @@
+{
+  "dashboard": {
+    "labels": {
+      "tested": "Testados",
+      "infected": "Infectados",
+      "actives": "Activos",
+      "deaths": "Óbitos",
+      "recovered": "Recuperados",
+      "local_transmissions": "Trans. Local",
+      "foreign_transmission": "C. Importados"
+    },
+    "titles": {
+      "main_title": "COVID-19 - Moçambique"
+    },
+    "descriptions": {
+      "recent_update": "Última actualização",
+      "source": "Fonte",
+      "today_warning": "O número em amarelo representa a diferença comparativamente ao dia de ontem",
+      "death_Warning": "Tem 2 óbitos por outras causas que não foram incluídos"
+    }
+  },
+  "progress_chart": {
+    "title": "Progresso dos casos",
+    "infected": "Infectados",
+    "recovered": "Recuperados",
+    "actives": "Activos",
+    "deaths": "Óbitos"
+  },
+  "map": {
+    "labels": {
+      "infected": "Infectados",
+      "recovered": "Recuperados",
+      "deaths": "Óbitos"
+    },
+    "descriptions": {
+      "map_warning": "Os pontos no mapa não representam localização exacta dos casos",
+      "infected": "Infectados",
+      "recovered": "Recuperados",
+      "deaths": "Óbitos"
+    }
+  },
+  "charts": {
+    "province_distribution": {
+      "title": "Distribuição Provincial",
+      "infected": "Infectados",
+      "recovered": "Recuperados",
+      "actives": "Activos",
+      "deaths": "Óbitos"
+    },
+    "gender_chart": {
+      "title": "Distribuição por Sexo",
+      "male": "Masculino",
+      "female": "Feminino"
+    },
+    "nationality_gender": {
+      "title": "Distribuição por Nacionalidade",
+      "mozambican": "Moçambicana",
+      "foreign": "Estrangeira"
+    },
+    "age_chart": {
+      "title": "Distribuição por Faixa Etária"
+    },
+    "monthly_cases_chart": {
+      "title": "Cumulativo de Testados e Positivos Mensalmente",
+      "tested": "Testados",
+      "infected": "Infectados"
+    },
+    "weekly_cases_chart": {
+      "title": "Casos Infectados por Semana",
+      "number_of_cases": "N° de Casos"
+    },
+    "description": "Alguns dos gráficos apresentados acima são actualizados no início de cada semana e não diariamente"
+  },
+  "footer": {
+    "title": "Ajude-nos a combater a COVID-19!",
+    "description1": "Além dos",
+    "prevention_link": "métodos de prevenção indicados pelo INS",
+    "description2": "a nossa única maneira de ajudar a impedir a propagação da COVID-19 é através da codificação de aplicativos. Essa é a parte mais fácil. O difícil é obter informações locais confiáveis portanto precisamos da sua ajuda para que possamos manter as pessoas conscientes do que está a acontecer.",
+    "contacts": "Contacte-nos em",
+    "made_by": "Feito com ❤️ por"
+  }
+}

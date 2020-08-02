@@ -1,0 +1,83 @@
+{
+  "dashboard": {
+    "labels": {
+      "tested": "Tested",
+      "infected": "Infected",
+      "actives": "Active",
+      "deaths": "Deaths",
+      "recovered": "Recovered",
+      "local_transmissions": "Local Trans.",
+      "foreign_transmission": "Imported Cases"
+    },
+    "titles": {
+      "main_title": "COVID-19 - Moçambique"
+    },
+    "descriptions": {
+      "recent_update": "Last Update:",
+      "source": "Source",
+      "today_warning": "The number in yellow represents the difference between today and yesterday",
+      "death_Warning": "There are 2 deaths by other causes that were not included"
+    }
+  },
+  "progress_chart": {
+    "title": "Progress of cases",
+    "infected": "Infected",
+    "recovered": "Recovered",
+    "actives": "Actives",
+    "deaths": "Deaths"
+  },
+  "map": {
+    "labels": {
+      "infected": "Infected",
+      "recovered": "Recovered",
+      "deaths": "Deaths"
+    },
+    "descriptions": {
+      "map_warning": "The points on the map do not represent the exact location of cases",
+      "infected": "Infected",
+      "recovered": "Recovered",
+      "deaths": "Deaths"
+    }
+  },
+  "charts": {
+    "province_distribution": {
+      "title": "Province Distribution",
+      "infected": "Infected",
+      "recovered": "Recovered",
+      "actives": "Actives",
+      "deaths": "Deaths"
+    },
+    "gender_chart": {
+      "title": "Distribution by Gender",
+      "male": "Male",
+      "female": "Female"
+    },
+    "nationality_gender": {
+      "title": "Distribution by Nationality",
+      "mozambican": "Mozambican",
+      "foreign": "Foreign"
+    },
+    "age_chart": {
+      "title": "Distribution by Age Range"
+    },
+    "monthly_cases_chart": {
+      "title": "Monthly Cumulative Number of Tested And Infected",
+      "tested": "Tested",
+      "infected": "Infected"
+    },
+    "weekly_cases_chart": {
+      "title": "Weekly Number of Infected Cases",
+      "number_of_cases": "Number of Cases"
+    },
+    "description": "Some charts are updated weekly and not daily"
+  },
+  "footer": {
+    "title": "Help us fight COVID-19!",
+    "description1": "Besides the",
+    "prevention_link": "prevention methods provided by INS",
+    "description2": "our only way to help reduce COVID-19 from spreading is thru coding. That's the easy part. The difficult part is to obtain trustworthy data, so we need your help to keep people aware of what's happening.",
+    "contacts": "Contact us on",
+    "made_by": "Made with ❤️ by"
+  }
+
+}
