@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap justify-between">
-    <div class="w-1/5 sm:w-1/3 self-center flex">
+    <div class="xxs:w-1/5 xs:w-1/4 sm:w-1/3 self-center flex">
       <div
         :class="getClassName"
         :style="getStyles"
@@ -9,7 +9,9 @@
         <slot name="icon"></slot>
       </div>
     </div>
-    <div class="w-4/5 sm:w-2/3 flex flex-wrap self-center">
+    <div
+      class="xxs:w-4/5 xs:w-3/4 xs:pl-2 sm:pl-0 sm:w-2/3 flex flex-wrap self-center"
+    >
       <div class="w-full mb-1">
         <span class="text-md text-white">{{ stats.label || '' }}</span>
         <span v-if="stats.type === 'deaths'" class="text-red">*</span>
