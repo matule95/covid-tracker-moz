@@ -18,6 +18,19 @@
             >*O número em amarelo representa a diferença comparativamente ao dia
             de ontem.</span
           >
+          <span class="flex text-red text-xs pt-3"
+            >* Tem 2 óbitos por outras causas que não foram incluídos</span
+          >
+        </div>
+        <div
+          class="block lg:hidden w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 lg:provinces"
+        >
+          <span class="text-white font-bold"
+            >Distribuição <span class="text-gold">Provincial</span> 📍</span
+          >
+          <div class="w-full mt-3 mb-5 overflow-auto">
+            <province-distribution :provinces="localPlaces" />
+          </div>
         </div>
         <div class="w-full flex-grow flex flex-row flex-wrap">
           <div
@@ -84,7 +97,7 @@
               </div>
             </div>
             <div
-              class="w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
+              class="hidden lg:block w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
             >
               <span class="text-white font-bold"
                 >Distribuição <span class="text-gold">Provincial</span> 📍</span
