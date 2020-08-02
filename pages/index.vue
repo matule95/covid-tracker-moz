@@ -9,7 +9,7 @@
           <p class="text-white">
             Última actualização: {{ latestUpdateDate }} às
             {{ latestUpdateTime }} - Fonte:
-            <a class="text-gold" href="https://covid19.ins.gov.mz/">INS</a>
+            <a class="text-gold" href="http://www.misau.gov.mz/">MISAU</a>
           </p>
         </div>
         <div class="w-full my-5">
