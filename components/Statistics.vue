@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-wrap flex-1">
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6">
+    <div class="xxs:w-full w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6">
       <stats-counter
         :stats="{
           type: 'countries',
@@ -28,7 +28,7 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6">
+    <div class="xxs:w-full w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 md:mt-0">
       <stats-counter
         :stats="{
           type: 'infected',
@@ -57,7 +57,7 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 md:mt-0">
+    <div class="xxs:w-full w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 md:mt-0">
       <stats-counter
         :stats="{
           type: 'active',
@@ -103,7 +103,7 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 md:mt-0">
+    <div class="xxs:w-full w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 md:mt-0">
       <stats-counter
         :stats="{
           type: 'deaths',
@@ -141,7 +141,7 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
+    <div class="xxs:w-full w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
       <stats-counter
         :stats="{
           type: 'recovered',
@@ -169,7 +169,7 @@
         </template>
       </stats-counter>
     </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 xxl:mt-0">
+    <div class="xxs:w-full w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 xxl:mt-0">
       <StatsCounter
         :stats="{
           type: 'local_transmissions',
@@ -198,7 +198,7 @@
         </template>
       </StatsCounter>
     </div>
-    <div class="w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5">
+    <div class="xxs:w-full w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5">
       <StatsCounter
         :stats="{
           type: 'foreign_transmission',

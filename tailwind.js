@@ -167,6 +167,8 @@ module.exports = {
   */
 
   screens: {
+    xxs: '280px',
+    xs: '480px',
     sm: '576px',
     md: '768px',
     lg: '992px',
@@ -409,7 +411,12 @@ module.exports = {
   |
   */
 
-  borderColors: global.Object.assign({ default: colors['grey-light'] }, colors),
+  borderColors: global.Object.assign(
+    {
+      default: colors['grey-light']
+    },
+    colors
+  ),
 
   /*
   |-----------------------------------------------------------------------------
