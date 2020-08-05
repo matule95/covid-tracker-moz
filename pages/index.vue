@@ -19,7 +19,8 @@
             de ontem.</span
           >
           <span class="flex text-red text-xs pt-3"
-            >* Tem 2 óbitos por outras causas que não foram incluídos</span
+            >* {{ otherDeaths }} óbitos por outras causas não foram
+            incluídos.</span
           >
         </div>
         <div
@@ -250,6 +251,10 @@ export default {
             Number.parseInt(yesterday.foreign_transmissions)
         }
       }
+    },
+    otherDeaths() {
+      return this.$store.state.statistics.dailyInformation[0].country_stats
+        .other_deaths
     },
     latestUpdateDate() {
       return this.$store.state.statistics.dailyInformation[0].date
