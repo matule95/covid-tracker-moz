@@ -30,39 +30,47 @@
           </div>
         </td>
         <td>
-          <span class="pl-5 text-white">{{ province.cases }} </span>
+          <span class="pl-5 text-white"
+            >{{ formatValue(province.cases) }}
+          </span>
           <span
             v-if="province.todayCases !== 0"
             class="pl-2 text-red text-xs font-bold"
             ><span v-if="province.todayCases > 0">+</span
-            >{{ formatNumbers(province.todayCases) }}
+            >{{ formatValue(province.todayCases) }}
           </span>
         </td>
         <td>
-          <span class="pl-5 text-white">{{ province.active }} </span>
+          <span class="pl-5 text-white"
+            >{{ formatValue(province.active) }}
+          </span>
           <span
             v-if="province.todayActive !== 0"
             class="pl-2 text-gold text-xs font-bold"
             ><span v-if="province.todayActive > 0">+</span
-            >{{ formatNumbers(province.todayActive) }}
+            >{{ formatValue(province.todayActive) }}
           </span>
         </td>
         <td>
-          <span class="pl-5 text-white">{{ province.deaths }} </span>
+          <span class="pl-5 text-white"
+            >{{ formatValue(province.deaths) }}
+          </span>
           <span
             v-if="province.todayDeaths !== 0"
             class="pl-2 text-grey text-xs font-bold"
             ><span v-if="province.todayDeaths > 0">+</span
-            >{{ formatNumbers(province.todayDeaths) }}
+            >{{ formatValue(province.todayDeaths) }}
           </span>
         </td>
         <td>
-          <span class="pl-5 text-white">{{ province.recovered }} </span>
+          <span class="pl-5 text-white"
+            >{{ formatValue(province.recovered) }}
+          </span>
           <span
             v-if="province.todayRecovered !== 0"
             class="pl-2 text-green text-xs"
             ><span v-if="province.todayRecovered > 0">+</span
-            >{{ formatNumbers(province.todayRecovered) }}
+            >{{ formatValue(province.todayRecovered) }}
           </span>
         </td>
       </tr>
@@ -79,8 +87,8 @@ export default {
     }
   },
   methods: {
-    formatNumbers(value) {
-      return new Intl.NumberFormat('es-ES').format(value)
+    formatValue(value) {
+      return new Intl.NumberFormat('de-DE').format(value)
     }
   }
 }

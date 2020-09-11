@@ -19,9 +19,10 @@
       <div
         class="w-full text-2xl text-white font-semibold flex flex-wap flex-row"
       >
-        {{ stats.value || 0 }}
+        {{ formatValue(stats.value) || 0 }}
         <span v-if="stats.today" class="ml-2 text-gold text-sm self-center"
-          ><span v-if="stats.today > 0">+</span>{{ stats.today }}</span
+          ><span v-if="stats.today > 0">+</span
+          >{{ formatValue(stats.today) }}</span
         >
       </div>
     </div>
@@ -49,6 +50,7 @@ export default {
         className['bg-blue'] = true
       else if (this.stats.type === 'foreign_transmission')
         className['bg-orange'] = true
+      else if (this.stats.type === 'hospitalized') className['bg-green'] = true
       return className
     },
     getStyles() {
@@ -67,7 +69,14 @@ export default {
         style.boxShadow = '0px 0px 15px -2px #3490dc'
       else if (this.stats.type === 'foreign_transmission')
         style.boxShadow = '0px 0px 15px -2px #f6993f'
+      else if (this.stats.type === 'hospitalized')
+        style.boxShadow = '0px 0px 15px -2px #5CC1AC'
       return style
+    }
+  },
+  methods: {
+    formatValue(value) {
+      return new Intl.NumberFormat('de-DE').format(value)
     }
   }
 }

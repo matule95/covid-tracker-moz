@@ -15,8 +15,8 @@
         <div class="w-full my-5">
           <statistics :stats="dashboardStats"></statistics>
           <span class="text-gold text-xs pt-3"
-            >*O número em amarelo representa a diferença comparativamente ao dia
-            de ontem.</span
+            >*O número em amarelo representa a diferença comparado ao dia de
+            ontem.</span
           >
           <span class="flex text-red text-xs pt-3"
             >* {{ otherDeaths }} óbitos por outras causas não foram
@@ -249,6 +249,12 @@ export default {
           variation:
             Number.parseInt(statistics.foreign_transmissions) -
             Number.parseInt(yesterday.foreign_transmissions)
+        },
+        hospitalized: {
+          today: statistics.hospitalized,
+          variation:
+            Number.parseInt(statistics.hospitalized) -
+            Number.parseInt(yesterday.hospitalized)
         }
       }
     },
