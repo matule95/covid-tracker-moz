@@ -18,7 +18,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Faça o monitoramento diário do número de casos de Coronavirus COVID 19 em Moçambique. Resumo das Últimas 24 horas do Coronavirus em Moçambique. Rastreador do COVID 19 para Moçambique 🇲🇿'
+          'Faça o monitoramento diário do número de casos de Coronavirus COVID 19 em Moçambique. Resumo das Últimas 24 horas do Coronavirus em Moçambique. COVID 19 em Moçambique 🇲🇿'
       }
     ],
     link: [
