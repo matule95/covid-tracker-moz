@@ -388,16 +388,16 @@ export default {
   },
   head() {
     return {
-      title: 'Início - Rastreador COVID-19 Moçambique',
+      title: 'Início - COVID 19 Moçambique',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Rastreador do COVID-19 para Moçambique 🇲🇿'
+          content: 'COVID 19 em Moçambique 🇲🇿'
         },
         {
           name: 'title',
-          content: 'Inicio - Rastreador do COVID-19 para Moçambique 🇲🇿'
+          content: 'Inicio - COVID 19 em Moçambique 🇲🇿'
         }
       ]
     }
