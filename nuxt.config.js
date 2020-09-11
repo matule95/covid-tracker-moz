@@ -1,7 +1,7 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 const path = require('path')
 export default {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
    ** Headers of the page
@@ -10,7 +10,7 @@ export default {
     host: '0.0.0.0'
   },
   head: {
-    title: 'Situação das últimas 24 horas do Coronavirus em Moçambique',
+    title: 'COVID 19 em Moçambique',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,7 +18,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Faça o monitoramento diário do número de casos de Coronavirus COVID-19 em Moçambique. Resumo das Últimas 24 horas do Coronavirus em Moçambique. Rastreador do COVID-19 para Moçambique 🇲🇿'
+          'Faça o monitoramento diário do número de casos de Coronavirus COVID 19 em Moçambique. Resumo das Últimas 24 horas do Coronavirus em Moçambique. Rastreador do COVID 19 para Moçambique 🇲🇿'
       }
     ],
     link: [
