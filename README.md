@@ -1,6 +1,6 @@
 # covid-tracker-moz
 
-> Rastreador de COVID-19 para Moçambique
+> COVID-19 para Moçambique
 
 ## Build Setup
 
