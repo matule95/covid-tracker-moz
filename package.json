@@ -1,7 +1,7 @@
 {
   "name": "covid-tracker-moz",
   "version": "1.0.0",
-  "description": "Rastreador de COVID-19 para Moçambique",
+  "description": "COVID 19 em Moçambique",
   "author": "Clayton Matule",
   "private": true,
   "scripts": {
