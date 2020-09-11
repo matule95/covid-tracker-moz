@@ -105,6 +105,34 @@
         </template>
       </stats-counter>
     </div>
+    <div class="xxs:w-full xs:w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
+      <stats-counter
+        :stats="{
+          type: 'recovered',
+          label: 'Recuperados',
+          value: stats.recovered.today,
+          today: stats.recovered.variation
+        }"
+        absolute
+      >
+        <template v-slot:icon>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 448"
+            class="w-5"
+          >
+            <defs />
+            <path
+              fill="#FFF"
+              d="M408 184H272c-4.417969 0-8-3.582031-8-8V40c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8H40c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40V272c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"
+              class="active-path"
+              data-old_color="#000000"
+              data-original="#000000"
+            />
+          </svg>
+        </template>
+      </stats-counter>
+    </div>
     <div class="xxs:w-full xs:w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 md:mt-0">
       <stats-counter
         :stats="{
@@ -143,33 +171,34 @@
         </template>
       </stats-counter>
     </div>
-    <div class="xxs:w-full xs:w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
-      <stats-counter
+    <div class="xxs:w-full xs:w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 xxl:mt-0">
+      <StatsCounter
         :stats="{
-          type: 'recovered',
-          label: 'Recuperados',
-          value: stats.recovered.today,
-          today: stats.recovered.variation
+          type: 'hospitalized',
+          label: 'Internados',
+          value: stats.hospitalized.today,
+          today: stats.hospitalized.variation
         }"
         absolute
       >
         <template v-slot:icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 448"
             class="w-5"
+            viewBox="0 0 512 512"
           >
             <defs />
             <path
-              fill="#FFF"
-              d="M408 184H272c-4.417969 0-8-3.582031-8-8V40c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8H40c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40V272c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"
-              class="active-path"
-              data-old_color="#000000"
-              data-original="#000000"
+              style="fill:#FFFFFF"
+              d="M105.046 168.773H0v309.512h105.046zM69.404 371.342H35.642v-30h33.762zm0-67.523H35.642v-30h33.762zm-33.762-67.523v-30h33.762v30zM406.954 478.286H512V168.773H406.954zm35.643-271.99h33.761v30h-33.761zm0 67.523h33.761v30h-33.761zm33.76 67.523v30h-33.761v-30zM203.477 438.865H241v39.421h-37.523zM271 438.865h37.522v39.421H271z"
+            />
+            <path
+              style="fill:#FFFFFF"
+              d="M135.046 478.286h38.431v-69.421h165.045v69.421h38.432V33.714H135.046zm137.835-106.944h-33.762v-30h33.762zm0-67.523h-33.762v-30h33.762zm0-67.523h-33.762v-30h33.762zm67.522 135.046h-33.761v-30h33.761zm0-67.523h-33.761v-30h33.761zm0-67.523h-33.761v-30h33.761zM205.358 105.052H241V69.41h30v35.642h35.643v30H271v35.643h-30v-35.643h-35.642zm-33.762 101.244h33.762v30h-33.762zm0 67.523h33.762v30h-33.762zm0 67.523h33.762v30h-33.762z"
             />
           </svg>
         </template>
-      </stats-counter>
+      </StatsCounter>
     </div>
     <div class="xxs:w-full xs:w-1/2 md:w-1/4 xl:w-1/5 xxl:w-1/6 mt-5 xxl:mt-0">
       <StatsCounter
