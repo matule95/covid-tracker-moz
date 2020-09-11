@@ -37,7 +37,9 @@
           <div
             class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
           >
-            <maps :locations="mapGEOJSON" class="z-30"></maps>
+            <client-only>
+              <maps :locations="mapGEOJSON" class="z-30"></maps>
+            </client-only>
             <div class="text-gold text-xs pt-3">
               *Os pontos no mapa não representam localização exacta dos casos
               <div class="w-full flex flex-row flex-wrap">
@@ -72,7 +74,9 @@
             <div
               class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-10 block xl:hidden provincesMap"
             >
-              <maps :locations="mapGEOJSON" class="z-30"></maps>
+              <client-only>
+                <maps :locations="mapGEOJSON" class="z-30"></maps>
+              </client-only>
               <div class="text-gold text-xs pt-3">
                 *Os pontos no mapa não representam localização exacta dos casos
                 <div class="flex flex-row flex-wrap">
@@ -176,13 +180,13 @@ import ChartsSection from '~/components/Partials/ChartsSection'
 import PieChart from '~/components/PieChart'
 import Statistics from '~/components/Statistics'
 import ProvinceDistribution from '~/components/ProvinceDistribution'
-import Maps from '~/components/Maps'
+// import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
 export default {
   components: {
     ChartsSection,
     Statistics,
-    Maps,
+    Maps: () => (process.client ? import('~/components/Maps.vue') : null),
     PieChart,
     Chart,
     ProvinceDistribution
