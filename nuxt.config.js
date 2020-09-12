@@ -1,8 +1,7 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 const path = require('path')
 export default {
-  mode: 'universal',
-  target: 'server',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
