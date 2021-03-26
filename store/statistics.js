@@ -22,7 +22,7 @@ export const actions = {
   },
   fetchDailyInformation({ commit }) {
     return this.$axios
-      .get('/dailyInformation.json')
+      .get('https://covid-19-tracker-moz.firebaseio.com/dailyInformation.json')
       .then(({ data }) => {
         commit('SET_ITEMS', {
           key: 'dailyInformation',
@@ -37,7 +37,7 @@ export const actions = {
   },
   fetchWeeklyInformation({ commit }) {
     return this.$axios
-      .get('/weeklyInformation.json')
+      .get('https://covid-19-tracker-moz.firebaseio.com/weeklyInformation.json')
       .then(({ data }) => {
         commit('SET_ITEMS', {
           key: 'weeklyInformation',
