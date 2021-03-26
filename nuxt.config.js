@@ -61,7 +61,14 @@ export default {
    ** Axios module configuration
    */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+    proxy: true,
+    prefix: '/api'
+  },
+  proxy: {
+    '/api': {
+      target: 'https://covid-19-tracker-moz.firebaseio.com/',
+      pathRewrite: { '^/api/': '' }
+    }
   },
   /*
    ** Build configuration
