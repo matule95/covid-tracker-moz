@@ -53,6 +53,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     '@nuxtjs/pwa',
     'nuxt-leaflet',
     'nuxt-purgecss'
@@ -61,15 +62,18 @@ export default {
    ** Axios module configuration
    */
   axios: {
-    // proxy: true,
-    // prefix: '/api'
+    proxy: true
   },
-  proxy: {
-    // '/api': {
-    //   target: 'https://covid-19-tracker-moz.firebaseio.com/',
-    //   pathRewrite: { '^/api/': '' }
-    // }
-  },
+  proxy: [
+    'https://covid-19-tracker-moz.firebaseio.com/dailyInformation.json',
+    'https://covid-19-tracker-moz.firebaseio.com/weeklyInformation.json'
+  ],
+  // proxy: {
+  //   '/api/': {
+  //     target: 'https://covid-19-tracker-moz.firebaseio.com/',
+  //     pathRewrite: { '^/api/': '' }
+  //   }
+  // },
   /*
    ** Build configuration
    */
