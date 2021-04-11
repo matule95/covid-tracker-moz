@@ -19,7 +19,7 @@
       <div
         class="w-full text-2xl text-white font-semibold flex flex-wap flex-row"
       >
-        {{ formatValue(stats.value) || 0 }}
+        {{ (stats.noFormat ? stats.value : formatValue(stats.value)) || 0 }}
         <span v-if="stats.today" class="ml-2 text-gold text-sm self-center"
           ><span v-if="stats.today > 0">+</span
           >{{ formatValue(stats.today) }}</span
