@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-wrap flex-1">
-    <div class="xxs:w-full md:w-1/2 xl:w-1/5 xxl:w-1/6 ">
+    <div class="xxs:w-full md:w-1/2 lg:w-1/3 xl:w-1/5 xxl:w-1/6 ">
       <stats-counter
         :stats="{
           type: 'countries',
@@ -28,7 +28,36 @@
         </template>
       </stats-counter>
     </div>
-    <div class="xxs:w-full md:w-1/2 xl:w-1/5 xxl:w-1/6 xxs:mt-5 md:mt-0">
+    <div
+      class="xxs:w-full md:w-1/2 lg:w-1/3 xl:w-1/5 xxl:w-1/6 xxs:mt-5 md:mt-0"
+    >
+      <stats-counter
+        :stats="{
+          type: 'countries',
+          label: '% Positividade',
+          value: positivityLevel.value,
+          today: positivityLevel.variation,
+          noFormat: true
+        }"
+        absolute
+      >
+        <template v-slot:icon>
+          <svg
+            class="w-4 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 263.285 263.285"
+            style="fill: white"
+          >
+            <path
+              d="M193.882 8.561c-7.383-3.756-16.414-.813-20.169 6.573L62.153 234.556c-3.755 7.385-.812 16.414 6.573 20.169 2.178 1.107 4.499 1.632 6.786 1.632 5.466 0 10.735-2.998 13.383-8.205L200.455 28.73c3.755-7.385.812-16.414-6.573-20.169zM113.778 80.818c0-31.369-25.521-56.89-56.89-56.89C25.521 23.928 0 49.449 0 80.818c0 31.368 25.521 56.889 56.889 56.889 31.369 0 56.889-25.521 56.889-56.889zm-56.889 26.889C42.063 107.707 30 95.644 30 80.818c0-14.827 12.063-26.89 26.889-26.89 14.827 0 26.89 12.062 26.89 26.89-.001 14.826-12.063 26.889-26.89 26.889zM206.396 125.58c-31.369 0-56.89 25.521-56.89 56.889 0 31.368 25.52 56.889 56.89 56.889 31.368 0 56.889-25.52 56.889-56.889 0-31.369-25.52-56.889-56.889-56.889zm0 83.777c-14.827 0-26.89-12.063-26.89-26.889 0-14.826 12.063-26.889 26.89-26.889 14.826 0 26.889 12.063 26.889 26.889 0 14.826-12.062 26.889-26.889 26.889z"
+            />
+          </svg>
+        </template>
+      </stats-counter>
+    </div>
+    <div
+      class="xxs:w-full md:w-1/2 lg:w-1/3 xl:w-1/5 xxl:w-1/6 xxs:mt-5 lg:mt-0"
+    >
       <stats-counter
         :stats="{
           type: 'infected',
@@ -57,7 +86,7 @@
         </template>
       </stats-counter>
     </div>
-    <div class="xxs:w-full md:w-1/2 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
+    <div class="xxs:w-full md:w-1/2 lg:w-1/3 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
       <stats-counter
         :stats="{
           type: 'active',
@@ -103,7 +132,7 @@
         </template>
       </stats-counter>
     </div>
-    <div class="xxs:w-full md:w-1/2 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
+    <div class="xxs:w-full md:w-1/2 lg:w-1/3 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
       <stats-counter
         :stats="{
           type: 'recovered',
@@ -131,7 +160,32 @@
         </template>
       </stats-counter>
     </div>
-    <div class="xxs:w-full md:w-1/2 xl:w-1/5 xxl:w-1/6 mt-5 xl:mt-0">
+    <div class="xxs:w-full md:w-1/2 lg:w-1/3 xl:w-1/5 xxl:w-1/6 mt-5">
+      <stats-counter
+        :stats="{
+          type: 'recovered',
+          label: '% Recuperados',
+          value: recoveredPercentage.value,
+          today: recoveredPercentage.variation,
+          noFormat: true
+        }"
+        absolute
+      >
+        <template v-slot:icon>
+          <svg
+            class="w-4 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 263.285 263.285"
+            style="fill: white"
+          >
+            <path
+              d="M193.882 8.561c-7.383-3.756-16.414-.813-20.169 6.573L62.153 234.556c-3.755 7.385-.812 16.414 6.573 20.169 2.178 1.107 4.499 1.632 6.786 1.632 5.466 0 10.735-2.998 13.383-8.205L200.455 28.73c3.755-7.385.812-16.414-6.573-20.169zM113.778 80.818c0-31.369-25.521-56.89-56.89-56.89C25.521 23.928 0 49.449 0 80.818c0 31.368 25.521 56.889 56.889 56.889 31.369 0 56.889-25.521 56.889-56.889zm-56.889 26.889C42.063 107.707 30 95.644 30 80.818c0-14.827 12.063-26.89 26.889-26.89 14.827 0 26.89 12.062 26.89 26.89-.001 14.826-12.063 26.889-26.89 26.889zM206.396 125.58c-31.369 0-56.89 25.521-56.89 56.889 0 31.368 25.52 56.889 56.89 56.889 31.368 0 56.889-25.52 56.889-56.889 0-31.369-25.52-56.889-56.889-56.889zm0 83.777c-14.827 0-26.89-12.063-26.89-26.889 0-14.826 12.063-26.889 26.89-26.889 14.826 0 26.889 12.063 26.889 26.889 0 14.826-12.062 26.889-26.889 26.889z"
+            />
+          </svg>
+        </template>
+      </stats-counter>
+    </div>
+    <div class="xxs:w-full md:w-1/2 lg:w-1/3 xl:w-1/5 xxl:w-1/6 mt-5">
       <stats-counter
         :stats="{
           type: 'deaths',
@@ -169,7 +223,7 @@
         </template>
       </stats-counter>
     </div>
-    <div class="xxs:w-full md:w-1/2 xl:w-1/5 xxl:w-1/6 mt-5 xxl:mt-0">
+    <div class="xxs:w-full md:w-1/2 xl:w-1/5 lg:w-1/3 xxl:w-1/6 mt-5 xxl:mt-0">
       <StatsCounter
         :stats="{
           type: 'hospitalized',
@@ -198,7 +252,7 @@
         </template>
       </StatsCounter>
     </div>
-    <div class="xxs:w-full md:w-1/2 xl:w-1/5 xxl:w-1/6 mt-5 xxl:mt-0">
+    <div class="xxs:w-full md:w-1/2 xl:w-1/5 lg:w-1/3 xxl:w-1/6 mt-5 xxl:mt-0">
       <StatsCounter
         :stats="{
           type: 'local_transmissions',
@@ -227,7 +281,7 @@
         </template>
       </StatsCounter>
     </div>
-    <div class="xxs:w-full md:w-1/2 xl:w-1/5 xxl:w-1/6 mt-5">
+    <div class="xxs:w-full md:w-1/2 xl:w-1/5 lg:w-1/3 xxl:w-1/6 mt-5">
       <StatsCounter
         :stats="{
           type: 'foreign_transmission',
@@ -268,6 +322,36 @@ export default {
     stats: {
       required: true,
       type: Object
+    }
+  },
+  computed: {
+    positivityLevel() {
+      const posObj = {}
+      posObj.value = parseFloat(
+        (this.stats.infected.today * 100) / this.stats.tested.today
+      ).toFixed(2)
+      const variation = parseFloat(
+        ((this.stats.infected.today - this.stats.infected.variation) * 100) /
+          (this.stats.tested.today - this.stats.infected.variation)
+      ).toFixed(2)
+      posObj.variation = (
+        parseFloat(posObj.value) - parseFloat(variation)
+      ).toFixed(2)
+      return posObj
+    },
+    recoveredPercentage() {
+      const recoveredObj = {}
+      recoveredObj.value = parseFloat(
+        (this.stats.recovered.today * 100) / this.stats.infected.today
+      ).toFixed(2)
+      const variation = parseFloat(
+        ((this.stats.recovered.today - this.stats.recovered.variation) * 100) /
+          this.stats.infected.today
+      ).toFixed(2)
+      recoveredObj.variation = (
+        parseFloat(recoveredObj.value) - parseFloat(variation)
+      ).toFixed(2)
+      return recoveredObj
     }
   },
   methods: {
