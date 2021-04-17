@@ -13,7 +13,7 @@
           </p>
         </div>
         <div class="w-full my-5">
-          <statistics :stats="dashboardStats"></statistics>
+          <statistics :stats="dashboardStats" :data="chartData"></statistics>
           <span class="text-gold text-xs pt-3"
             >*O número em amarelo representa a diferença comparado ao dia de
             ontem.</span
