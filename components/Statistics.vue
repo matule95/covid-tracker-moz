@@ -288,7 +288,6 @@
           type: 'countries',
           label: '% Positividade Total',
           value: allTimeInfectedPercentage.value,
-          today: allTimeInfectedPercentage.variation,
           noFormat: true
         }"
         absolute
@@ -313,7 +312,6 @@
           type: 'countries',
           label: '% Positividade Diária',
           value: todayInfectedPercentage.value,
-          today: todayInfectedPercentage.variation,
           noFormat: true
         }"
         absolute
@@ -357,14 +355,6 @@ export default {
       posObj.value = parseFloat(
         (this.stats.infected.today * 100) / this.stats.tested.today
       ).toFixed(2)
-
-      const variation = parseFloat(
-        ((this.stats.infected.today - this.stats.infected.variation) * 100) /
-          (this.stats.tested.today - this.stats.infected.variation)
-      ).toFixed(2)
-      posObj.variation = (
-        parseFloat(posObj.value) - parseFloat(variation)
-      ).toFixed(2)
       return posObj
     },
     todayInfectedPercentage() {
@@ -373,45 +363,6 @@ export default {
         (this.stats.infected.variation * 100) / this.stats.tested.variation
       ).toFixed(2)
 
-      // const yesterday = this.data[1].country_stats
-
-      // const beforeYesterday = this.data[2].country_stats
-
-      // const beforeBeforeYesterday = this.data[3].country_stats
-
-      // const beforeYesterdayTestedVariation =
-      //   beforeYesterday.tested - beforeBeforeYesterday.tested
-
-      // const yesterdayTestedVariation = yesterday.tested - beforeYesterday.tested
-
-      // const todayTestedVariation =
-      //   this.stats.tested.today - yesterdayTestedVariation
-
-      // const beforeYesterdayInfectedVariation =
-      //   beforeYesterday.infected - beforeBeforeYesterday.infected
-
-      // const yesterdayInfectedVariation =
-      //   yesterday.infected - beforeYesterday.infected
-
-      // const todayInfectedVariation =
-      //   this.stats.tested.infected - yesterdayInfectedVariation
-
-      // const todayVariation = parseFloat(
-      //   ((todayInfectedVariation - yesterdayInfectedVariation) * 100) /
-      //     (todayTestedVariation - todayInfectedVariation)
-      // ).tofixed(2)
-
-      // posObj.variation = (
-      //   parseFloat(posObj.value) - parseFloat(todayVariation)
-      // ).toFixed(2)
-
-      const variation = parseFloat(
-        ((this.stats.infected - this.stats.infected.variation) * 100) /
-          (this.stats.tested - this.stats.infected.variation)
-      ).toFixed(2)
-      posObj.variation = (
-        parseFloat(posObj.value) - parseFloat(variation)
-      ).toFixed(2)
       return posObj
     },
     recoveredPercentage() {
