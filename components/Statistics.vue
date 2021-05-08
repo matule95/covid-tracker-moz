@@ -10,7 +10,7 @@
         }"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
@@ -41,7 +41,7 @@
         :today="stats.todayCases"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 549.983 549.983"
@@ -68,7 +68,7 @@
           today: stats.active.variation
         }"
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             id="Capa_1"
             xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +115,7 @@
         }"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 448"
@@ -143,7 +143,7 @@
         }"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             class="w-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +181,7 @@
         }"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5"
@@ -211,7 +211,7 @@
         :today="stats.todayLocal_transmissions"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5"
@@ -239,7 +239,7 @@
         }"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 426.667 426.667"
@@ -268,7 +268,7 @@
         }"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             class="w-4 fill-current"
             xmlns="http://www.w3.org/2000/svg"
@@ -292,7 +292,7 @@
         }"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             class="w-4 fill-current"
             xmlns="http://www.w3.org/2000/svg"
@@ -316,7 +316,7 @@
         }"
         absolute
       >
-        <template v-slot:icon>
+        <template #icon>
           <svg
             class="w-4 fill-current"
             xmlns="http://www.w3.org/2000/svg"

@@ -41,16 +41,18 @@ export default {
   computed: {
     getClassName() {
       const className = {}
-      if (this.stats.type === 'infected') className['bg-red-dark'] = true
+      if (this.stats.type === 'infected') className['bg-red-500'] = true
       else if (this.stats.type === 'active') className['bg-gold'] = true
-      else if (this.stats.type === 'deaths') className['bg-grey-dark'] = true
-      else if (this.stats.type === 'recovered') className['bg-green'] = true
-      else if (this.stats.type === 'countries') className['bg-purple'] = true
+      else if (this.stats.type === 'deaths') className['bg-gray-500'] = true
+      else if (this.stats.type === 'recovered') className['bg-green-500'] = true
+      else if (this.stats.type === 'countries')
+        className['bg-purple-500'] = true
       else if (this.stats.type === 'local_transmissions')
-        className['bg-blue'] = true
+        className['bg-blue-500'] = true
       else if (this.stats.type === 'foreign_transmission')
-        className['bg-orange'] = true
-      else if (this.stats.type === 'hospitalized') className['bg-green'] = true
+        className['bg-orange-500'] = true
+      else if (this.stats.type === 'hospitalized')
+        className['bg-green-500'] = true
       return className
     },
     getStyles() {

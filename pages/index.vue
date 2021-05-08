@@ -18,7 +18,7 @@
             >*O número em amarelo representa a diferença comparado ao dia de
             ontem.</span
           >
-          <span class="flex text-red text-xs pt-3"
+          <span class="flex text-red-500 text-xs pt-3"
             >* {{ otherDeaths }} óbitos por outras causas não foram
             incluídos.</span
           >
@@ -49,7 +49,7 @@
                 >
               </div>
               <div class="w-full flex flex-row flex-wrap my-1">
-                <span class="w-5 h-5 bg-grey">&nbsp;</span>
+                <span class="w-5 h-5 bg-">&nbsp;</span>
                 <span class="text-white text-xs self-center pl-1">Óbitos</span>
               </div>
               <div class="w-full flex flex-row flex-wrap">
@@ -87,7 +87,7 @@
                     >
                   </div>
                   <div class="w-full flex flex-row flex-wrap my-1">
-                    <span class="w-5 h-5 bg-grey">&nbsp;</span>
+                    <span class="w-5 h-5 bg-gray">&nbsp;</span>
                     <span class="text-white text-xs self-center pl-1"
                       >Óbitos</span
                     >
@@ -195,6 +195,26 @@ export default {
     mozGeoJson: require('~/map'),
     provinces: require('~/provinces')
   }),
+  async fetch({ store }) {
+    await store.dispatch('statistics/fetchDailyInformation')
+    await store.dispatch('statistics/fetchWeeklyInformation')
+  },
+  head() {
+    return {
+      title: 'Início - COVID 19 Moçambique',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'COVID 19 em Moçambique 🇲🇿'
+        },
+        {
+          name: 'title',
+          content: 'Inicio - COVID 19 em Moçambique 🇲🇿'
+        }
+      ]
+    }
+  },
   computed: {
     dashboardStats() {
       const statistics = this.$store.state.statistics.dailyInformation[0]
@@ -273,44 +293,48 @@ export default {
       return this.$store.state.statistics.dailyInformation[0].updatedAt
     },
     localPlaces() {
-      return this.$store.state.statistics.dailyInformation[0].province_stats
-        .map(province => {
-          const yesterday = this.$store.state.statistics.dailyInformation[1].province_stats.find(
-            item => item.province === province.province
-          )
-          return {
-            name: province.province,
-            cases: province.confirmed,
-            flag: this.getFlag(province.province),
-            todayCases: Number.parseInt(
-              Number.parseInt(province.confirmed) -
-                Number.parseInt(yesterday.confirmed)
-            ),
-            active: province.active,
-            todayActive: Number.parseInt(
-              Number.parseInt(province.active) -
-                Number.parseInt(yesterday.active)
-            ),
-            todayRecovered: Number.parseInt(
-              Number.parseInt(province.recovered) -
-                Number.parseInt(yesterday.recovered)
-            ),
-            recovered: province.recovered,
-            todayDeaths: Number.parseInt(
-              Number.parseInt(province.deaths) -
-                Number.parseInt(yesterday.deaths)
-            ),
-            deaths: province.deaths
-          }
-        })
-        .sort((a, b) => {
-          if (Number.parseInt(a.cases) < Number.parseInt(b.cases)) {
-            return 1
-          }
-          if (Number.parseInt(a.cases) > Number.parseInt(b.cases)) {
-            return -1
-          }
-        })
+      return (
+        this.$store.state.statistics.dailyInformation[0].province_stats
+          .map(province => {
+            const yesterday = this.$store.state.statistics.dailyInformation[1].province_stats.find(
+              item => item.province === province.province
+            )
+            return {
+              name: province.province,
+              cases: province.confirmed,
+              flag: this.getFlag(province.province),
+              todayCases: Number.parseInt(
+                Number.parseInt(province.confirmed) -
+                  Number.parseInt(yesterday.confirmed)
+              ),
+              active: province.active,
+              todayActive: Number.parseInt(
+                Number.parseInt(province.active) -
+                  Number.parseInt(yesterday.active)
+              ),
+              todayRecovered: Number.parseInt(
+                Number.parseInt(province.recovered) -
+                  Number.parseInt(yesterday.recovered)
+              ),
+              recovered: province.recovered,
+              todayDeaths: Number.parseInt(
+                Number.parseInt(province.deaths) -
+                  Number.parseInt(yesterday.deaths)
+              ),
+              deaths: province.deaths
+            }
+          })
+          //
+          .sort((a, b) => {
+            if (Number.parseInt(a.cases) < Number.parseInt(b.cases)) {
+              return 1
+            }
+            if (Number.parseInt(a.cases) > Number.parseInt(b.cases)) {
+              return -1
+            }
+            return 0
+          })
+      )
     },
     mapGEOJSON() {
       const geoJson = {
@@ -367,10 +391,6 @@ export default {
       return newRatioByOrigin
     }
   },
-  async fetch({ store }) {
-    await store.dispatch('statistics/fetchDailyInformation')
-    await store.dispatch('statistics/fetchWeeklyInformation')
-  },
   methods: {
     getFlag(province) {
       const flags = {
@@ -388,22 +408,6 @@ export default {
       }
 
       return flags[province]
-    }
-  },
-  head() {
-    return {
-      title: 'Início - COVID 19 Moçambique',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'COVID 19 em Moçambique 🇲🇿'
-        },
-        {
-          name: 'title',
-          content: 'Inicio - COVID 19 em Moçambique 🇲🇿'
-        }
-      ]
     }
   }
 }

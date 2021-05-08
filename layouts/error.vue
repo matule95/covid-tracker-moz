@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row flex-wrap bg-brown-light justify-center items-center h-full text-center"
+    class="flex flex-row flex-wrap bg-brownLight justify-center items-center h-full text-center"
   >
     <div class="w-full">
       <img src="/robot.svg" style="max-width: 300px" alt="Broken Robot" />
@@ -12,7 +12,12 @@
       {{ message }}
     </div>
     <div class="w-full mt-10">
-      <button @click="goToPage">Ir à Página Inicial</button>
+      <button
+        class="text-gold hover:bg-gold hover:text-white"
+        @click="goToPage"
+      >
+        Ir à Página Inicial
+      </button>
     </div>
   </div>
 </template>
@@ -53,7 +58,6 @@ button {
   border: 1px solid;
   border-color: #f6c879;
   background-color: transparent;
-  @apply text-gold;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -61,7 +65,6 @@ button {
   font-size: 16px;
   transition: all 0.3 ease-in-out;
   &:hover {
-    @apply bg-gold text-white;
     cursor: pointer;
   }
 }

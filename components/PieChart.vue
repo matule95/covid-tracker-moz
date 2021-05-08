@@ -49,7 +49,7 @@ export default {
         },
         plugins: {
           datalabels: {
-            formatter: function(value, context) {
+            formatter(value) {
               return `${value}`
             }
           }

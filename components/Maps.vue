@@ -55,9 +55,9 @@ export default {
         if (confirmed > 0) {
           html = `
           <div class="marker flex flex-row flex-wrap rounded-lg">
-            <div class="marker--confirmed px-2 w-1/3 rounded-tl-lg"> ${confirmed}</div>
-            <div class="marker--deaths px-2 w-1/3 text-black"> ${deaths} </div>
-            <div class="marker--recovered px-2 w-1/3 rounded-tr-lg"> ${recovered} </div>
+            <div class="marker--confirmed bg-red-500 px-2 w-1/3 rounded-tl-lg"> ${confirmed}</div>
+            <div class="marker--deaths bg-gray-500 px-2 w-1/3 text-black"> ${deaths} </div>
+            <div class="marker--recovered bg-green-500 px-2 w-1/3 rounded-tr-lg"> ${recovered} </div>
             <div class="w-full truncate bg-white text-black text-xs rounded-b-lg text-center" style="font-size:0.65rem">${province}</div>
           </div>
     `
@@ -104,21 +104,18 @@ export default {
   padding: 10px;
 }
 .marker--confirmed {
-  @apply bg-red;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .marker--deaths {
-  @apply bg-grey;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .marker--recovered {
-  @apply bg-green;
   height: 100%;
   display: flex;
   justify-content: center;

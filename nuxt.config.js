@@ -1,7 +1,8 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 const path = require('path')
 export default {
-  mode: 'spa',
+  ssr: false,
+  target: 'static',
   /*
    ** Headers of the page
    */
@@ -47,6 +48,15 @@ export default {
    */
   plugins: [],
 
+  buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+    // https://composition-api.nuxtjs.org/getting-started/setup
+    '@nuxtjs/composition-api/module'
+  ],
+
   /*
    ** Nuxt.js modules
    */
@@ -54,6 +64,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    ,
+    '@nuxtjs/auth-next',
     'nuxt-leaflet',
     'nuxt-purgecss'
   ],
@@ -76,7 +88,7 @@ export default {
   build: {
     postcss: {
       plugins: {
-        tailwindcss: path.resolve(__dirname, './tailwind.js')
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js')
       }
     },
     extractCSS: true,

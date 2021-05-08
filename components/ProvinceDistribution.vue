@@ -7,10 +7,10 @@
       <tr class="text-left">
         <th class="pr-5">&nbsp;</th>
         <th class="pr-5">&nbsp;</th>
-        <th class="text-red px-3">Total de Infectados</th>
+        <th class="text-red-500 px-3">Total de Infectados</th>
         <th class="text-gold px-3">Activos</th>
-        <th class="text-grey px-3">Óbitos</th>
-        <th class="text-green">Recuperados</th>
+        <th class="text-gray-500 px-3">Óbitos</th>
+        <th class="text-green-500">Recuperados</th>
       </tr>
     </thead>
     <tbody>
@@ -35,7 +35,7 @@
           </span>
           <span
             v-if="province.todayCases !== 0"
-            class="pl-2 text-red text-xs font-bold"
+            class="pl-2 text-red-500 text-xs font-bold"
             ><span v-if="province.todayCases > 0">+</span
             >{{ formatValue(province.todayCases) }}
           </span>
@@ -57,7 +57,7 @@
           </span>
           <span
             v-if="province.todayDeaths !== 0"
-            class="pl-2 text-grey text-xs font-bold"
+            class="pl-2 text-gray-500 text-xs font-bold"
             ><span v-if="province.todayDeaths > 0">+</span
             >{{ formatValue(province.todayDeaths) }}
           </span>
@@ -68,7 +68,7 @@
           </span>
           <span
             v-if="province.todayRecovered !== 0"
-            class="pl-2 text-green text-xs"
+            class="pl-2 text-green-500 text-xs"
             ><span v-if="province.todayRecovered > 0">+</span
             >{{ formatValue(province.todayRecovered) }}
           </span>
