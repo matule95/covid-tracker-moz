@@ -11,8 +11,9 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         body: '#F4F4FB',
-        gold: '#F6C879',
-        brownLight: '#282B2E'
+        brown: '#222529',
+        brownLight: '#282B2E',
+        gold: '#F6C879'
       },
       screens: {
         reading: '992px',

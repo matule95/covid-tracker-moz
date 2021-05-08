@@ -140,38 +140,7 @@
       </div>
     </section>
     <ChartsSection class="w-full h-full pt-5" />
-    <div
-      class="flex flex-col flex-wrap w-full justify-center items-center bg-brown mt-16 pb-20 px-5"
-    >
-      <div class="w-full flex justify-center mt-10">
-        <img
-          src="/Gladiator.png"
-          width="250px"
-          height="170px"
-          alt="Gladiator Fighting Corona Virus"
-        />
-      </div>
-      <h2 class="mt-5 text-gold text-center">
-        Ajude-nos a combater a COVID-19!
-      </h2>
-      <span
-        class="mt-5 text-white w-full lg:w-1/2 text-center"
-        style="line-height: 2.1rem;"
-      >
-        Além dos
-        <a class="text-gold" href="https://covid19.ins.gov.mz/prevencao/"
-          >métodos de prevenção indicados pelo INS</a
-        >, a nossa única maneira de ajudar a impedir a propagação da COVID-19 é
-        através da codificação de aplicativos. Essa é a parte mais fácil. O
-        difícil é obter informações locais confiáveis portanto precisamos da sua
-        ajuda para que possamos manter as pessoas conscientes do que está a
-        acontecer.<br />
-        Contacte-nos em:
-        <a class="text-gold" href="mailto:covidmozinfo@gmail.com"
-          >covidmozinfo@gmail.com</a
-        >
-      </span>
-    </div>
+    <FooterSection />
   </div>
 </template>
 
@@ -180,6 +149,7 @@ import ChartsSection from '~/components/Partials/ChartsSection'
 import PieChart from '~/components/PieChart'
 import Statistics from '~/components/Statistics'
 import ProvinceDistribution from '~/components/ProvinceDistribution'
+import FooterSection from '~/components/Partials/FooterSection.vue'
 // import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
 export default {
@@ -189,7 +159,8 @@ export default {
     Maps: () => (process.client ? import('~/components/Maps.vue') : null),
     PieChart,
     Chart,
-    ProvinceDistribution
+    ProvinceDistribution,
+    FooterSection
   },
   data: () => ({
     mozGeoJson: require('~/map'),
