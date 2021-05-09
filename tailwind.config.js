@@ -13,7 +13,13 @@ module.exports = {
         body: '#F4F4FB',
         brown: '#222529',
         brownLight: '#282B2E',
-        gold: '#F6C879'
+        gold: '#F6C879',
+        vividBlue: '3490dc',
+        vividGreen: '#5CC1AC',
+        vividGrey: '#b8c2cc',
+        vividOrange: '#f6993f',
+        vividPurple: '#8C79F6',
+        vividRed: '#e3342f'
       },
       screens: {
         reading: '992px',

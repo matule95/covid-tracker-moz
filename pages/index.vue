@@ -18,7 +18,7 @@
             >*O número em amarelo representa a diferença comparado ao dia de
             ontem.</span
           >
-          <span class="flex text-red-500 text-xs pt-3"
+          <span class="flex text-vividRed text-xs pt-3"
             >* {{ otherDeaths }} óbitos por outras causas não foram
             incluídos.</span
           >
