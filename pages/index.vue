@@ -11,14 +11,9 @@
           <div
             class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
           >
-            <div
-              class="flex flex-wrap flex-row w-full my-5 xl:mt-0 order-3 xl:order-1 overallChart"
-            >
-              <span class="text-white font-bold mb-5"
-                >Progressos dos <span class="text-gold">Casos</span> 📈</span
-              >
-              <chart :info="chartData" style="width: 100%" />
-            </div>
+            <CasesProgressChartSection
+              class="order-3 xl:order-1 overallChart"
+            />
             <CountryMapSection class="block xl:hidden provincesMap" />
             <ProvinceDistributionSection
               class="hidden lg:block w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
@@ -59,26 +54,23 @@
 <script>
 import ChartsSection from '~/components/Partials/ChartsSection'
 import PieChart from '~/components/PieChart'
+import CasesProgressChartSection from '~/components/Sections/CasesProgressChartSection.vue'
 import CountryMapSection from '~/components/Sections/CountryMapSection.vue'
 import FooterSection from '~/components/Sections/FooterSection.vue'
 import MainStatisticsSection from '~/components/Sections/MainStatisticsSection.vue'
 import ProvinceDistributionSection from '~/components/Sections/ProvinceDistributionSection.vue'
 
-import Chart from '~/components/Chart'
 export default {
   components: {
     ChartsSection,
     PieChart,
-    Chart,
+    CasesProgressChartSection,
     CountryMapSection,
     FooterSection,
     MainStatisticsSection,
     ProvinceDistributionSection
   },
   computed: {
-    chartData() {
-      return this.$store.state.statistics.dailyInformation
-    },
     genderDistribution() {
       const newRatioByGender = {
         data: [],
