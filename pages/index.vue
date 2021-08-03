@@ -7,32 +7,7 @@
           class="block lg:hidden w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 lg:provinces"
         />
         <div class="w-full flex-grow flex flex-row flex-wrap">
-          <div
-            class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
-          >
-            <client-only>
-              <maps :locations="mapGEOJSON" class="z-30"></maps>
-            </client-only>
-            <div class="text-gold text-xs pt-3">
-              *Os pontos no mapa não representam localização exacta dos casos
-              <div class="w-full flex flex-row flex-wrap">
-                <span class="w-5 h-5 bg-red">&nbsp;</span>
-                <span class="text-white text-xs self-center pl-1"
-                  >Infectados</span
-                >
-              </div>
-              <div class="w-full flex flex-row flex-wrap my-1">
-                <span class="w-5 h-5 bg-grey">&nbsp;</span>
-                <span class="text-white text-xs self-center pl-1">Óbitos</span>
-              </div>
-              <div class="w-full flex flex-row flex-wrap">
-                <span class="w-5 h-5 bg-green">&nbsp;</span>
-                <span class="text-white text-xs self-center pl-1"
-                  >Recuperados</span
-                >
-              </div>
-            </div>
-          </div>
+          <CountryMapSection class="hidden xl:block" />
           <div
             class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
           >
@@ -44,36 +19,7 @@
               >
               <chart :info="chartData" style="width: 100%" />
             </div>
-            <div
-              class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-10 block xl:hidden provincesMap"
-            >
-              <client-only>
-                <maps :locations="mapGEOJSON" class="z-30"></maps>
-              </client-only>
-              <div class="text-gold text-xs pt-3">
-                *Os pontos no mapa não representam localização exacta dos casos
-                <div class="flex flex-row flex-wrap">
-                  <div class="w-full flex flex-row flex-wrap">
-                    <span class="w-5 h-5 bg-red">&nbsp;</span>
-                    <span class="text-white text-xs self-center pl-1"
-                      >Infectados</span
-                    >
-                  </div>
-                  <div class="w-full flex flex-row flex-wrap my-1">
-                    <span class="w-5 h-5 bg-grey">&nbsp;</span>
-                    <span class="text-white text-xs self-center pl-1"
-                      >Óbitos</span
-                    >
-                  </div>
-                  <div class="w-full flex flex-row flex-wrap">
-                    <span class="w-5 h-5 bg-green">&nbsp;</span>
-                    <span class="text-white text-xs self-center pl-1"
-                      >Recuperados</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+            <CountryMapSection class="block xl:hidden provincesMap" />
             <ProvinceDistributionSection
               class="hidden lg:block w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
             />
@@ -113,52 +59,23 @@
 <script>
 import ChartsSection from '~/components/Partials/ChartsSection'
 import PieChart from '~/components/PieChart'
+import CountryMapSection from '~/components/Sections/CountryMapSection.vue'
 import FooterSection from '~/components/Sections/FooterSection.vue'
 import MainStatisticsSection from '~/components/Sections/MainStatisticsSection.vue'
 import ProvinceDistributionSection from '~/components/Sections/ProvinceDistributionSection.vue'
 
-// import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
 export default {
   components: {
     ChartsSection,
-    Maps: () => (process.client ? import('~/components/Maps.vue') : null),
     PieChart,
     Chart,
+    CountryMapSection,
     FooterSection,
     MainStatisticsSection,
     ProvinceDistributionSection
   },
-  data: () => ({
-    mozGeoJson: require('~/map'),
-    provinces: require('~/provinces')
-  }),
   computed: {
-    mapGEOJSON() {
-      const geoJson = {
-        type: 'FeatureCollection',
-        features: this.mozGeoJson.features.concat(
-          this.$store.state.statistics.dailyInformation[0].province_stats.map(
-            province => {
-              const position = this.provinces.provinces.find(
-                item => item.name === province.province
-              )
-              return {
-                type: 'Feature',
-                properties: {
-                  ...province
-                },
-                geometry: {
-                  type: 'Point',
-                  coordinates: [position.lng, position.lat]
-                }
-              }
-            }
-          )
-        )
-      }
-      return geoJson
-    },
     chartData() {
       return this.$store.state.statistics.dailyInformation
     },
