@@ -3,16 +3,9 @@
     <section class="container h-full pb-5" style="max-width: 100%">
       <div class="flex flex-wrap flex-col h-full">
         <MainStatisticsSection />
-        <div
+        <ProvinceDistributionSection
           class="block lg:hidden w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 lg:provinces"
-        >
-          <span class="text-white font-bold"
-            >Distribuição <span class="text-gold">Provincial</span> 📍</span
-          >
-          <div class="w-full mt-3 mb-5 overflow-auto">
-            <province-distribution :provinces="localPlaces" />
-          </div>
-        </div>
+        />
         <div class="w-full flex-grow flex flex-row flex-wrap">
           <div
             class="w-full xl:w-1/3 xxl:w-1/3 flex-grow h-128 xl:h-auto my-5 hidden xl:block"
@@ -81,16 +74,9 @@
                 </div>
               </div>
             </div>
-            <div
+            <ProvinceDistributionSection
               class="hidden lg:block w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
-            >
-              <span class="text-white font-bold"
-                >Distribuição <span class="text-gold">Provincial</span> 📍</span
-              >
-              <div class="w-full mt-3 mb-5 overflow-auto">
-                <province-distribution :provinces="localPlaces" />
-              </div>
-            </div>
+            />
             <div
               class="w-full flex flex-wrap flex-row lg:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
             >
@@ -127,9 +113,10 @@
 <script>
 import ChartsSection from '~/components/Partials/ChartsSection'
 import PieChart from '~/components/PieChart'
-import ProvinceDistribution from '~/components/ProvinceDistribution'
-import MainStatisticsSection from '~/components/Partials/MainStatisticsSection.vue'
-import FooterSection from '~/components/Partials/FooterSection.vue'
+import FooterSection from '~/components/Sections/FooterSection.vue'
+import MainStatisticsSection from '~/components/Sections/MainStatisticsSection.vue'
+import ProvinceDistributionSection from '~/components/Sections/ProvinceDistributionSection.vue'
+
 // import Maps from '~/components/Maps'
 import Chart from '~/components/Chart'
 export default {
@@ -138,55 +125,15 @@ export default {
     Maps: () => (process.client ? import('~/components/Maps.vue') : null),
     PieChart,
     Chart,
-    ProvinceDistribution,
+    FooterSection,
     MainStatisticsSection,
-    FooterSection
+    ProvinceDistributionSection
   },
   data: () => ({
     mozGeoJson: require('~/map'),
     provinces: require('~/provinces')
   }),
   computed: {
-    localPlaces() {
-      return this.$store.state.statistics.dailyInformation[0].province_stats
-        .map(province => {
-          const yesterday = this.$store.state.statistics.dailyInformation[1].province_stats.find(
-            item => item.province === province.province
-          )
-          return {
-            name: province.province,
-            cases: province.confirmed,
-            flag: this.getFlag(province.province),
-            todayCases: Number.parseInt(
-              Number.parseInt(province.confirmed) -
-                Number.parseInt(yesterday.confirmed)
-            ),
-            active: province.active,
-            todayActive: Number.parseInt(
-              Number.parseInt(province.active) -
-                Number.parseInt(yesterday.active)
-            ),
-            todayRecovered: Number.parseInt(
-              Number.parseInt(province.recovered) -
-                Number.parseInt(yesterday.recovered)
-            ),
-            recovered: province.recovered,
-            todayDeaths: Number.parseInt(
-              Number.parseInt(province.deaths) -
-                Number.parseInt(yesterday.deaths)
-            ),
-            deaths: province.deaths
-          }
-        })
-        .sort((a, b) => {
-          if (Number.parseInt(a.cases) < Number.parseInt(b.cases)) {
-            return 1
-          }
-          if (Number.parseInt(a.cases) > Number.parseInt(b.cases)) {
-            return -1
-          }
-        })
-    },
     mapGEOJSON() {
       const geoJson = {
         type: 'FeatureCollection',
@@ -245,25 +192,6 @@ export default {
   async fetch({ store }) {
     await store.dispatch('statistics/fetchDailyInformation')
     await store.dispatch('statistics/fetchWeeklyInformation')
-  },
-  methods: {
-    getFlag(province) {
-      const flags = {
-        'Cabo Delgado': `/icons/cabodelgado.svg`,
-        Niassa: `/icons/niassa.svg`,
-        Nampula: `/icons/nampula.svg`,
-        Zambézia: `/icons/zambezia.svg`,
-        Sofala: `/icons/sofala.svg`,
-        Manica: `/icons/manica.svg`,
-        Tete: `/icons/tete.svg`,
-        Gaza: `/icons/gaza.svg`,
-        Inhambane: `/icons/inhambane.svg`,
-        'Província de Maputo': `/icons/maputo.svg`,
-        'Cidade de Maputo': `/icons/maputo.svg`
-      }
-
-      return flags[province]
-    }
   },
   head() {
     return {
