@@ -54,9 +54,24 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    'nuxt-i18n',
     'nuxt-leaflet',
     'nuxt-purgecss'
   ],
+
+  i18n: {
+    locales: [
+      { code: 'pt', iso: 'pt-PT', file: 'pt.js' },
+      { code: 'en', iso: 'en-US', file: 'en.js' }
+    ],
+    defaultLocale: 'pt',
+    strategy: 'no_prefix',
+    vueI18nLoader: true,
+    langDir: './utils/i18n/locales',
+    vueI18n: {
+      fallbackLocale: 'pt'
+    }
+  },
   /*
    ** Axios module configuration
    */
