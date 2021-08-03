@@ -18,30 +18,9 @@
             <ProvinceDistributionSection
               class="hidden lg:block w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
             />
-            <div
+            <GenderAndNationalityChartSection
               class="w-full flex flex-wrap flex-row lg:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
-            >
-              <div class="w-full flex flex-row flex-wrap">
-                <span class="text-white font-bold mb-10 text-center w-full"
-                  >Distribuição por <span class="text-gold">Sexo</span></span
-                >
-                <PieChart
-                  :chart-data="genderDistribution"
-                  class="justify-left h-64 w-full flex flex-wrap justify-center content-center items-center"
-                />
-              </div>
-              <div class="w-full flex flex-row flex-wrap mt-16">
-                <span class="text-white font-bold mb-10 text-center w-full"
-                  >Distribuição por
-                  <span class="text-gold">Nacionalidade</span></span
-                >
-                <PieChart
-                  :chart-data="originDistribution"
-                  :background-color="['#F6C879', '#A7D3A6']"
-                  class="justify-left h-64 w-full flex flex-wrap justify-center content-center items-center"
-                />
-              </div>
-            </div>
+            />
           </div>
         </div>
       </div>
@@ -52,51 +31,23 @@
 </template>
 
 <script>
-import ChartsSection from '~/components/Partials/ChartsSection'
-import PieChart from '~/components/PieChart'
 import CasesProgressChartSection from '~/components/Sections/CasesProgressChartSection.vue'
+import ChartsSection from '~/components/Partials/ChartsSection'
 import CountryMapSection from '~/components/Sections/CountryMapSection.vue'
 import FooterSection from '~/components/Sections/FooterSection.vue'
+import GenderAndNationalityChartSection from '~/components/Sections/GenderAndNationalityChartSection.vue'
 import MainStatisticsSection from '~/components/Sections/MainStatisticsSection.vue'
 import ProvinceDistributionSection from '~/components/Sections/ProvinceDistributionSection.vue'
 
 export default {
   components: {
-    ChartsSection,
-    PieChart,
     CasesProgressChartSection,
+    ChartsSection,
     CountryMapSection,
     FooterSection,
+    GenderAndNationalityChartSection,
     MainStatisticsSection,
     ProvinceDistributionSection
-  },
-  computed: {
-    genderDistribution() {
-      const newRatioByGender = {
-        data: [],
-        labels: []
-      }
-      const gender = this.$store.state.statistics.weeklyInformation
-        .genderDistribution
-      gender.forEach(item => {
-        newRatioByGender.labels.push(item.gender)
-        newRatioByGender.data.push(item.cases)
-      })
-      return newRatioByGender
-    },
-    originDistribution() {
-      const newRatioByOrigin = {
-        data: [],
-        labels: []
-      }
-      const gender = this.$store.state.statistics.weeklyInformation
-        .originDistribution
-      gender.forEach(item => {
-        newRatioByOrigin.labels.push(item.gender)
-        newRatioByOrigin.data.push(item.cases)
-      })
-      return newRatioByOrigin
-    }
   },
   async fetch({ store }) {
     await store.dispatch('statistics/fetchDailyInformation')
