@@ -4,18 +4,24 @@
       <maps :locations="mapGEOJSON" class="z-30"></maps>
     </client-only>
     <div class="text-gold text-xs pt-3">
-      *Os pontos no mapa não representam localização exacta dos casos
+      {{ $t('countryMapSection.yellowNote') }}
       <div class="w-full flex flex-row flex-wrap">
         <span class="w-5 h-5 bg-red">&nbsp;</span>
-        <span class="text-white text-xs self-center pl-1">Infectados</span>
+        <span class="text-white text-xs self-center pl-1">{{
+          $t('countryMapSection.infected')
+        }}</span>
       </div>
       <div class="w-full flex flex-row flex-wrap my-1">
         <span class="w-5 h-5 bg-grey">&nbsp;</span>
-        <span class="text-white text-xs self-center pl-1">Óbitos</span>
+        <span class="text-white text-xs self-center pl-1">{{
+          $t('countryMapSection.deaths')
+        }}</span>
       </div>
       <div class="w-full flex flex-row flex-wrap">
         <span class="w-5 h-5 bg-green">&nbsp;</span>
-        <span class="text-white text-xs self-center pl-1">Recuperados</span>
+        <span class="text-white text-xs self-center pl-1">{{
+          $t('countryMapSection.recovered')
+        }}</span>
       </div>
     </div>
   </div>
