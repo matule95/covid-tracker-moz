@@ -1,10 +1,14 @@
 <template>
   <div>
-    <span class="block lg:hidden w-full pb-1 text-gold text-sm"
-      >*Arraste a tabela para o lado para ver mais detalhes →</span
-    >
+    <span class="block lg:hidden w-full pb-1 text-gold text-sm">{{
+      $t('provinceDistributionSection.mobileDragNote')
+    }}</span>
     <span class="text-white font-bold"
-      >Distribuição <span class="text-gold">Provincial</span> 📍</span
+      >{{ $t('provinceDistributionSection.whiteTitle') }}
+      <span class="text-gold">{{
+        $t('provinceDistributionSection.goldTitle')
+      }}</span>
+      📍</span
     >
     <div class="w-full mt-3 mb-5 overflow-auto">
       <province-distribution :provinces="localPlaces" />
