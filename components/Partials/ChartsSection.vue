@@ -2,7 +2,10 @@
   <div class="flex flex-col lg:flex-row lg:flex-wrap justify-left w-full ">
     <div class="flex flex-col lg:w-1/3 pt-4 lg:pt-24">
       <span class="text-white font-bold mb-3 text-center"
-        >Distribuição por <span class="text-gold">Faixa Etária</span></span
+        >{{ $t('chartSection.ageRange.whiteTitle') }}
+        <span class="text-gold">{{
+          $t('chartSection.ageRange.goldTitle')
+        }}</span></span
       >
       <AgeRangeChart
         :chart-data="ageDistribution"
@@ -11,14 +14,17 @@
     </div>
     <div class="flex flex-col lg:w-1/3 pt-4 lg:pt-24">
       <span class="text-white font-bold mb-3 text-center"
-        >Cumulativo de
-        <span class="text-gold">Testados e Positivos</span> Mensalmente</span
+        >{{ $t('chartSection.monthlyTestedPositive.whiteTitleStart') }}
+        <span class="text-gold">{{
+          $t('chartSection.monthlyTestedPositive.goldTitle')
+        }}</span>
+        {{ $t('chartSection.monthlyTestedPositive.whiteTitleEnd') }}</span
       >
       <div class="w-full flex flex-end">
         <select-input
           :options="monthlyInformation.years"
           v-model="selectedYear"
-          label="Escolha o ano"
+          :label="$t('chartSection.inputLabel')"
         />
       </div>
       <TestedAndPositiveChart
@@ -28,13 +34,16 @@
     </div>
     <div class="flex flex-col lg:w-1/3 pt-4 lg:pt-24">
       <span class="text-white font-bold mb-3 text-center"
-        >Casos positivos por <span class="text-gold">Semana</span></span
+        >{{ $t('chartSection.weeklyCases.whiteTitle')
+        }}<span class="text-gold">{{
+          $t('chartSection.weeklyCases.goldTitle')
+        }}</span></span
       >
       <div class="w-full flex flex-end">
         <select-input
           :options="weeklyDistribution.years"
           v-model="selectedYear2"
-          label="Escolha o ano"
+          :label="$t('chartSection.inputLabel')"
         />
       </div>
       <WeeklyCasesChart
@@ -43,10 +52,9 @@
       />
     </div>
     <div class="flex flex-wrap flex-row w-full">
-      <span class="text-gold text-xs pt-3"
-        >*Alguns dos gráficos apresentados acima são actualizados no início de
-        cada semana e não diariamente.</span
-      >
+      <span class="text-gold text-xs pt-3">{{
+        $t('chartSection.yellowNote')
+      }}</span>
     </div>
   </div>
 </template>

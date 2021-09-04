@@ -71,6 +71,10 @@ export default {
     langDir: './utils/i18n/locales',
     vueI18n: {
       fallbackLocale: 'pt'
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: true
     }
   },
   /*
