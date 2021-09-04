@@ -8,11 +8,11 @@
     >
       <div @click.prevent.stop="$i18n.setLocale(locale.code)">
         <div v-if="locale.code === 'pt'" class="flex items-center">
-          <span class="text-white font-bold">PT</span>
+          <span class="text-gold font-bold">PT</span>
           <PtFlag class="h-6 w-6 ml-1" />
         </div>
         <div v-if="locale.code === 'en'" class="flex items-center">
-          <span class="text-white font-bold">EN</span>
+          <span class="text-gold font-bold">EN</span>
           <UkFlag class="h-6 w-6 ml-1" />
         </div>
       </div>
