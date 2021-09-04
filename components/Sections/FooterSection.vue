@@ -11,21 +11,18 @@
       />
     </div>
     <h2 class="mt-5 text-gold text-center">
-      Ajude-nos a combater a COVID-19!
+      {{ $t('footerSection.title') }}
     </h2>
     <span
       class="mt-5 text-white w-full lg:w-1/2 text-center"
       style="line-height: 2.1rem;"
     >
-      Além dos
-      <a class="text-gold" href="https://covid19.ins.gov.mz/prevencao/"
-        >métodos de prevenção indicados pelo INS</a
-      >, a nossa única maneira de ajudar a impedir a propagação da COVID-19 é
-      através da codificação de aplicativos. Essa é a parte mais fácil. O
-      difícil é obter informações locais confiáveis portanto precisamos da sua
-      ajuda para que possamos manter as pessoas conscientes do que está a
-      acontecer.<br />
-      Contacte-nos em:
+      {{ $t('footerSection.whiteDescriptionStart') }}
+      <a class="text-gold" href="https://covid19.ins.gov.mz/prevencao/">{{
+        $t('footerSection.goldDescription')
+      }}</a
+      >{{ $t('footerSection.whiteDescriptionEnd') }}<br />
+      {{ $t('footerSection.contactUs') }}
       <a class="text-gold" href="mailto:covidmozinfo@gmail.com"
         >covidmozinfo@gmail.com</a
       >
