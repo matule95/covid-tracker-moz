@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="flex-initial w-full mb-2">
-      <h2 class="text-white">COVID-19 - Moçambique</h2>
+      <h2 class="text-white">{{ $t('mainStatistics.title') }}</h2>
     </div>
     <div class="w-full mt-2">
       <p class="text-white">
-        Última actualização: {{ latestUpdateDate }} às {{ latestUpdateTime }} -
-        Fonte:
+        {{ $t('mainStatistics.latestUpdate') }} {{ latestUpdateDate }}
+        {{ $t('mainStatistics.at') }} {{ latestUpdateTime }} -
+        {{ $t('mainStatistics.source') }}
         <a class="text-gold" href="http://www.misau.gov.mz/" target="_blank"
           >MISAU</a
         >
@@ -14,12 +15,11 @@
     </div>
     <div class="w-full my-5">
       <statistics :stats="dashboardStats" :data="chartData"></statistics>
-      <span class="text-gold text-xs pt-3"
-        >*O número em amarelo representa a diferença comparado ao dia de
-        ontem.</span
-      >
+      <span class="text-gold text-xs pt-3">{{
+        $t('mainStatistics.yellowNote')
+      }}</span>
       <span class="flex text-red text-xs pt-3"
-        >* {{ otherDeaths }} óbitos por outras causas não foram incluídos.</span
+        >* {{ otherDeaths }} {{ $t('mainStatistics.redNote') }}</span
       >
     </div>
   </div>

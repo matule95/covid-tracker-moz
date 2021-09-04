@@ -244,10 +244,6 @@ export default {
       return chartData
     }
   },
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this.weeklyDistribution)
-  },
   methods: {
     getNumberOfWeek(date) {
       // Copy date so don't modify original
