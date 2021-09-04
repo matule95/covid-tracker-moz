@@ -3,11 +3,13 @@ import { pt as mainStatisticsSectionPT } from '../translations/mainStatisticsSec
 import { pt as provinceDistributionSectionPT } from '../translations/provinceDistributionSection.js'
 import { pt as countryMapSectionPT } from '../translations/countryMapSection.js'
 import { pt as casesProgressChartSectionPT } from '../translations/casesProgressChartSection.js'
+import { pt as genderAndNationalityChartSectionPT } from '../translations/genderAndNationalityChartSection.js'
 
 export default {
   pageHead: pageHeadPT,
   mainStatistics: mainStatisticsSectionPT,
   provinceDistributionSection: provinceDistributionSectionPT,
   countryMapSection: countryMapSectionPT,
-  casesProgressChartSection: casesProgressChartSectionPT
+  casesProgressChartSection: casesProgressChartSectionPT,
+  genderAndNationalityChartSection: genderAndNationalityChartSectionPT
 }

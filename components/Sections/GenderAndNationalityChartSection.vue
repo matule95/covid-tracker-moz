@@ -2,7 +2,10 @@
   <div>
     <div class="w-full flex flex-row flex-wrap">
       <span class="text-white font-bold mb-10 text-center w-full"
-        >Distribuição por <span class="text-gold">Sexo</span></span
+        >{{ $t('genderAndNationalityChartSection.genderSection.whiteTitle') }}
+        <span class="text-gold">{{
+          $t('genderAndNationalityChartSection.genderSection.goldTitle')
+        }}</span></span
       >
       <PieChart
         :chart-data="genderDistribution"
@@ -11,7 +14,12 @@
     </div>
     <div class="w-full flex flex-row flex-wrap mt-16">
       <span class="text-white font-bold mb-10 text-center w-full"
-        >Distribuição por <span class="text-gold">Nacionalidade</span></span
+        >{{
+          $t('genderAndNationalityChartSection.nationalitySection.whiteTitle')
+        }}
+        <span class="text-gold">{{
+          $t('genderAndNationalityChartSection.nationalitySection.goldTitle')
+        }}</span></span
       >
       <PieChart
         :chart-data="originDistribution"
