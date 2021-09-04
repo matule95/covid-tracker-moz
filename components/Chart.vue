@@ -44,7 +44,7 @@ export default {
         labels: labels.reverse(),
         datasets: [
           {
-            label: 'Infectados',
+            label: this.$t('casesProgressChartSection.chart.infected'),
             borderColor: '#e3342f',
             data: infected.reverse(),
             borderWidth: 3,
@@ -62,7 +62,7 @@ export default {
             }
           },
           {
-            label: 'Recuperados',
+            label: this.$t('casesProgressChartSection.chart.recovered'),
             borderColor: '#5CC1AC',
             data: recovered.reverse(),
             borderWidth: 3,
@@ -80,7 +80,7 @@ export default {
             }
           },
           {
-            label: 'Activos',
+            label: this.$t('casesProgressChartSection.chart.active'),
             borderColor: '#F6C879',
             data: active.reverse(),
             borderWidth: 3,
@@ -98,7 +98,7 @@ export default {
             }
           },
           {
-            label: 'Óbitos',
+            label: this.$t('casesProgressChartSection.chart.deaths'),
             borderColor: '#8795a1',
             data: deaths.reverse(),
             borderWidth: 3,
