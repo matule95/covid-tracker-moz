@@ -1,7 +1,7 @@
 import { en as pageHeadEN } from '../translations/pageHead.js'
-import { en as mainStatisticsEN } from '../translations/MainStatisticsSection/mainStatistics.js'
+import { en as mainStatisticsSectionEN } from '../translations/mainStatisticsSection.js'
 
 export default {
   pageHead: pageHeadEN,
-  mainStatistics: mainStatisticsEN
+  mainStatistics: mainStatisticsSectionEN
 }

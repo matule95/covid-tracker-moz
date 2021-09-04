@@ -1,7 +1,7 @@
 import { pt as pageHeadPT } from '../translations/pageHead.js'
-import { pt as mainStatisticsPT } from '../translations/MainStatisticsSection/mainStatistics.js'
+import { pt as mainStatisticsSectionPT } from '../translations/mainStatisticsSection.js'
 
 export default {
   pageHead: pageHeadPT,
-  mainStatistics: mainStatisticsPT
+  mainStatistics: mainStatisticsSectionPT
 }

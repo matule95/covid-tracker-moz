@@ -4,7 +4,7 @@
       <stats-counter
         :stats="{
           type: 'countries',
-          label: 'Testados',
+          label: `${$t('mainStatistics.statistics.tested')}`,
           value: stats.tested.today,
           today: stats.tested.variation
         }"
@@ -21,7 +21,7 @@
       <stats-counter
         :stats="{
           type: 'infected',
-          label: 'Infectados',
+          label: `${$t('mainStatistics.statistics.infected')}`,
           value: stats.infected.today,
           today: stats.infected.variation
         }"
@@ -37,7 +37,7 @@
       <stats-counter
         :stats="{
           type: 'active',
-          label: 'Activos',
+          label: `${$t('mainStatistics.statistics.active')}`,
           value: stats.active.today,
           today: stats.active.variation
         }"
@@ -51,7 +51,7 @@
       <stats-counter
         :stats="{
           type: 'recovered',
-          label: 'Recuperados',
+          label: `${$t('mainStatistics.statistics.recovered')}`,
           value: stats.recovered.today,
           today: stats.recovered.variation
         }"
@@ -66,7 +66,7 @@
       <stats-counter
         :stats="{
           type: 'deaths',
-          label: 'Óbitos',
+          label: `${$t('mainStatistics.statistics.deaths')}`,
           value: stats.deaths.today,
           today: stats.deaths.variation
         }"
@@ -81,7 +81,7 @@
       <StatsCounter
         :stats="{
           type: 'hospitalized',
-          label: 'Internados',
+          label: `${$t('mainStatistics.statistics.hospitalized')}`,
           value: stats.hospitalized.today,
           today: stats.hospitalized.variation
         }"
@@ -96,7 +96,7 @@
       <StatsCounter
         :stats="{
           type: 'local_transmissions',
-          label: 'Trans. Local',
+          label: `${$t('mainStatistics.statistics.localTransmission')}`,
           value: stats.local_transmission.today,
           today: stats.local_transmission.variation
         }"
@@ -112,7 +112,7 @@
       <StatsCounter
         :stats="{
           type: 'foreign_transmission',
-          label: 'C. Importados',
+          label: `${$t('mainStatistics.statistics.foreignTransmission')}`,
           value: stats.foreign_transmission.today,
           today: stats.foreign_transmission.variation
         }"
@@ -127,7 +127,7 @@
       <stats-counter
         :stats="{
           type: 'recovered',
-          label: '% Recuperados',
+          label: `${$t('mainStatistics.statistics.recoveredPercentage')}`,
           value: recoveredPercentage.value,
           today: recoveredPercentage.variation,
           noFormat: true
@@ -143,7 +143,7 @@
       <stats-counter
         :stats="{
           type: 'countries',
-          label: '% Positividade Total',
+          label: `${$t('mainStatistics.statistics.totalPositivityPercentage')}`,
           value: allTimeInfectedPercentage.value,
           noFormat: true
         }"
@@ -158,7 +158,7 @@
       <stats-counter
         :stats="{
           type: 'countries',
-          label: '% Positividade Diária',
+          label: `${$t('mainStatistics.statistics.dailyPositivityPercentage')}`,
           value: todayInfectedPercentage.value,
           noFormat: true
         }"
