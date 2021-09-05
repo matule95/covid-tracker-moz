@@ -38,33 +38,13 @@ export default {
   },
   computed: {
     genderDistribution() {
-      const newRatioByGender = {
-        data: [],
-        labels: []
-      }
-      const gender = this.$store.state.statistics.weeklyInformation
-        .genderDistribution
-      gender.forEach(item => {
-        newRatioByGender.labels.push(item.gender)
-        newRatioByGender.data.push(item.cases)
-      })
-      return newRatioByGender
+      return this.$store.state.statistics.all.charts.gender_and_nationality_info
+        .gender_distribution
     },
     originDistribution() {
-      const newRatioByOrigin = {
-        data: [],
-        labels: []
-      }
-      const gender = this.$store.state.statistics.weeklyInformation
-        .originDistribution
-      gender.forEach(item => {
-        newRatioByOrigin.labels.push(item.gender)
-        newRatioByOrigin.data.push(item.cases)
-      })
-      return newRatioByOrigin
+      return this.$store.state.statistics.all.charts.gender_and_nationality_info
+        .origin_distribution
     }
   }
 }
 </script>
-
-<style></style>

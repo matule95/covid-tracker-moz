@@ -33,31 +33,14 @@ export default {
     Maps: () => (process.client ? import('~/components/Maps.vue') : null)
   },
   data: () => ({
-    mozGeoJson: require('~/map'),
-    provinces: require('~/provinces')
+    mozGeoJson: require('~/map')
   }),
   computed: {
     mapGEOJSON() {
       const geoJson = {
         type: 'FeatureCollection',
         features: this.mozGeoJson.features.concat(
-          this.$store.state.statistics.dailyInformation[0].province_stats.map(
-            province => {
-              const position = this.provinces.provinces.find(
-                item => item.name === province.province
-              )
-              return {
-                type: 'Feature',
-                properties: {
-                  ...province
-                },
-                geometry: {
-                  type: 'Point',
-                  coordinates: [position.lng, position.lat]
-                }
-              }
-            }
-          )
+          this.$store.state.statistics.all.country_map_info.province_stats
         )
       }
       return geoJson

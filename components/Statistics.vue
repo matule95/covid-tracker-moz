@@ -25,7 +25,6 @@
           value: stats.infected.today,
           today: stats.infected.variation
         }"
-        :today="stats.todayCases"
         absolute
       >
         <template v-slot:icon>
@@ -100,7 +99,6 @@
           value: stats.local_transmission.today,
           today: stats.local_transmission.variation
         }"
-        :today="stats.todayLocal_transmissions"
         absolute
       >
         <template v-slot:icon>
@@ -128,8 +126,8 @@
         :stats="{
           type: 'recovered',
           label: `${$t('mainStatistics.statistics.recoveredPercentage')}`,
-          value: recoveredPercentage.value,
-          today: recoveredPercentage.variation,
+          value: stats.recovered_percentage.value,
+          today: stats.recovered_percentage.variation,
           noFormat: true
         }"
         absolute
@@ -144,7 +142,7 @@
         :stats="{
           type: 'countries',
           label: `${$t('mainStatistics.statistics.totalPositivityPercentage')}`,
-          value: allTimeInfectedPercentage.value,
+          value: stats.all_time_infected_percentage.value,
           noFormat: true
         }"
         absolute
@@ -159,7 +157,7 @@
         :stats="{
           type: 'countries',
           label: `${$t('mainStatistics.statistics.dailyPositivityPercentage')}`,
-          value: todayInfectedPercentage.value,
+          value: stats.today_infected_percentage.value,
           noFormat: true
         }"
         absolute
@@ -200,46 +198,6 @@ export default {
     stats: {
       required: true,
       type: Object
-    },
-    data: {
-      required: true,
-      type: Array
-    }
-  },
-  computed: {
-    allTimeInfectedPercentage() {
-      const posObj = {}
-      posObj.value = parseFloat(
-        (this.stats.infected.today * 100) / this.stats.tested.today
-      ).toFixed(2)
-      return posObj
-    },
-    todayInfectedPercentage() {
-      const posObj = {}
-      posObj.value = parseFloat(
-        (this.stats.infected.variation * 100) / this.stats.tested.variation
-      ).toFixed(2)
-
-      return posObj
-    },
-    recoveredPercentage() {
-      const recoveredObj = {}
-      recoveredObj.value = parseFloat(
-        (this.stats.recovered.today * 100) / this.stats.infected.today
-      ).toFixed(2)
-      const variation = parseFloat(
-        ((this.stats.recovered.today - this.stats.recovered.variation) * 100) /
-          this.stats.infected.today
-      ).toFixed(2)
-      recoveredObj.variation = (
-        parseFloat(recoveredObj.value) - parseFloat(variation)
-      ).toFixed(2)
-      return recoveredObj
-    }
-  },
-  methods: {
-    formatNumbers(value) {
-      return new Intl.NumberFormat('es-ES').format(value)
     }
   }
 }

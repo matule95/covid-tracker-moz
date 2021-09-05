@@ -53,8 +53,7 @@ export default {
     I18NSection
   },
   async fetch({ store }) {
-    await store.dispatch('statistics/fetchDailyInformation')
-    await store.dispatch('statistics/fetchWeeklyInformation')
+    await store.dispatch('statistics/fetchAll')
   },
   head() {
     return {

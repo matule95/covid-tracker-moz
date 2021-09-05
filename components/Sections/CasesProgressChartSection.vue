@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     chartData() {
-      return this.$store.state.statistics.dailyInformation
+      return this.$store.state.statistics.all.charts.progress_chart_info
     }
   }
 }

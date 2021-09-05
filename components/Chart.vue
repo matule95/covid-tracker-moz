@@ -28,18 +28,11 @@ export default {
   computed: {
     chartData() {
       let data = {}
-      const infected = []
-      const active = []
-      const recovered = []
-      const deaths = []
-      const labels = []
-      this.$store.state.statistics.dailyInformation.forEach(info => {
-        labels.push(this.getDate(info.date))
-        infected.push(info.country_stats.infected)
-        active.push(info.country_stats.active)
-        recovered.push(info.country_stats.recovered)
-        deaths.push(info.country_stats.deaths)
-      })
+      const infected = JSON.parse(JSON.stringify(this.info.infected))
+      const active = JSON.parse(JSON.stringify(this.info.active))
+      const recovered = JSON.parse(JSON.stringify(this.info.recovered))
+      const deaths = JSON.parse(JSON.stringify(this.info.deaths))
+      const labels = JSON.parse(JSON.stringify(this.info.labels))
       data = {
         labels: labels.reverse(),
         datasets: [
@@ -165,12 +158,6 @@ export default {
       gradient.addColorStop(0, bg.toString())
       gradient.addColorStop(1, 'rgba(34,37,41')
       return gradient
-    },
-    getDate(date) {
-      const splitDate = date.split('/')
-      const day = splitDate[0]
-      const month = splitDate[1]
-      return `${day} ${this.months[Number.parseInt(month - 1)].substring(0, 3)}`
     }
   }
 }
