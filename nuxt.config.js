@@ -1,5 +1,6 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 const path = require('path')
+require('dotenv').config()
 export default {
   mode: 'spa',
   /*
@@ -55,6 +56,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/svg',
+    '@nuxtjs/dotenv',
     'nuxt-i18n',
     'nuxt-leaflet',
     'nuxt-purgecss'
