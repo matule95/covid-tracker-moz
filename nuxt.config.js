@@ -81,14 +81,14 @@ export default {
    ** Axios module configuration
    */
   axios: {
-    // proxy: true,
-    // prefix: '/api'
+    proxy: true,
+    prefix: '/api/'
   },
   proxy: {
-    // '/api': {
-    //   target: 'https://covid-19-tracker-moz.firebaseio.com/',
-    //   pathRewrite: { '^/api/': '' }
-    // }
+    '/api/': {
+      target: process.env.API_HOST || 'http://localhost:8088',
+      pathRewrite: { '^/api/': '/' }
+    }
   },
   /*
    ** Build configuration
