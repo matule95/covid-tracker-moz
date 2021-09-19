@@ -34,8 +34,8 @@
     </div>
     <div class="flex flex-col lg:w-1/3 pt-4 lg:pt-24">
       <span class="text-white font-bold mb-3 text-center"
-        >{{ $t('chartSection.weeklyCases.whiteTitle')
-        }}<span class="text-gold">{{
+        >{{ $t('chartSection.weeklyCases.whiteTitle') }}
+        <span class="text-gold">{{
           $t('chartSection.weeklyCases.goldTitle')
         }}</span></span
       >

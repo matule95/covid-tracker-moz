@@ -6,6 +6,7 @@ import { pt as casesProgressChartSectionPT } from '../translations/casesProgress
 import { pt as genderAndNationalityChartSectionPT } from '../translations/genderAndNationalityChartSection.js'
 import { pt as chartSectionPT } from '../translations/chartSection.js'
 import { pt as footerSectionPT } from '../translations/footerSection.js'
+import { pt as defaultLayoutPT } from '../translations/defaultLayout'
 
 export default {
   pageHead: pageHeadPT,
@@ -15,5 +16,6 @@ export default {
   casesProgressChartSection: casesProgressChartSectionPT,
   genderAndNationalityChartSection: genderAndNationalityChartSectionPT,
   chartSection: chartSectionPT,
-  footerSection: footerSectionPT
+  footerSection: footerSectionPT,
+  defaultLayout: defaultLayoutPT
 }

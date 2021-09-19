@@ -5,7 +5,8 @@
     </div>
     <div class="my-5 text-center">
       <span class="text-white font-bold text-sm">
-        Feito com ❤️ por: <br />
+        {{ $t('defaultLayout.madeWith') }} ❤️ {{ $t('defaultLayout.by') }}:
+        <br />
         <span class="text-gold">
           Clayton Matule <span class="text-white">&</span> Luís Pereira</span
         ></span

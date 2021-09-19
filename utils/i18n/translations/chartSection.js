@@ -1,18 +1,18 @@
 export const en = {
   ageRange: {
-    whiteTitle: 'Distribution by',
+    whiteTitle: 'Cases Distribution by',
     goldTitle: 'Age Group',
     chart: {}
   },
   monthlyTestedPositive: {
     whiteTitleStart: 'Cumulative Monthly',
-    goldTitle: 'Tested and Positive',
+    goldTitle: 'Tested and Positive Cases',
     whiteTitleEnd: '',
     chart: {}
   },
   weeklyCases: {
-    whiteTitle: 'Casos positivos por',
-    goldTitle: 'Semana',
+    whiteTitle: 'Weekly',
+    goldTitle: 'Positive Cases',
     chart: {}
   },
   yellowNote:
