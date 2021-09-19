@@ -8,6 +8,7 @@ import { en as chartSectionEN } from '../translations/sections/chartSection.js'
 import { en as footerSectionEN } from '../translations/sections/footerSection.js'
 import { en as defaultLayoutEN } from '../translations/layouts/defaultLayout'
 import { en as errorLayoutEN } from '../translations/layouts/errorLayout'
+import { en as loadingEN } from '../translations/loading'
 
 export default {
   pageHead: pageHeadEN,
@@ -19,5 +20,6 @@ export default {
   chartSection: chartSectionEN,
   footerSection: footerSectionEN,
   defaultLayout: defaultLayoutEN,
-  errorLayout: errorLayoutEN
+  errorLayout: errorLayoutEN,
+  loading: loadingEN
 }

@@ -8,6 +8,7 @@ import { pt as chartSectionPT } from '../translations/sections/chartSection.js'
 import { pt as footerSectionPT } from '../translations/sections/footerSection.js'
 import { pt as defaultLayoutPT } from '../translations/layouts/defaultLayout'
 import { pt as errorLayoutPT } from '../translations/layouts/errorLayout'
+import { pt as loadingPT } from '../translations/loading'
 
 export default {
   pageHead: pageHeadPT,
@@ -19,5 +20,6 @@ export default {
   chartSection: chartSectionPT,
   footerSection: footerSectionPT,
   defaultLayout: defaultLayoutPT,
-  errorLayout: errorLayoutPT
+  errorLayout: errorLayoutPT,
+  loading: loadingPT
 }
