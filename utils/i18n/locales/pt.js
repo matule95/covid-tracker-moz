@@ -1,12 +1,13 @@
 import { pt as pageHeadPT } from '../translations/pageHead.js'
-import { pt as mainStatisticsSectionPT } from '../translations/mainStatisticsSection.js'
-import { pt as provinceDistributionSectionPT } from '../translations/provinceDistributionSection.js'
-import { pt as countryMapSectionPT } from '../translations/countryMapSection.js'
-import { pt as casesProgressChartSectionPT } from '../translations/casesProgressChartSection.js'
-import { pt as genderAndNationalityChartSectionPT } from '../translations/genderAndNationalityChartSection.js'
-import { pt as chartSectionPT } from '../translations/chartSection.js'
-import { pt as footerSectionPT } from '../translations/footerSection.js'
-import { pt as defaultLayoutPT } from '../translations/defaultLayout'
+import { pt as mainStatisticsSectionPT } from '../translations/sections/mainStatisticsSection.js'
+import { pt as provinceDistributionSectionPT } from '../translations/sections/provinceDistributionSection.js'
+import { pt as countryMapSectionPT } from '../translations/sections/countryMapSection.js'
+import { pt as casesProgressChartSectionPT } from '../translations/sections/casesProgressChartSection.js'
+import { pt as genderAndNationalityChartSectionPT } from '../translations/sections/genderAndNationalityChartSection.js'
+import { pt as chartSectionPT } from '../translations/sections/chartSection.js'
+import { pt as footerSectionPT } from '../translations/sections/footerSection.js'
+import { pt as defaultLayoutPT } from '../translations/layouts/defaultLayout'
+import { pt as errorLayoutPT } from '../translations/layouts/errorLayout'
 
 export default {
   pageHead: pageHeadPT,
@@ -17,5 +18,6 @@ export default {
   genderAndNationalityChartSection: genderAndNationalityChartSectionPT,
   chartSection: chartSectionPT,
   footerSection: footerSectionPT,
-  defaultLayout: defaultLayoutPT
+  defaultLayout: defaultLayoutPT,
+  errorLayout: errorLayoutPT
 }
