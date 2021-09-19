@@ -9,6 +9,7 @@
       >
       <PieChart
         :chart-data="genderDistribution"
+        :labels="$t('genderDistribution.labels')"
         class="justify-left h-64 w-full flex flex-wrap justify-center content-center items-center"
       />
     </div>
@@ -23,6 +24,7 @@
       >
       <PieChart
         :chart-data="originDistribution"
+        :labels="$t('originDistribution.labels')"
         :background-color="['#F6C879', '#A7D3A6']"
         class="justify-left h-64 w-full flex flex-wrap justify-center content-center items-center"
       />

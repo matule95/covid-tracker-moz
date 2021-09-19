@@ -9,6 +9,13 @@ import { en as footerSectionEN } from '../translations/sections/footerSection.js
 import { en as defaultLayoutEN } from '../translations/layouts/defaultLayout'
 import { en as errorLayoutEN } from '../translations/layouts/errorLayout'
 import { en as loadingEN } from '../translations/loading'
+import {
+  ageRangeEN,
+  weeklyCasesEN,
+  testedAndPositiveEN,
+  originDistributionEN,
+  genderDistributionEN
+} from '../translations/charts/charts'
 
 export default {
   pageHead: pageHeadEN,
@@ -21,5 +28,10 @@ export default {
   footerSection: footerSectionEN,
   defaultLayout: defaultLayoutEN,
   errorLayout: errorLayoutEN,
-  loading: loadingEN
+  loading: loadingEN,
+  ageRange: ageRangeEN,
+  weeklyCases: weeklyCasesEN,
+  testedAndPositive: testedAndPositiveEN,
+  originDistribution: originDistributionEN,
+  genderDistribution: genderDistributionEN
 }

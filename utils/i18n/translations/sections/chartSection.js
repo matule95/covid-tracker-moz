@@ -33,8 +33,8 @@ export const pt = {
     chart: {}
   },
   weeklyCases: {
-    whiteTitle: 'Weekly',
-    goldTitle: 'Positive Cases',
+    whiteTitle: 'Casos Positivos',
+    goldTitle: 'por Semana',
     chart: {}
   },
   yellowNote:

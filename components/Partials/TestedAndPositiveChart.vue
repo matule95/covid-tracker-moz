@@ -6,12 +6,20 @@ export default {
   props: {
     chartData: { type: [Array, Object], required: true }
   },
+  computed: {
+    currentLanguage() {
+      return this.$i18n.locale
+    }
+  },
   watch: {
     $props: {
       handler(newValue) {
         this.initializeChart(newValue.chartData)
       },
       deep: true
+    },
+    currentLanguage: function() {
+      this.initializeChart(this.chartData)
     }
   },
   mounted() {
@@ -25,7 +33,7 @@ export default {
           labels: data.labels,
           datasets: [
             {
-              label: 'Testados',
+              label: this.$t('testedAndPositive.tested'),
               backgroundColor: '#8c79f6',
               data: data.tested,
               datalabels: {
@@ -39,7 +47,7 @@ export default {
               }
             },
             {
-              label: 'Positivos',
+              label: this.$t('testedAndPositive.positive'),
               backgroundColor: '#e84a5f',
               data: data.cases,
               datalabels: {

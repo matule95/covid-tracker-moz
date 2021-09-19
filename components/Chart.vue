@@ -111,42 +111,18 @@ export default {
         ]
       }
       return data
+    },
+    currentLanguage() {
+      return this.$i18n.locale
+    }
+  },
+  watch: {
+    currentLanguage: function() {
+      this.initializeChart()
     }
   },
   mounted() {
-    this.renderChart(this.chartData, {
-      responsive: true,
-      maintainAspectRatio: false,
-      tooltips: {
-        mode: 'x-axis'
-      },
-      scales: {
-        xAxes: [
-          {
-            gridLines: {
-              color: '#333639',
-              borderDash: [3, 3],
-              zeroLineColor: 'transparent'
-            },
-            barPercentage: 0.05,
-            ticks: {
-              fontFamily: 'CircularStd'
-            }
-          }
-        ]
-      },
-      legend: {
-        position: 'bottom',
-        labels: {
-          boxWidth: 5,
-          fontFamily: 'CircularStd',
-          padding: 20,
-          fontColor: '#ffffff',
-          usePointStyle: true,
-          backgroundColor: '#ffffff'
-        }
-      }
-    })
+    this.initializeChart()
   },
   methods: {
     setGradient(color) {
@@ -158,9 +134,48 @@ export default {
       gradient.addColorStop(0, bg.toString())
       gradient.addColorStop(1, 'rgba(34,37,41')
       return gradient
+    },
+    getDate(date) {
+      const splitDate = date.split('/')
+      const day = splitDate[0]
+      const month = splitDate[1]
+      return `${day} ${this.months[Number.parseInt(month - 1)].substring(0, 3)}`
+    },
+    initializeChart() {
+      this.renderChart(this.chartData, {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+          mode: 'x-axis'
+        },
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                color: '#333639',
+                borderDash: [3, 3],
+                zeroLineColor: 'transparent'
+              },
+              barPercentage: 0.05,
+              ticks: {
+                fontFamily: 'CircularStd'
+              }
+            }
+          ]
+        },
+        legend: {
+          position: 'bottom',
+          labels: {
+            boxWidth: 5,
+            fontFamily: 'CircularStd',
+            padding: 20,
+            fontColor: '#ffffff',
+            usePointStyle: true,
+            backgroundColor: '#ffffff'
+          }
+        }
+      })
     }
   }
 }
 </script>
-
-<style></style>

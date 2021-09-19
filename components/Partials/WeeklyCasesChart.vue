@@ -6,12 +6,20 @@ export default {
   props: {
     chartData: { type: [Array, Object], required: true }
   },
+  computed: {
+    currentLanguage() {
+      return this.$i18n.locale
+    }
+  },
   watch: {
     $props: {
       handler(newValue) {
         this.initializeChart(newValue.chartData)
       },
       deep: true
+    },
+    currentLanguage: function() {
+      this.initializeChart(this.chartData)
     }
   },
   mounted() {
@@ -25,7 +33,7 @@ export default {
           labels: data.labels,
           datasets: [
             {
-              label: 'N° de Casos',
+              label: this.$t('weeklyCases.label'),
               backgroundColor: '#e84a5f',
               data: data.data,
               datalabels: {
