@@ -6,8 +6,8 @@
     <div class="w-full mt-2">
       <p class="text-white">
         {{ $t('mainStatistics.latestUpdate') }}
-        {{ dashboardData.last_updated }} {{ $t('mainStatistics.at') }}
-        {{ dashboardData.last_updated }} -
+        {{ dashboardData.last_updated_date }} {{ $t('mainStatistics.at') }}
+        {{ dashboardData.last_updated_time }} -
         {{ $t('mainStatistics.source') }}
         <a class="text-gold" href="http://www.misau.gov.mz/" target="_blank"
           >MISAU</a
