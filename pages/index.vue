@@ -33,7 +33,7 @@
 
 <script>
 import CasesProgressChartSection from '~/components/Sections/CasesProgressChartSection.vue'
-import ChartsSection from '~/components/Partials/ChartsSection'
+import ChartsSection from '~/components/Sections/ChartsSection'
 import CountryMapSection from '~/components/Sections/CountryMapSection.vue'
 import FooterSection from '~/components/Sections/FooterSection.vue'
 import GenderAndNationalityChartSection from '~/components/Sections/GenderAndNationalityChartSection.vue'

@@ -62,9 +62,9 @@
 <script>
 import moment from 'moment'
 import SelectInput from '../SelectInput'
-import AgeRangeChart from '~/components/Partials/AgeRangeChart'
-import TestedAndPositiveChart from '~/components/Partials/TestedAndPositiveChart'
-import WeeklyCasesChart from '~/components/Partials/WeeklyCasesChart'
+import AgeRangeChart from '~/components/Partials/charts/AgeRangeChart'
+import TestedAndPositiveChart from '~/components/Partials/charts/TestedAndPositiveChart'
+import WeeklyCasesChart from '~/components/Partials/charts/WeeklyCasesChart'
 export default {
   components: {
     SelectInput,
