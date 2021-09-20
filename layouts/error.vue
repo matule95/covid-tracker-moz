@@ -3,7 +3,11 @@
     class="flex flex-row flex-wrap bg-brown-light justify-center items-center h-full text-center"
   >
     <div class="w-full">
-      <img src="/robot.svg" style="max-width: 300px" alt="Broken Robot" />
+      <img
+        src="/robot-optimized.png"
+        style="max-width: 300px"
+        alt="Broken Robot"
+      />
     </div>
     <div class="w-full mt-5">
       <h2 class="text-gold">{{ $t('errorLayout.oops') }}!</h2>
