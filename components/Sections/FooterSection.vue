@@ -4,7 +4,7 @@
   >
     <div class="w-full flex justify-center mt-10">
       <img
-        src="/Gladiator.png"
+        src="/gladiator-optimized-min.png"
         width="250px"
         height="170px"
         alt="Gladiator Fighting Corona Virus"
