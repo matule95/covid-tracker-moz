@@ -102,13 +102,6 @@ export default {
       }
     },
     extractCSS: true,
-    optimization: {
-      splitChunks: {
-        chunks: 'all',
-        automaticNameDelimiter: '.',
-        maxSize: 256000
-      }
-    },
     /*
      ** You can extend webpack config here
      */
