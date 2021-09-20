@@ -9,7 +9,7 @@ export const en = {
   statistics: {
     tested: 'Tested',
     infected: 'Infected',
-    active: 'Active',
+    active: 'Actives',
     recovered: 'Recovered',
     deaths: 'Deaths',
     hospitalized: 'Hospitalized',
