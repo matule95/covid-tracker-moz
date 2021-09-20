@@ -133,7 +133,7 @@
         absolute
       >
         <template v-slot:icon>
-          <PercentageIcon />
+          <PercentageIcon style="fill: white;" class="h-5" />
         </template>
       </stats-counter>
     </div>
@@ -148,7 +148,7 @@
         absolute
       >
         <template v-slot:icon>
-          <PercentageIcon />
+          <PercentageIcon style="fill: white;" class="h-5" />
         </template>
       </stats-counter>
     </div>
@@ -163,7 +163,7 @@
         absolute
       >
         <template v-slot:icon>
-          <PercentageIcon />
+          <PercentageIcon style="fill: white;" class="h-5" />
         </template>
       </stats-counter>
     </div>
