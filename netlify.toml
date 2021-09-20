@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/getData"
+  to = "https://api.covid19.co.mz/getData"
+  status = 200
+  force = true
