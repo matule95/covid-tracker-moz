@@ -6,13 +6,13 @@
       <img src="/robot.svg" style="max-width: 300px" alt="Broken Robot" />
     </div>
     <div class="w-full mt-5">
-      <h2 class="text-gold">Oops!</h2>
+      <h2 class="text-gold">{{ $t('errorLayout.oops') }}!</h2>
     </div>
     <div class="w-full text-white text-md mt-5">
       {{ message }}
     </div>
     <div class="w-full mt-10">
-      <button @click="goToPage">Ir à Página Inicial</button>
+      <button @click="goToPage">{{ $t('errorLayout.goToPage') }}</button>
     </div>
   </div>
 </template>
@@ -27,13 +27,11 @@ export default {
   },
   computed: {
     message() {
-      let message = ''
       if (this.error.statusCode && this.error.statusCode === 404) {
-        message = 'A página solicitada não encontra-se disponível.'
+        return this.$t('errorLayout.notFoundMessage')
       } else if (this.error.statusCode && this.error.statusCode === 500) {
-        message = 'Erro ao solicitar dados no servidor'
-      } else message = 'Erro ao solicitar dados no servidor'
-      return message
+        return this.$t('errorLayout.serverErrorMessage')
+      } else return this.$t('errorLayout.serverErrorMessage')
     }
   },
   mounted() {

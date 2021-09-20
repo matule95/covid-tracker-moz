@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "dev-debug": "nodemon --inspect node_modules/.bin/nuxt"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
@@ -20,12 +21,15 @@
     "cross-env": "^5.2.0",
     "moment": "^2.29.1",
     "nuxt": "^2.4.0",
+    "nuxt-i18n": "^6.28.0",
     "nuxt-leaflet": "^0.0.21",
     "tinycolor2": "^1.4.1",
     "vue-chartjs": "^3.5.0"
   },
   "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^0.0.1",
+    "@nuxtjs/svg": "^0.2.0",
     "autoprefixer": "^8.6.4",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.1",

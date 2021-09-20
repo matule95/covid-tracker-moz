@@ -2,19 +2,29 @@
   <div>
     <div class="w-full flex flex-row flex-wrap">
       <span class="text-white font-bold mb-10 text-center w-full"
-        >Distribuição por <span class="text-gold">Sexo</span></span
+        >{{ $t('genderAndNationalityChartSection.genderSection.whiteTitle') }}
+        <span class="text-gold">{{
+          $t('genderAndNationalityChartSection.genderSection.goldTitle')
+        }}</span></span
       >
       <PieChart
         :chart-data="genderDistribution"
+        :labels="$t('genderDistribution.labels')"
         class="justify-left h-64 w-full flex flex-wrap justify-center content-center items-center"
       />
     </div>
     <div class="w-full flex flex-row flex-wrap mt-16">
       <span class="text-white font-bold mb-10 text-center w-full"
-        >Distribuição por <span class="text-gold">Nacionalidade</span></span
+        >{{
+          $t('genderAndNationalityChartSection.nationalitySection.whiteTitle')
+        }}
+        <span class="text-gold">{{
+          $t('genderAndNationalityChartSection.nationalitySection.goldTitle')
+        }}</span></span
       >
       <PieChart
         :chart-data="originDistribution"
+        :labels="$t('originDistribution.labels')"
         :background-color="['#F6C879', '#A7D3A6']"
         class="justify-left h-64 w-full flex flex-wrap justify-center content-center items-center"
       />
@@ -30,33 +40,13 @@ export default {
   },
   computed: {
     genderDistribution() {
-      const newRatioByGender = {
-        data: [],
-        labels: []
-      }
-      const gender = this.$store.state.statistics.weeklyInformation
-        .genderDistribution
-      gender.forEach(item => {
-        newRatioByGender.labels.push(item.gender)
-        newRatioByGender.data.push(item.cases)
-      })
-      return newRatioByGender
+      return this.$store.state.statistics.all.charts.gender_and_nationality_info
+        .gender_distribution
     },
     originDistribution() {
-      const newRatioByOrigin = {
-        data: [],
-        labels: []
-      }
-      const gender = this.$store.state.statistics.weeklyInformation
-        .originDistribution
-      gender.forEach(item => {
-        newRatioByOrigin.labels.push(item.gender)
-        newRatioByOrigin.data.push(item.cases)
-      })
-      return newRatioByOrigin
+      return this.$store.state.statistics.all.charts.gender_and_nationality_info
+        .origin_distribution
     }
   }
 }
 </script>
-
-<style></style>

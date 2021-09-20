@@ -2,6 +2,7 @@
   <div>
     <section class="container h-full pb-5" style="max-width: 100%">
       <div class="flex flex-wrap flex-col h-full">
+        <I18NSection class="flex w-full mb-4" />
         <MainStatisticsSection />
         <ProvinceDistributionSection
           class="block lg:hidden w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 lg:provinces"
@@ -38,6 +39,7 @@ import FooterSection from '~/components/Sections/FooterSection.vue'
 import GenderAndNationalityChartSection from '~/components/Sections/GenderAndNationalityChartSection.vue'
 import MainStatisticsSection from '~/components/Sections/MainStatisticsSection.vue'
 import ProvinceDistributionSection from '~/components/Sections/ProvinceDistributionSection.vue'
+import I18NSection from '~/components/Sections/I18NSection.vue'
 
 export default {
   components: {
@@ -47,26 +49,16 @@ export default {
     FooterSection,
     GenderAndNationalityChartSection,
     MainStatisticsSection,
-    ProvinceDistributionSection
+    ProvinceDistributionSection,
+    I18NSection
   },
   async fetch({ store }) {
-    await store.dispatch('statistics/fetchDailyInformation')
-    await store.dispatch('statistics/fetchWeeklyInformation')
+    await store.dispatch('statistics/fetchAll')
   },
   head() {
     return {
-      title: 'Início - COVID 19 Moçambique',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'COVID 19 em Moçambique 🇲🇿'
-        },
-        {
-          name: 'title',
-          content: 'Inicio - COVID 19 em Moçambique 🇲🇿'
-        }
-      ]
+      title: this.$t('pageHead.title'),
+      meta: this.$t('pageHead.meta')
     }
   }
 }

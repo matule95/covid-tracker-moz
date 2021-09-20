@@ -1,5 +1,6 @@
 // eslint-disable-next-line nuxt/no-cjs-in-config
 const path = require('path')
+require('dotenv').config()
 export default {
   mode: 'spa',
   /*
@@ -54,21 +55,42 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/svg',
+    '@nuxtjs/dotenv',
+    'nuxt-i18n',
     'nuxt-leaflet',
     'nuxt-purgecss'
   ],
+
+  i18n: {
+    locales: [
+      { code: 'pt', iso: 'pt-PT', file: 'pt.js' },
+      { code: 'en', iso: 'en-US', file: 'en.js' }
+    ],
+    defaultLocale: 'pt',
+    strategy: 'no_prefix',
+    vueI18nLoader: true,
+    langDir: './utils/i18n/locales',
+    vueI18n: {
+      fallbackLocale: 'pt'
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: true
+    }
+  },
   /*
    ** Axios module configuration
    */
   axios: {
-    // proxy: true,
-    // prefix: '/api'
+    proxy: true,
+    prefix: '/api/'
   },
   proxy: {
-    // '/api': {
-    //   target: 'https://covid-19-tracker-moz.firebaseio.com/',
-    //   pathRewrite: { '^/api/': '' }
-    // }
+    '/api/': {
+      target: process.env.API_HOST || 'http://localhost:8088',
+      pathRewrite: { '^/api/': '/' }
+    }
   },
   /*
    ** Build configuration
@@ -91,6 +113,8 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      config.devtool = ctx.isClient ? 'eval-source-map' : 'inline-source-map'
+
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({

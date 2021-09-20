@@ -1,7 +1,11 @@
 <template>
   <div class="flex flex-wrap flex-row w-full my-5 xl:mt-0 ">
     <span class="text-white font-bold mb-5"
-      >Progressos dos <span class="text-gold">Casos</span> 📈</span
+      >{{ $t('casesProgressChartSection.whiteTitle') }}
+      <span class="text-gold">{{
+        $t('casesProgressChartSection.goldTitle')
+      }}</span>
+      📈</span
     >
     <chart :info="chartData" style="width: 100%" />
   </div>
@@ -16,7 +20,7 @@ export default {
   },
   computed: {
     chartData() {
-      return this.$store.state.statistics.dailyInformation
+      return this.$store.state.statistics.all.charts.progress_chart_info
     }
   }
 }

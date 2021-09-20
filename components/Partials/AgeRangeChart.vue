@@ -18,77 +18,92 @@ export default {
       '#fe8a71'
     ]
   }),
+  computed: {
+    currentLanguage() {
+      return this.$i18n.locale
+    }
+  },
+  watch: {
+    currentLanguage: function() {
+      this.initializeChart()
+    }
+  },
   mounted() {
-    const datasets = this.chartData.data.map((item, index) => {
-      return {
-        label: this.chartData.labels[index],
-        backgroundColor: this.bgColors[index],
-        data: [item],
-        datalabels: {
-          align: 'middle',
-          borderRadius: 4,
-          color: '#ffffff',
-          font: {
-            weight: 'bold',
-            fontSize: 12
+    this.initializeChart()
+  },
+  methods: {
+    initializeChart() {
+      const datasets = this.chartData.data.map((item, index) => {
+        return {
+          label: this.chartData.labels[index],
+          backgroundColor: this.bgColors[index],
+          data: [item],
+          datalabels: {
+            align: 'middle',
+            borderRadius: 4,
+            color: '#ffffff',
+            font: {
+              weight: 'bold',
+              fontSize: 12
+            }
           }
         }
-      }
-    })
-    this.renderChart(
-      {
-        plugins: [ChartJsPluginDataLabels],
-        datasets,
-        labels: ['Idade']
-      },
-      {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-          position: 'bottom',
-          labels: {
-            boxWidth: 8,
-            fontFamily: 'CircularStd',
-            padding: 20,
-            fontSize: 16,
-            fontColor: '#ffffff',
-            usePointStyle: false,
-            backgroundColor: '#ffffff'
-          }
+      })
+      this.renderChart(
+        {
+          plugins: [ChartJsPluginDataLabels],
+          datasets,
+          labels: this.$t('ageRange.labels')
         },
-        scales: {
-          xAxes: [
-            {
-              ticks: {
-                fontSize: 13,
-                fontFamily: 'CircularStd',
-                fontColor: '#ffffff'
-              },
-              stacked: false,
-              gridLines: {
-                color: '#333639',
-                borderDash: [3, 3],
-                zeroLineColor: 'transparent'
-              }
+        {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 8,
+              fontFamily: 'CircularStd',
+              padding: 20,
+              fontSize: 16,
+              fontColor: '#ffffff',
+              usePointStyle: false,
+              backgroundColor: '#ffffff'
             }
-          ],
-          yAxes: [
-            {
-              ticks: {
-                fontSize: 13,
-                fontFamily: 'CircularStd'
-              },
-              stacked: false,
-              gridLines: {
-                color: '#333639',
-                borderDash: [3, 3],
-                zeroLineColor: 'transparent'
+          },
+          scales: {
+            xAxes: [
+              {
+                ticks: {
+                  fontSize: 13,
+                  fontFamily: 'CircularStd',
+                  fontColor: '#ffffff'
+                },
+                stacked: false,
+                gridLines: {
+                  color: '#333639',
+                  borderDash: [3, 3],
+                  zeroLineColor: 'transparent'
+                }
               }
-            }
-          ]
+            ],
+            yAxes: [
+              {
+                ticks: {
+                  fontSize: 13,
+                  fontFamily: 'CircularStd'
+                },
+                stacked: false,
+                gridLines: {
+                  color: '#333639',
+                  borderDash: [3, 3],
+                  zeroLineColor: 'transparent'
+                }
+              }
+            ]
+          }
         }
-      }
-    )
+      )
+    }
   }
 }
 </script>

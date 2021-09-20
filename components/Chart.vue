@@ -28,23 +28,16 @@ export default {
   computed: {
     chartData() {
       let data = {}
-      const infected = []
-      const active = []
-      const recovered = []
-      const deaths = []
-      const labels = []
-      this.$store.state.statistics.dailyInformation.forEach(info => {
-        labels.push(this.getDate(info.date))
-        infected.push(info.country_stats.infected)
-        active.push(info.country_stats.active)
-        recovered.push(info.country_stats.recovered)
-        deaths.push(info.country_stats.deaths)
-      })
+      const infected = JSON.parse(JSON.stringify(this.info.infected))
+      const active = JSON.parse(JSON.stringify(this.info.active))
+      const recovered = JSON.parse(JSON.stringify(this.info.recovered))
+      const deaths = JSON.parse(JSON.stringify(this.info.deaths))
+      const labels = JSON.parse(JSON.stringify(this.info.labels))
       data = {
         labels: labels.reverse(),
         datasets: [
           {
-            label: 'Infectados',
+            label: this.$t('casesProgressChartSection.chart.infected'),
             borderColor: '#e3342f',
             data: infected.reverse(),
             borderWidth: 3,
@@ -62,7 +55,7 @@ export default {
             }
           },
           {
-            label: 'Recuperados',
+            label: this.$t('casesProgressChartSection.chart.recovered'),
             borderColor: '#5CC1AC',
             data: recovered.reverse(),
             borderWidth: 3,
@@ -80,7 +73,7 @@ export default {
             }
           },
           {
-            label: 'Activos',
+            label: this.$t('casesProgressChartSection.chart.active'),
             borderColor: '#F6C879',
             data: active.reverse(),
             borderWidth: 3,
@@ -98,7 +91,7 @@ export default {
             }
           },
           {
-            label: 'Óbitos',
+            label: this.$t('casesProgressChartSection.chart.deaths'),
             borderColor: '#8795a1',
             data: deaths.reverse(),
             borderWidth: 3,
@@ -118,42 +111,18 @@ export default {
         ]
       }
       return data
+    },
+    currentLanguage() {
+      return this.$i18n.locale
+    }
+  },
+  watch: {
+    currentLanguage: function() {
+      this.initializeChart()
     }
   },
   mounted() {
-    this.renderChart(this.chartData, {
-      responsive: true,
-      maintainAspectRatio: false,
-      tooltips: {
-        mode: 'x-axis'
-      },
-      scales: {
-        xAxes: [
-          {
-            gridLines: {
-              color: '#333639',
-              borderDash: [3, 3],
-              zeroLineColor: 'transparent'
-            },
-            barPercentage: 0.05,
-            ticks: {
-              fontFamily: 'CircularStd'
-            }
-          }
-        ]
-      },
-      legend: {
-        position: 'bottom',
-        labels: {
-          boxWidth: 5,
-          fontFamily: 'CircularStd',
-          padding: 20,
-          fontColor: '#ffffff',
-          usePointStyle: true,
-          backgroundColor: '#ffffff'
-        }
-      }
-    })
+    this.initializeChart()
   },
   methods: {
     setGradient(color) {
@@ -171,9 +140,42 @@ export default {
       const day = splitDate[0]
       const month = splitDate[1]
       return `${day} ${this.months[Number.parseInt(month - 1)].substring(0, 3)}`
+    },
+    initializeChart() {
+      this.renderChart(this.chartData, {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltips: {
+          mode: 'x-axis'
+        },
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                color: '#333639',
+                borderDash: [3, 3],
+                zeroLineColor: 'transparent'
+              },
+              barPercentage: 0.05,
+              ticks: {
+                fontFamily: 'CircularStd'
+              }
+            }
+          ]
+        },
+        legend: {
+          position: 'bottom',
+          labels: {
+            boxWidth: 5,
+            fontFamily: 'CircularStd',
+            padding: 20,
+            fontColor: '#ffffff',
+            usePointStyle: true,
+            backgroundColor: '#ffffff'
+          }
+        }
+      })
     }
   }
 }
 </script>
-
-<style></style>
