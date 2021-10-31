@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     dashboardData() {
-      return this.$store.state.statistics.all.dashboard_info
+      return this.$store.state.statistics.overall.dashboard_info
     }
   }
 }

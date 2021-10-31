@@ -41,7 +41,7 @@ export default {
       const geoJson = {
         type: 'FeatureCollection',
         features: this.mozGeoJson.features.concat(
-          this.$store.state.statistics.all.country_map_info.province_stats.map(
+          this.$store.state.statistics.countryMap.country_map_info.province_stats.map(
             province => {
               const position = this.provinces.provinces.find(
                 item => item.name === province.province

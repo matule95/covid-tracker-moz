@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     provinceData() {
-      return this.$store.state.statistics.all.province_distribution
+      return this.$store.state.statistics.overall.province_distribution
     }
   }
 }

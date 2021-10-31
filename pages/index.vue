@@ -8,25 +8,33 @@
           class="block lg:hidden w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 lg:provinces"
         />
         <div class="w-full flex-grow flex flex-row flex-wrap">
-          <CountryMapSection class="hidden xl:block" />
+          <CountryMapSection
+            v-if="this.$store.state.statistics.countryMap !== []"
+            class="hidden xl:block"
+          />
           <div
             class="flex flex-wrap flex-row w-full  xl:w-2/3 xxl:w-2/3 xl:pl-5 mt-5"
           >
             <CasesProgressChartSection
+              v-if="chartsData !== []"
               class="order-3 xl:order-1 overallChart"
             />
-            <CountryMapSection class="block xl:hidden provincesMap" />
+            <CountryMapSection
+              v-if="this.$store.state.statistics.countryMap !== []"
+              class="block xl:hidden provincesMap"
+            />
             <ProvinceDistributionSection
               class="hidden lg:block w-full lg:w-2/3 mt-24 xl:mt-5 mb-2 order-1 xl:order-2 provinces"
             />
             <GenderAndNationalityChartSection
+              v-if="chartsData !== []"
               class="w-full flex flex-wrap flex-row lg:w-1/3 mt-24 xl:mt-5 order-2 xl:order-3 nearbyCountries"
             />
           </div>
         </div>
       </div>
     </section>
-    <ChartsSection class="w-full h-full pt-5" />
+    <ChartsSection v-if="chartsData !== []" class="w-full h-full pt-5" />
     <FooterSection />
   </div>
 </template>
@@ -52,8 +60,18 @@ export default {
     ProvinceDistributionSection,
     I18NSection
   },
+  computed: {
+    chartsData() {
+      return this.$store.state.statistics.charts
+    }
+  },
   async fetch({ store }) {
-    await store.dispatch('statistics/fetchAll')
+    // await store.dispatch('statistics/fetchAll')
+    await store.dispatch('statistics/fetchOverall')
+  },
+  mounted() {
+    this.$store.dispatch('statistics/fetchCharts')
+    this.$store.dispatch('statistics/fetchCountryMap')
   },
   head() {
     return {

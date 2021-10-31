@@ -80,11 +80,11 @@ export default {
   }),
   computed: {
     ageDistributionData() {
-      return this.$store.state.statistics.all.charts.age_chart_info
+      return this.$store.state.statistics.charts.charts.age_chart_info
     },
     testedAndPositiveData() {
       let returnData = {}
-      this.$store.state.statistics.all.charts.tested_and_positive_info.map(
+      this.$store.state.statistics.charts.charts.tested_and_positive_info.map(
         yearData => {
           if (yearData.year === this.testedAndPositiveSelectedYear) {
             returnData = yearData
@@ -95,7 +95,7 @@ export default {
     },
     testedAndPositiveYears() {
       const years = []
-      this.$store.state.statistics.all.charts.tested_and_positive_info.map(
+      this.$store.state.statistics.charts.charts.tested_and_positive_info.map(
         yearData => {
           years.push(yearData.year)
         }
@@ -104,7 +104,7 @@ export default {
     },
     weeklyDistributionData() {
       let returnData = {}
-      this.$store.state.statistics.all.charts.weekly_cases_info.map(
+      this.$store.state.statistics.charts.charts.weekly_cases_info.map(
         yearData => {
           if (yearData.year === this.weeklyDistributionSelectedYear) {
             returnData = yearData
@@ -115,7 +115,7 @@ export default {
     },
     weeklyDistributionYears() {
       const years = []
-      this.$store.state.statistics.all.charts.weekly_cases_info.map(
+      this.$store.state.statistics.charts.charts.weekly_cases_info.map(
         yearData => {
           years.push(yearData.year)
         }
