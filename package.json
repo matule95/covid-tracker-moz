@@ -19,7 +19,7 @@
     "chart.js": "^2.9.3",
     "chartjs-plugin-datalabels": "^0.7.0",
     "cross-env": "^5.2.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "nuxt": "^2.4.0",
     "nuxt-i18n": "^6.28.0",
     "nuxt-leaflet": "^0.0.21",
