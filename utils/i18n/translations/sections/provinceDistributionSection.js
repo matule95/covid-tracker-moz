@@ -12,8 +12,8 @@ export const en = {
 
 export const pt = {
   mobileDragNote: '*Arraste a tabela para o lado para ver mais detalhes →',
-  whiteTitle: 'Distribuição',
-  goldTitle: 'Provincial',
+  whiteTitle: 'Distribuição por',
+  goldTitle: 'Provincias',
   provinceDistribution: {
     totalInfected: 'Total de Infectados',
     actives: 'Activos',

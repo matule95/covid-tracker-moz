@@ -27,9 +27,9 @@ export const pt = {
     chart: {}
   },
   monthlyTestedPositive: {
-    whiteTitleStart: 'Cumulativo de',
+    whiteTitleStart: 'Número de ',
     goldTitle: 'Testados e Positivos',
-    whiteTitleEnd: 'Mensalmente',
+    whiteTitleEnd: 'por mês',
     chart: {}
   },
   weeklyCases: {
